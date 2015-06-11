@@ -27,5 +27,5 @@ def login_auth(request):
             return HttpResponseRedirect('/home/')
     else:
         logger.warn('<%s> login in fail.' % user_auth)
-        return render_to_response('login/login.html',{'msg':'账号或密码错误','test':request.user.username})
+        return render_to_response('login/login.html',{'msg':'账号或密码错误'})
 
