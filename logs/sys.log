@@ -16,3 +16,9 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django\template\loader.py", line 138, in find_template
     raise TemplateDoesNotExist(name)
 TemplateDoesNotExist: public/index.html
+[2015-06-11 20:16:09,667] WARNING : <阿斯顿> login in fail.
+[2015-06-11 20:16:12,740] WARNING : <阿斯顿> login in fail.
+[2015-06-11 20:16:33,448] WARNING : <阿斯顿> login in fail.
+[2015-06-11 20:17:06,940] WARNING : Not Found: /login、
+[2015-06-11 20:17:09,592] WARNING : Not Found: /login、
+[2015-06-11 20:17:54,878] WARNING : <阿斯顿> login in fail.
