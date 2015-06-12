@@ -26,3 +26,1891 @@ TemplateDoesNotExist: public/index.html
 [2015-06-12 10:15:19,447] WARNING : <阿斯顿> login in fail.
 [2015-06-12 11:09:00,526] WARNING : Not Found: /modify_passwd/
 [2015-06-12 11:11:22,734] WARNING : Not Found: /assets_manage/
+[2015-06-12 11:57:01,346] WARNING : Not Found: /modify_passwd/
+[2015-06-12 12:03:52,948] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 246, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: ' "sidebarmenu.html"' from 'include "sidebarmenu.html"'
+[2015-06-12 12:04:07,515] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 246, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: ' "public/sidebarmenu.html"' from 'include "public/sidebarmenu.html"'
+[2015-06-12 12:07:20,451] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 148, in get_template
+    template = get_template_from_string(template, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 262, in do_include
+    isolated_context=isolated_context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 145, in __init__
+    t = get_template(template_path)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: sidebarmenu.html
+[2015-06-12 12:07:27,882] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 148, in get_template
+    template = get_template_from_string(template, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 262, in do_include
+    isolated_context=isolated_context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 145, in __init__
+    t = get_template(template_path)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: public/sidebarmenu.html
+[2015-06-12 12:08:22,680] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 262, in do_include
+    isolated_context=isolated_context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 145, in __init__
+    t = get_template(template_path)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd6 in position 123: invalid continuation byte
+[2015-06-12 12:20:35,509] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 262, in do_include
+    isolated_context=isolated_context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 145, in __init__
+    t = get_template(template_path)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd6 in position 123: invalid continuation byte
+[2015-06-12 12:24:06,763] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 263, in do_include
+    return IncludeNode(parser.compile_filter(bits[1]), extra_context=namemap,
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '/sidebarmemu.html' from 'public/sidebarmemu.html'
+[2015-06-12 12:24:47,003] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 262, in do_include
+    isolated_context=isolated_context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 145, in __init__
+    t = get_template(template_path)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd6 in position 123: invalid continuation byte
+[2015-06-12 12:25:37,828] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 262, in do_include
+    isolated_context=isolated_context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 145, in __init__
+    t = get_template(template_path)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd6 in position 160: invalid continuation byte
+[2015-06-12 12:26:54,308] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 262, in do_include
+    isolated_context=isolated_context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 145, in __init__
+    t = get_template(template_path)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd6 in position 206: invalid continuation byte
+[2015-06-12 12:54:27,526] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 213, in do_extends
+    parent_name = parser.compile_filter(bits[1])
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '/sidebarmemu.html' from 'public/sidebarmemu.html'
+[2015-06-12 12:54:37,072] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\main\views.py", line 10, in main
+    return render_to_response('public/index.html',{'path':path,'page_name1':'涓婚〉'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 171, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 140, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 74, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 101, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 98, in get_parent
+    return get_template(parent)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd6 in position 123: invalid continuation byte
+[2015-06-12 13:18:44,938] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 2, in <module>
+    from login.views import login,login_auth
+  File "E:\BearCatOMS_1.4.20\login\views.py", line 34
+    return render_to_response('login/login.html')
+    ^
+IndentationError: unexpected indent
+[2015-06-12 13:19:21,503] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 2, in <module>
+    from login.views import login,login_auth,logout
+  File "E:\BearCatOMS_1.4.20\login\views.py", line 34
+    return render_to_response('login/login.html')
+    ^
+IndentationError: unexpected indent
+[2015-06-12 13:19:27,256] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 2, in <module>
+    from login.views import login,login_auth,logout
+  File "E:\BearCatOMS_1.4.20\login\views.py", line 34
+    return render_to_response('login/login.html')
+    ^
+IndentationError: unexpected indent
+[2015-06-12 13:22:03,026] INFO : <admin> login in sucess.
+[2015-06-12 14:08:20,819] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 4, in <module>
+    from monitor.views import nagios,zabbix
+ImportError: cannot import name zabbix
+[2015-06-12 14:10:40,430] ERROR : Internal Server Error: /nagios/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\monitor\views.py", line 13, in nagios
+    'page_name2':'nagios'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 213, in do_extends
+    parent_name = parser.compile_filter(bits[1])
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '/index.html' from 'public/index.html'
+[2015-06-12 17:21:49,194] INFO : <admin> login in sucess.
+[2015-06-12 17:40:28,443] WARNING : Not Found: /modify_passwd/
+[2015-06-12 17:49:38,473] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 17:50:25,644] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 17:51:20,561] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 17:52:09,750] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 17:52:12,737] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 17:52:21,147] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 17:52:42,043] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 17:52:50,091] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 17:52:54,747] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 18:14:19,934] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 18:14:22,634] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 18:16:40,326] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 18:17:23,144] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import modify_password
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 18:20:14,038] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from usermanage.views import modifypassword
+  File "E:\BearCatOMS_1.4.20\usermanage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 18:20:14,970] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from usermanage.views import modifypassword
+  File "E:\BearCatOMS_1.4.20\usermanage\views.py", line 11
+    'path1':鐢ㄦ埛绠＄悊,
+            ^
+SyntaxError: invalid syntax
+[2015-06-12 18:23:25,990] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage import modify_password
+ImportError: cannot import name modify_password
+[2015-06-12 18:23:36,148] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage import modify_password
+ImportError: cannot import name modify_password
+[2015-06-12 18:25:10,430] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage import chpasswd
+ImportError: cannot import name chpasswd
+[2015-06-12 18:25:58,390] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage import chpasswd
+ImportError: cannot import name chpasswd
+[2015-06-12 18:25:59,180] ERROR : Internal Server Error: /main/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage import chpasswd
+ImportError: cannot import name chpasswd
+[2015-06-12 18:28:11,305] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:28:26,789] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:28:28,163] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:28:28,875] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:28:29,102] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:28:29,302] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:28:29,467] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:28:32,381] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:28:36,540] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:29:24,476] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:29:28,302] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:29:38,789] WARNING : Not Found: /modify_passwd/
+[2015-06-12 18:32:53,033] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1596: invalid continuation byte
+[2015-06-12 18:37:21,796] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import chpasswd
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 13
+SyntaxError: Non-ASCII character '\xe7' in file E:\BearCatOMS_1.4.20\user_manage\views.py on line 13, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+[2015-06-12 18:37:31,792] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1596: invalid continuation byte
+[2015-06-12 18:38:52,193] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1596: invalid continuation byte
+[2015-06-12 18:38:52,842] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1596: invalid continuation byte
+[2015-06-12 19:06:30,700] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1596: invalid continuation byte
+[2015-06-12 19:09:50,345] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1596: invalid continuation byte
+[2015-06-12 19:12:56,256] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1596: invalid continuation byte
+[2015-06-12 19:12:56,996] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1596: invalid continuation byte
+[2015-06-12 19:14:39,148] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1596: invalid continuation byte
+[2015-06-12 19:14:57,161] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1851: invalid continuation byte
+[2015-06-12 19:14:58,513] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1851: invalid continuation byte
+[2015-06-12 19:14:59,081] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1851: invalid continuation byte
+[2015-06-12 19:14:59,306] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1851: invalid continuation byte
+[2015-06-12 19:14:59,539] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1851: invalid continuation byte
+[2015-06-12 19:14:59,595] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1851: invalid continuation byte
+[2015-06-12 19:15:58,565] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1851: invalid continuation byte
+[2015-06-12 19:17:10,982] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1851: invalid continuation byte
+[2015-06-12 19:18:08,888] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1851: invalid continuation byte
+[2015-06-12 19:22:39,642] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1851: invalid continuation byte
+[2015-06-12 19:22:42,374] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    'page_name2':u'修改密码'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd3 in position 1851: invalid continuation byte
+[2015-06-12 19:23:38,701] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xc2 in position 51: invalid continuation byte
+[2015-06-12 19:26:20,107] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xb0 in position 55: invalid start byte
+[2015-06-12 19:29:23,095] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xb0 in position 55: invalid start byte
+[2015-06-12 19:31:30,558] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xa1 in position 55: invalid start byte
+[2015-06-12 19:31:43,091] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xb0 in position 58: invalid start byte
+[2015-06-12 19:31:45,029] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xb0 in position 58: invalid start byte
+[2015-06-12 19:36:21,443] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xb0 in position 55: invalid start byte
+[2015-06-12 19:36:28,339] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xb0 in position 55: invalid start byte
+[2015-06-12 19:38:55,276] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 45, in load_template
+    source, display_name = self.load_template_source(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loaders\filesystem.py", line 39, in load_template_source
+    return (file.read().decode(settings.FILE_CHARSET), filepath)
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xb0 in position 55: invalid start byte
+[2015-06-12 19:47:09,512] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 246, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '=url_for_static('assets/css/DT_bootstrap.css')' from '=url_for_static('assets/css/DT_bootstrap.css')'
+[2015-06-12 19:48:35,785] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 246, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '=account' from '=account'
+[2015-06-12 19:50:11,936] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 246, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '=description' from '=description'
+[2015-06-12 19:50:29,022] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 246, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: ' js_ex' from 'block js_ex'
+[2015-06-12 20:05:10,992] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 265, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 320, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'print', expected 'endblock'
+[2015-06-12 20:05:45,832] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 265, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 320, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'print', expected 'endblock'
+[2015-06-12 20:05:55,318] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 265, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 320, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'print', expected 'endblock'
+[2015-06-12 20:06:06,796] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 14, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜'})# Create your views here.
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 265, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 320, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'print', expected 'endblock'
+[2015-06-12 20:54:48,062] WARNING : <None> login in fail.
+[2015-06-12 20:54:59,076] WARNING : <None> login in fail.

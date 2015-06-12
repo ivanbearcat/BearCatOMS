@@ -21,11 +21,15 @@ def login_auth(request):
                 return HttpResponseRedirect(next_next)
             else:
                 logger.info('<%s> login in sucess.' % user_auth)
-                return HttpResponseRedirect('/home/')
+                return HttpResponseRedirect('/main/')
         else:
             logger.info('<%s> login in sucess.' % user_auth)
-            return HttpResponseRedirect('/home/')
+            return HttpResponseRedirect('/main/')
     else:
         logger.warn('<%s> login in fail.' % user_auth)
-        return render_to_response('login/login.html',{'msg':'账号或密码错误'})
+        return render_to_response('login/login.html',{'msg':u'账号或密码错误'})
+
+def logout(request):
+    auth.logout(request)
+    return render_to_response('login/login.html')
 

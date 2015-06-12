@@ -16,7 +16,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
-<meta charset="utf-8"/>
+<!--<meta charset="utf-8"/>-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>万众互联运维管理系统</title>
 <!--<link href="/static/assets/img/logo/icon.ico" rel="shortcut icon" />-->
 <link rel='icon' href='/static/assets/img/logo/icon.ico' type=‘image/x-ico’ />
@@ -46,6 +47,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="/static/assets/css/themes/default.css" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 <link href="/static/assets/css/print.css" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/css/print.css" rel="stylesheet" type="text/css" media="print"/>
 <link href="/static/assets/css/custom.css" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/css/custom.css" rel="stylesheet" type="text/css"/>
+<link href="/static/assets/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="icon.ico"/>
 </head>
@@ -77,53 +79,22 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- BEGIN USER LOGIN DROPDOWN -->
 			<li class="dropdown user">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img alt="" src="/static/assets/img/avatar1_small.jpg" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/img/avatar1_small.jpg"/>
+					<img alt="" src="/static/assets/img/logo/head.png" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/img/avatar1_small.jpg"/>
 					<span class="username">
-						 Bob Nilson
+						 {{ user }}
 					</span>
 					<i class="fa fa-angle-down"></i>
 				</a>
 				<ul class="dropdown-menu">
-					<li>
-						<a href="extra_profile.html" tppabs="http://www.keenthemes.com/preview/metronic_admin/extra_profile.html">
-							<i class="fa fa-user"></i> My Profile
-						</a>
-					</li>
-					<li>
-						<a href="page_calendar.html" tppabs="http://www.keenthemes.com/preview/metronic_admin/page_calendar.html">
-							<i class="fa fa-calendar"></i> My Calendar
-						</a>
-					</li>
-					<li>
-						<a href="inbox.html" tppabs="http://www.keenthemes.com/preview/metronic_admin/inbox.html">
-							<i class="fa fa-envelope"></i> My Inbox
-							<span class="badge badge-danger">
-								 3
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="fa fa-tasks"></i> My Tasks
-							<span class="badge badge-success">
-								 7
-							</span>
-						</a>
-					</li>
-					<li class="divider">
-					</li>
+
 					<li>
 						<a href="javascript:;" id="trigger_fullscreen">
 							<i class="fa fa-arrows"></i> Full Screen
 						</a>
 					</li>
+
 					<li>
-						<a href="extra_lock.html" tppabs="http://www.keenthemes.com/preview/metronic_admin/extra_lock.html">
-							<i class="fa fa-lock"></i> Lock Screen
-						</a>
-					</li>
-					<li>
-						<a href="login.html" tppabs="http://www.keenthemes.com/preview/metronic_admin/login.html">
+						<a href="/logout/">
 							<i class="fa fa-key"></i> Log Out
 						</a>
 					</li>
@@ -153,6 +124,14 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 				</li>
 
+
+
+
+
+
+
+
+
 				<li id="main" class="start">
 					<a href="/main/">
 						<i class="fa fa-home"></i>
@@ -163,18 +142,18 @@ License: You must have a valid license purchased only from themeforest(the above
 						</span>
 					</a>
 				</li>
-				<li>
+				<li id="user_manage">
 					<a href="javascript:;">
 						<i class="fa fa-shopping-cart"></i>
 						<span class="title">
-							用户中心
+							用户管理
 						</span>
 						<span class="arrow ">
 						</span>
 					</a>
 					<ul class="sub-menu">
-						<li>
-							<a href="/modify_passwd/">
+						<li id="chpasswd">
+							<a href="/chpasswd/">
 								<i class="fa fa-bullhorn"></i>
 								修改密码
 							</a>
@@ -238,14 +217,44 @@ License: You must have a valid license purchased only from themeforest(the above
 						</li>
 					</ul>
 				</li>
+				<li id="monitor">
+					<a href="javascript:;">
+						<i class="fa fa-cogs"></i>
+						<span class="title">
+							监控
+						</span>
+						<span class="arrow ">
+						</span>
+					</a>
+					<ul class="sub-menu">
+						<li id="nagios">
+							<a href="/nagios/">
+								 nagios
+							</a>
+						</li>
+						<li id="zabbix">
+							<a href="/zabbix/">
+								 zabbix
+							</a>
+						</li>
+					</ul>
+				</li>
+
+
+
+
+
+
 
 			<!-- END SIDEBAR MENU -->
 		</div>
 	</div>
+
 	<!-- END SIDEBAR -->
+
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
-		<div class="page-content" style="min-height:870px">
+		<div class="page-content" style="min-height:850px">
 			<!--&lt;!&ndash; BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM&ndash;&gt;-->
 			<!--<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
 				<!--<div class="modal-dialog">-->
@@ -277,13 +286,13 @@ License: You must have a valid license purchased only from themeforest(the above
 					<ul class="page-breadcrumb breadcrumb">
 						<li>
 							<i class="fa fa-home"></i>
-							<a href="/main/">
+							<a href="#">
 								{{ page_name1 }}
 							</a>
 							<i class="fa fa-angle-right"></i>
 						</li>
 						<li>
-							<a href="#">
+							<a href="/{{path}}/">
 								{{ page_name2 }}
 							</a>
 						</li>
@@ -294,11 +303,12 @@ License: You must have a valid license purchased only from themeforest(the above
 			<!-- END PAGE HEADER-->
 
 <!--BEGIN BODY-->
-<div>
 
+{% block body %}
 
+<iframe width="100%" height="75%" frameborder=0 src="http://www.hub520.com"></iframe>
 
-</div>
+{% endblock %}
 
 <!--END BODY-->
 
@@ -307,7 +317,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END CONTAINER -->
 <!-- BEGIN FOOTER -->
 <div class="footer" >
-	<div class="footer-inner">
+	<div class="footer-inner" style="text-align:center;width:100%">
 		 2015 &copy; WZHL Admin Operation System.
 	</div>
 	<div class="footer-tools">
@@ -323,7 +333,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="/static/assets/plugins/respond.min.js"></script>
 <script src="/static/assets/plugins/excanvas.min.js"></script> 
 <![endif]-->
-<script src="/static/assets/plugins/jquery-1.10.2.min.js" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="/static/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
 <script src="/static/assets/plugins/jquery-migrate-1.2.1.min.js" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
 <!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
 <script src="/static/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
@@ -358,6 +368,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="/static/assets/scripts/core/app.js" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/scripts/core/app.js" type="text/javascript"></script>
 <script src="/static/assets/scripts/custom/index.js" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/scripts/custom/index.js" type="text/javascript"></script>
 <script src="/static/assets/scripts/custom/tasks.js" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/scripts/custom/tasks.js" type="text/javascript"></script>
+<script src="/static/assets/plugins/bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
+<script src="/static/assets/extend-js/shinezone.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {    
@@ -371,8 +383,11 @@ jQuery(document).ready(function() {
    Index.initDashboardDaterange();
    Index.initIntro();
    Tasks.initDashboardWidget();
+
+   $('#{{path1}}').attr('class','active');
+   $('#{{path2}}').attr('class','active');
 });
-$('#{{path}}').attr('class','start active');
+
 
 </script>
 <!-- END JAVASCRIPTS -->
