@@ -22,3 +22,7 @@ TemplateDoesNotExist: public/index.html
 [2015-06-11 20:17:06,940] WARNING : Not Found: /login、
 [2015-06-11 20:17:09,592] WARNING : Not Found: /login、
 [2015-06-11 20:17:54,878] WARNING : <阿斯顿> login in fail.
+[2015-06-12 10:03:53,844] WARNING : <阿斯顿> login in fail.
+[2015-06-12 10:15:19,447] WARNING : <阿斯顿> login in fail.
+[2015-06-12 11:09:00,526] WARNING : Not Found: /modify_passwd/
+[2015-06-12 11:11:22,734] WARNING : Not Found: /assets_manage/

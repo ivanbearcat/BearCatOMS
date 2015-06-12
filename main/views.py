@@ -6,4 +6,5 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 
 def main(request):
-    return render_to_response('public/index.html')
+    path = request.path.split('/')[1]
+    return render_to_response('public/index.html',{'path':path,'page_name1':'主页'})
