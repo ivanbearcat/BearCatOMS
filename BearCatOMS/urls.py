@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from login.views import login,login_auth,logout
 from main.views import main
 from monitor.views import nagios,zabbix
-from user_manage.views import chpasswd
+from user_manage.views import chpasswd,post_chpasswd
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -25,4 +25,5 @@ urlpatterns = patterns('',
     url(r'^nagios/', nagios),
     url(r'^zabbix/', zabbix),
     url(r'^chpasswd/', chpasswd),
+    url(r'^post_chpasswd/', post_chpasswd),
 )

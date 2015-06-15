@@ -28,7 +28,7 @@
 									<div class="col-md-9">
 										<div class="tab-content">
 											<div id="tab_3-3" class="tab-pane active">
-												<!--<form action="#">-->
+												<form action="">
 													<div class="form-group">
 														<label class="control-label">当前密码</label>
 														<input type="password" id='password_current'class="form-control">
@@ -42,14 +42,14 @@
 														<input type="password" id='password_new_again'class="form-control">
 													</div>
 													<div class="margin-top-10">
-														<a href="" class="btn green" onclick="chpasswd()">
-															 更改密码
+														<a class="btn green" onclick="chpasswd()">
+															 修改密码
 														</a>
-														<a href="" class="btn default">
-															 取消
+														<a class="btn default" onclick="reset()">
+															 清除
 														</a>
 													</div>
-												<!--</form>-->
+												</form>
 											</div>
 										</div>
 									</div>
@@ -64,21 +64,32 @@
 				</div>
 			</div>
 
-
-{% endblock %}
-
 <script type="text/javascript">
+
 function chpasswd(){
 var password_current = $('#password_current').val()
 var password_new = $('#password_new').val()
 var password_new_again = $('#password_new_again').val()
-$.post('/chpasswd/', {password_current:password_current,password_new:password_new,password_new_again:password_new_again}, function (d) {
-            hideAjaxLoad()
+showAjaxLoad()
+$.post('/post_chpasswd/', {password_current:password_current,password_new:password_new,password_new_again:password_new_again}, function (d) {
             if (d.code == 0) {
                 toastr.success(d.msg)
             } else {
-                toastr.error(d.msg)
+                toastr.error(d.msg);
             }
         })
-}
+$('#password_current').val('')
+$('#password_new').val('')
+$('#password_new_again').val('')
+hideAjaxLoad()
+};
+
+function reset(){
+	$('#password_current').val('')
+	$('#password_new').val('')
+	$('#password_new_again').val('')
+};
 </script>
+
+{% endblock %}
+

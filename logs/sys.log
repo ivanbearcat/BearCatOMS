@@ -1914,3 +1914,32 @@ Traceback (most recent call last):
 TemplateSyntaxError: Invalid block tag: 'print', expected 'endblock'
 [2015-06-12 20:54:48,062] WARNING : <None> login in fail.
 [2015-06-12 20:54:59,076] WARNING : <None> login in fail.
+[2015-06-15 17:27:51,575] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 15, in chpasswd
+    user = User.objects.get(username='request.user.username')
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: User matching query does not exist.
+[2015-06-15 17:28:42,352] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 16, in chpasswd
+    print user.check_password()
+TypeError: check_password() takes exactly 2 arguments (1 given)
+[2015-06-15 18:18:25,627] WARNING : Not Found: /post_chpasswd/
+[2015-06-15 18:18:29,553] WARNING : Not Found: /post_chpasswd/
+[2015-06-15 18:41:05,959] ERROR : Internal Server Error: /post_chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 34, in post_chpasswd
+    return render_to_response(simplejson.dumps({'code':code,'msg':msg}),content_type="application/json")
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+TypeError: render_to_string() got an unexpected keyword argument 'content_type'
