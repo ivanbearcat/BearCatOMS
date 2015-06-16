@@ -522,11 +522,13 @@ var Index = function () {
             });
 
             $('.easy-pie-chart-reload').click(function(){
-                $('.easy-pie-chart .number').each(function() {
-                    var newValue = Math.floor(100*Math.random());
-                    $(this).data('easyPieChart').update(newValue);
-                    $('span', this).text(newValue);
-                });
+                get_data()
+//                $('.easy-pie-chart .number').each(function() {
+//                    var newValue = Math.floor(100*Math.random());
+//
+//                    $(this).data('easyPieChart').update(newValue);
+//                    $('span', this).text(newValue);
+//                });
             });
                
             $("#sparkline_bar").sparkline([8,9,10,11,10,10,12,10,10,11,9,12,11,10,9,11,13,13,12], {

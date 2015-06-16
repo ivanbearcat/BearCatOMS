@@ -5,6 +5,7 @@ from django.utils.log import logger
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def main(request):
     path = request.path.split('/')[1]
     return render_to_response('public/index.html',{'user':request.user.username,

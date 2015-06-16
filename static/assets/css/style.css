@@ -1128,8 +1128,8 @@ Footer
 }
 
 .footer .footer-inner {
-  float: left;
-  display: inline-block;
+  float: none;
+
 }
 
 .footer .footer-tools {

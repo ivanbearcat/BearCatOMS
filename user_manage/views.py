@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 import simplejson
 
+@login_required
 def chpasswd(request):
     path = request.path.split('/')[1]
     return render_to_response('user_manage/chpasswd.html',{'user':request.user.username,
@@ -15,7 +16,7 @@ def chpasswd(request):
                                                            'page_name1':u'用户管理',
                                                            'page_name2':u'修改密码',})
 
-
+@login_required
 def post_chpasswd(request):
     password_current = request.POST.get('password_current')
     password_new = request.POST.get('password_new')
@@ -25,17 +26,20 @@ def post_chpasswd(request):
     if not user.check_password(password_current):
         code = 1
         msg = u'当前密码错误'
-    elif not password_new == password_new_again:
+    elif password_new == '' or password_new_again == '':
         code = 2
+        msg = u'新密码不能为空'
+    elif not password_new == password_new_again:
+        code = 3
         msg = u'新密码不一致'
     else:
         try:
-            user.set_password(password=password_new)
-            user.save
+            user.set_password(password_new)
+            user.save()
             code = 0
             msg = u'密码修改成功'
         except Exception,e:
             print e
-            code = 3
+            code = 4
             msg = u'密码修改失败'
     return HttpResponse(simplejson.dumps({'code':code,'msg':msg}),content_type="application/json")

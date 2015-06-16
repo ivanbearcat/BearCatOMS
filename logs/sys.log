@@ -1943,3 +1943,1759 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
     return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
 TypeError: render_to_string() got an unexpected keyword argument 'content_type'
+[2015-06-16 10:10:15,670] INFO : <admin> login in sucess.
+[2015-06-16 10:12:41,693] INFO : <admin> login in sucess.
+[2015-06-16 10:19:14,063] WARNING : Not Found: /assets_manage/
+[2015-06-16 10:29:39,661] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 16, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜',})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 171, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 140, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 74, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 101, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 98, in get_parent
+    return get_template(parent)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 213, in do_extends
+    parent_name = parser.compile_filter(bits[1])
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '/sidebar.html' from 'public/sidebar.html'
+[2015-06-16 10:30:38,663] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 16, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜',})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 171, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 140, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 74, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 101, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 98, in get_parent
+    return get_template(parent)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 271, in parse
+    self.extend_nodelist(nodelist, compiled_result, token)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 60, in extend_nodelist
+    super(DebugParser, self).extend_nodelist(nodelist, node, token)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 297, in extend_nodelist
+    "in the template." % node)
+TemplateSyntaxError: <ExtendsNode: extends 'public/sidebar.html'> must be the first tag in the template.
+[2015-06-16 10:32:05,894] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 16, in chpasswd
+    'page_name2':u'淇敼瀵嗙爜',})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 171, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 140, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 74, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 101, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 98, in get_parent
+    return get_template(parent)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 271, in parse
+    self.extend_nodelist(nodelist, compiled_result, token)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 60, in extend_nodelist
+    super(DebugParser, self).extend_nodelist(nodelist, node, token)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 297, in extend_nodelist
+    "in the template." % node)
+TemplateSyntaxError: <ExtendsNode: extends 'public/sidebar.html'> must be the first tag in the template.
+[2015-06-16 12:50:09,354] WARNING : Not Found: /accounts/login/
+[2015-06-16 12:59:04,506] WARNING : <admin> login in fail.
+[2015-06-16 12:59:08,407] ERROR : Internal Server Error: /login_auth/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\login\views.py", line 20, in login_auth
+    if next_next.has_key('next_next'):
+AttributeError: 'NoneType' object has no attribute 'has_key'
+[2015-06-16 13:07:01,572] INFO : <admin> login in sucess.
+[2015-06-16 13:07:19,138] INFO : <admin> login in sucess.
+[2015-06-16 13:08:02,571] INFO : <admin> login in sucess.
+[2015-06-16 13:09:46,986] WARNING : <None> login in fail.
+[2015-06-16 13:10:11,517] WARNING : <None> login in fail.
+[2015-06-16 13:13:16,875] ERROR : Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 24, in <module>
+    url(r'^accounts/login/$',not_login),
+NameError: name 'not_login' is not defined
+[2015-06-16 13:13:53,161] INFO : <admin> login in sucess.
+[2015-06-16 13:13:53,161] ERROR : Internal Server Error: /login_auth/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\login\views.py", line 25, in login_auth
+    return HttpResponseRedirect(next_next)
+  File "C:\Python27\lib\site-packages\django\http\__init__.py", line 747, in __init__
+    parsed = urlparse(redirect_to)
+  File "C:\Python27\lib\urlparse.py", line 143, in urlparse
+    tuple = urlsplit(url, scheme, allow_fragments)
+  File "C:\Python27\lib\urlparse.py", line 182, in urlsplit
+    i = url.find(':')
+AttributeError: 'NoneType' object has no attribute 'find'
+[2015-06-16 13:15:01,167] INFO : <admin> login in sucess.
+[2015-06-16 13:15:01,167] ERROR : Internal Server Error: /login_auth/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\login\views.py", line 23, in login_auth
+    return HttpResponseRedirect(next_next)
+NameError: global name 'next_next' is not defined
+[2015-06-16 13:15:21,865] INFO : <admin> login in sucess.
+[2015-06-16 13:15:59,244] INFO : <admin> login in sucess.
+[2015-06-16 13:15:59,244] ERROR : Internal Server Error: /login_auth/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\login\views.py", line 23, in login_auth
+    return HttpResponseRedirect(next_next)
+NameError: global name 'next_next' is not defined
+[2015-06-16 13:17:53,125] INFO : <admin> login in sucess.
+[2015-06-16 13:18:06,671] INFO : <admin> login in sucess.
+[2015-06-16 13:31:47,779] WARNING : Not Found: /assets_manage/
+[2015-06-16 13:34:06,507] ERROR : Internal Server Error: /assets_device/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 15, in assets_device
+    'page_name2':'nagios'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 246, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '=url_for_static('assets/css/DT_bootstrap.css')' from '=url_for_static('assets/css/DT_bootstrap.css')'
+[2015-06-16 13:34:57,411] ERROR : Internal Server Error: /assets_device/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 15, in assets_device
+    'page_name2':'nagios'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 246, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '=permision' from '=permision'
+[2015-06-16 14:28:57,582] ERROR : Internal Server Error: /assets_device/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 15, in assets_device
+    'page_name2':u'璧勪骇鍑哄叆搴?})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 246, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '=permision' from '=permision'
+[2015-06-16 14:32:09,395] WARNING : Not Found: /assets/assets_data
+[2015-06-16 14:34:14,608] WARNING : Not Found: /assets/assets_data
+[2015-06-16 14:38:42,665] WARNING : Not Found: /assets/assets_data
+[2015-06-16 14:38:43,759] WARNING : Not Found: /assets/assets_data
+[2015-06-16 14:39:06,782] WARNING : Not Found: /assets/assets_data
+[2015-06-16 14:40:59,703] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:06:38,283] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:06:59,062] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:08:38,367] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:12:50,173] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:15:13,809] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:15:28,727] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:15:56,384] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:16:13,381] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:16:26,516] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:17:20,588] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:17:24,558] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:27:39,339] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:30:18,996] WARNING : Not Found: /assets/assets_data
+[2015-06-16 15:36:14,934] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 32, in assets_device_data
+    result_data = self.assets_device_model.all().order_by(self.assets_device_model.c[sort[iSortCol_0]]).limit(iDisplayLength).offset(iDisplayStart)
+NameError: global name 'self' is not defined
+[2015-06-16 15:36:28,223] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 32, in assets_device_data
+    result_data = self.assets_device_model.all().order_by(self.assets_device_model.c[sort[iSortCol_0]]).limit(iDisplayLength).offset(iDisplayStart)
+NameError: global name 'self' is not defined
+[2015-06-16 15:42:31,619] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 32, in assets_device_data
+    result_data = self.assets_device_model.all().order_by(self.assets_device_model.c[sort[iSortCol_0]]).limit(iDisplayLength).offset(iDisplayStart)
+NameError: global name 'self' is not defined
+[2015-06-16 15:55:46,295] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 35, in assets_device_data
+    result_data = self.assets_device_model.all().order_by(self.assets_device_model.c[sort[iSortCol_0]]).limit(iDisplayLength).offset(iDisplayStart)
+NameError: global name 'self' is not defined
+[2015-06-16 15:55:54,000] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 35, in assets_device_data
+    result_data = self.assets_device_model.all().order_by(self.assets_device_model.c[sort[iSortCol_0]]).limit(iDisplayLength).offset(iDisplayStart)
+NameError: global name 'self' is not defined
+[2015-06-16 15:56:26,372] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_device_data
+    result_data = self.assets_device_model.all().order_by(self.assets_device_model.c[sort[iSortCol_0]]).limit(iDisplayLength).offset(iDisplayStart)
+NameError: global name 'self' is not defined
+[2015-06-16 15:56:31,305] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_device_data
+    result_data = self.assets_device_model.all().order_by(self.assets_device_model.c[sort[iSortCol_0]]).limit(iDisplayLength).offset(iDisplayStart)
+NameError: global name 'self' is not defined
+[2015-06-16 15:57:09,871] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_device_data
+    result_data = self.assets_device_model.all().order_by(self.assets_device_model.c[sort[iSortCol_0]]).limit(iDisplayLength).offset(iDisplayStart)
+NameError: global name 'self' is not defined
+[2015-06-16 16:00:45,709] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 97, in assets_device_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+NameError: global name 'result' is not defined
+[2015-06-16 16:01:38,055] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 97, in assets_device_data
+    return HttpResponse(simplejson.dumps(result_data),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [] is not JSON serializable
+[2015-06-16 16:02:07,821] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 97, in assets_device_data
+    return HttpResponse(simplejson.dumps(result_data),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [] is not JSON serializable
+[2015-06-16 16:02:26,252] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 97, in assets_device_data
+    return HttpResponse(simplejson.dumps(result_data),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [] is not JSON serializable
+[2015-06-16 16:02:34,915] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 97, in assets_device_data
+    return HttpResponse(simplejson.dumps(result_data),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [] is not JSON serializable
+[2015-06-16 16:03:16,946] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 97, in assets_device_data
+    return HttpResponse(simplejson.dumps(result_data),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [] is not JSON serializable
+[2015-06-16 16:04:24,285] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view assets.views.assets_device_data didn't return an HttpResponse object.
+[2015-06-16 16:10:07,135] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 33, in assets_device_data
+    print i.code
+AttributeError: 'device' object has no attribute 'code'
+[2015-06-16 16:10:17,872] ERROR : Internal Server Error: /assets_device_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 33, in assets_device_data
+    print i.assets_code
+AttributeError: 'device' object has no attribute 'assets_code'
+[2015-06-16 16:17:01,128] ERROR : Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 6, in <module>
+    from assets.views import assets_asset,assets_asset_data
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 8, in <module>
+    from assets.models import device
+ImportError: cannot import name device
+[2015-06-16 16:17:12,509] WARNING : Not Found: /
+[2015-06-16 16:17:22,670] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 31, in assets_asset_data
+    result_data = device.objects.all().order_by(sort[iSortCol_0])
+NameError: global name 'device' is not defined
+[2015-06-16 16:17:35,713] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 31, in assets_asset_data
+    result_data = device.objects.all().order_by(sort[iSortCol_0])
+NameError: global name 'device' is not defined
+[2015-06-16 16:17:49,927] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 31, in assets_asset_data
+    result_data = device.objects.all().order_by(sort[iSortCol_0])
+NameError: global name 'device' is not defined
+[2015-06-16 16:24:27,565] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 98, in assets_asset_data
+    return HttpResponse(simplejson.dumps(result_data),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [<asset: asset object>, <asset: asset object>, <asset: asset object>, <asset: asset object>, <asset: asset object>, <asset: asset object>, <asset: asset object>, <asset: asset object>, <asset: asset object>, <asset: asset object>, <asset: asset object>] is not JSON serializable
+[2015-06-16 16:26:21,533] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 34, in assets_asset_data
+    iTotalRecords = len(self.assets_device_model.all())
+NameError: global name 'self' is not defined
+[2015-06-16 16:29:37,767] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 98, in assets_asset_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.date(2015, 6, 16) is not JSON serializable
+[2015-06-16 16:33:42,667] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 83, in assets_asset_data
+    '4':i.add_time.strftime('%F %X'),
+AttributeError: 'NoneType' object has no attribute 'strftime'
+[2015-06-16 16:34:48,489] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 83, in assets_asset_data
+    '4':i.add_time.strftime('%F %X'),
+ValueError: Invalid format string
+[2015-06-16 16:35:34,687] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 83, in assets_asset_data
+    '4':i.add_time.strftime('%F %X'),
+ValueError: Invalid format string
+[2015-06-16 16:47:51,559] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 83, in assets_asset_data
+    '4':i.add_time.strftime('%F %X'),
+AttributeError: 'NoneType' object has no attribute 'strftime'
+[2015-06-16 16:49:57,039] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 98, in assets_asset_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2015, 6, 16, 16, 49, 12, tzinfo=<UTC>) is not JSON serializable
+[2015-06-16 16:50:11,117] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 83, in assets_asset_data
+    '4':i.add_time.strftime('%F %X'),
+ValueError: Invalid format string
+[2015-06-16 16:50:46,203] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 83, in assets_asset_data
+    '4':i.add_time.strftime('%Y'),
+AttributeError: 'NoneType' object has no attribute 'strftime'
+[2015-06-16 16:51:30,492] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 83, in assets_asset_data
+    '4':i.add_time.strftime('%Y'),
+AttributeError: 'NoneType' object has no attribute 'strftime'
+[2015-06-16 16:51:52,733] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 83, in assets_asset_data
+    '4':i.add_time.strftime('%Y'),
+AttributeError: 'NoneType' object has no attribute 'strftime'
+[2015-06-16 16:56:13,746] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 31, in assets_asset_data
+    result_data = asset.objects.all().order_by(sort[iSortCol_0])[iDisplayStart-1:]
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 174, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+[2015-06-16 16:57:00,529] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 31, in assets_asset_data
+    result_data = asset.objects.all()[iDisplayStart:].order_by(sort[iSortCol_0])
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 756, in order_by
+    "Cannot reorder a query once a slice has been taken."
+AssertionError: Cannot reorder a query once a slice has been taken.
+[2015-06-16 17:01:13,329] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 32, in assets_asset_data
+    for i in result_data:
+UnboundLocalError: local variable 'result_data' referenced before assignment
+[2015-06-16 17:01:14,484] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 32, in assets_asset_data
+    for i in result_data:
+UnboundLocalError: local variable 'result_data' referenced before assignment
+[2015-06-16 17:11:24,326] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%asd%' for column 'add_time' at row 1
+[2015-06-16 17:11:24,423] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%asda%' for column 'add_time' at row 1
+[2015-06-16 17:11:24,536] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%asdasd%' for column 'add_time' at row 1
+[2015-06-16 17:11:24,750] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%asdasdasd%' for column 'add_time' at row 1
+[2015-06-16 17:11:31,543] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%asdasdas%' for column 'add_time' at row 1
+[2015-06-16 17:11:32,167] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%asdasda%' for column 'add_time' at row 1
+[2015-06-16 17:11:32,535] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%asdasd%' for column 'add_time' at row 1
+[2015-06-16 17:11:32,703] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%asdas%' for column 'add_time' at row 1
+[2015-06-16 17:11:32,852] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%asda%' for column 'add_time' at row 1
+[2015-06-16 17:11:33,025] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%asd%' for column 'add_time' at row 1
+[2015-06-16 17:11:33,311] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%as%' for column 'add_time' at row 1
+[2015-06-16 17:11:39,362] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 37, in assets_asset_data
+    for i in result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Incorrect datetime value: '%ass%' for column 'add_time' at row 1
+[2015-06-16 17:12:25,312] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 90, in assets_asset_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+NameError: global name 'result' is not defined
+[2015-06-16 17:12:26,456] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 90, in assets_asset_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+NameError: global name 'result' is not defined
+[2015-06-16 17:16:00,318] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 32, in assets_asset_data
+    for i in result_data:
+UnboundLocalError: local variable 'result_data' referenced before assignment
+[2015-06-16 17:41:45,085] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 97, in assets_asset_data
+    'iTotalRecords':iTotalRecords,
+NameError: global name 'iTotalRecords' is not defined
+[2015-06-16 17:51:26,888] ERROR : Internal Server Error: /assets_asset/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 6, in <module>
+    from assets.views import assets_asset,assets_asset_data
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 33
+    Q(assets_code__contains=sSearch) | Q(comment__contains=sSearch) | Q(id__contains=sSearch))
+                                                                                             ^
+SyntaxError: invalid syntax
+[2015-06-16 17:51:42,832] ERROR : Internal Server Error: /assets_asset/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 6, in <module>
+    from assets.views import assets_asset,assets_asset_data
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 7, in <module>
+    import simplejson,datetime,django.db.models.query_utils.Q
+ImportError: No module named Q
+[2015-06-16 17:52:57,612] ERROR : Internal Server Error: /assets_asset/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 6, in <module>
+    from assets.views import assets_asset,assets_asset_data
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 8
+    django.db.models.query_utils import Q
+                                      ^
+SyntaxError: invalid syntax
+[2015-06-16 17:53:09,365] ERROR : Internal Server Error: /assets_asset/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 6, in <module>
+    from assets.views import assets_asset,assets_asset_data
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 8
+    django.db.models.query_utils.Q import Q
+                                        ^
+SyntaxError: invalid syntax
+[2015-06-16 19:22:37,766] WARNING : Not Found: /assets_asset_save
+[2015-06-16 19:23:47,545] ERROR : Internal Server Error: /assets_asset_save
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django\middleware\common.py", line 67, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 557, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 446, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 33, in <module>
+    url(r'^assets_asset_save/', assets_asset_save),
+NameError: name 'assets_asset_save' is not defined
+[2015-06-16 19:24:05,944] ERROR : Internal Server Error: /assets_asset_save
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django\middleware\common.py", line 77, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.100.42:8000/assets_asset_save/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2015-06-16 19:26:03,055] ERROR : Internal Server Error: /assets_asset_save
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django\middleware\common.py", line 77, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.100.42:8000/assets_asset_save/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2015-06-16 19:27:20,592] ERROR : Internal Server Error: /assets_asset_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 89, in assets_asset_save
+    orm = asset(name=name,assets_type=assets_type,assets_asset=assets_asset,assets_code=assets_code,comment=comment)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 367, in __init__
+    raise TypeError("'%s' is an invalid keyword argument for this function" % kwargs.keys()[0])
+TypeError: 'assets_asset' is an invalid keyword argument for this function
+[2015-06-16 19:33:33,194] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:37,918] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:39,237] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:42,055] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:42,792] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_type' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:43,684] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_type' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:50,769] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:52,262] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:53,107] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_type' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:55,591] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_type' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:57,338] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_type' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:58,490] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_type' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:33:59,002] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:34:00,164] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:34:03,217] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:34:04,286] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:34:04,813] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_type' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:34:05,444] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_type' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-16 19:35:13,157] ERROR : Internal Server Error: /assets_asset_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 64, in assets_asset_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user

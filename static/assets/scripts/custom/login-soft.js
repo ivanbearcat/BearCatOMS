@@ -244,16 +244,16 @@ var Login = function () {
     return {
         //main function to initiate the module
         init: function () {
-        	
-            handleLogin();
-            handleForgetPassword();
-            handleRegister();        
+//
+//            handleLogin();
+//            handleForgetPassword();
+//            handleRegister();
 	       
 	       	$.backstretch([
-		        "assets/img/bg/1.jpg",
-		        "assets/img/bg/2.jpg",
-		        "assets/img/bg/3.jpg",
-		        "assets/img/bg/4.jpg"
+		        "static/assets/img/bg/1.jpg",
+		        "static/assets/img/bg/2.jpg",
+		        "static/assets/img/bg/3.jpg",
+		        "static/assets/img/bg/4.jpg"
 		        ], {
 		          fade: 1000,
 		          duration: 8000

@@ -48,6 +48,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="/static/assets/css/print.css" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/css/print.css" rel="stylesheet" type="text/css" media="print"/>
 <link href="/static/assets/css/custom.css" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/css/custom.css" rel="stylesheet" type="text/css"/>
 <link href="/static/assets/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css"/>
+{% block css %}
+{% endblock %}
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="icon.ico"/>
 </head>
@@ -89,13 +91,13 @@ License: You must have a valid license purchased only from themeforest(the above
 
 					<li>
 						<a href="javascript:;" id="trigger_fullscreen">
-							<i class="fa fa-arrows"></i> Full Screen
+							<i class="fa fa-arrows"></i> 全屏
 						</a>
 					</li>
 
 					<li>
 						<a href="/logout/">
-							<i class="fa fa-key"></i> Log Out
+							<i class="fa fa-key"></i> 登出
 						</a>
 					</li>
 				</ul>
@@ -124,128 +126,8 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
 				</li>
 
-
-
-
-
-
-
-
-
-				<li id="main" class="start">
-					<a href="/main/">
-						<i class="fa fa-home"></i>
-						<span class="title">
-							主页
-						</span>
-						<span class="selected">
-						</span>
-					</a>
-				</li>
-				<li id="user_manage">
-					<a href="javascript:;">
-						<i class="fa fa-shopping-cart"></i>
-						<span class="title">
-							用户管理
-						</span>
-						<span class="arrow ">
-						</span>
-					</a>
-					<ul class="sub-menu">
-						<li id="chpasswd">
-							<a href="/chpasswd/">
-								<i class="fa fa-bullhorn"></i>
-								修改密码
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<i class="fa fa-gift"></i>
-						<span class="title">
-							资产管理
-						</span>
-						<span class="arrow">
-						</span>
-					</a>
-					<ul class="sub-menu">
-						<li>
-							<a href="/assets_manage/">
-								<span class="title">
-									资产出入库
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<span class="title">
-									员工资产
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<span class="title">
-									资产统计图
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<span class="title">
-									出入库记录
-								</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<i class="fa fa-cogs"></i>
-						<span class="title">
-							运维审计
-						</span>
-						<span class="arrow ">
-						</span>
-					</a>
-					<ul class="sub-menu">
-						<li>
-							<a href="">
-								 操作日志
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li id="monitor">
-					<a href="javascript:;">
-						<i class="fa fa-cogs"></i>
-						<span class="title">
-							监控
-						</span>
-						<span class="arrow ">
-						</span>
-					</a>
-					<ul class="sub-menu">
-						<li id="nagios">
-							<a href="/nagios/">
-								 nagios
-							</a>
-						</li>
-						<li id="zabbix">
-							<a href="/zabbix/">
-								 zabbix
-							</a>
-						</li>
-					</ul>
-				</li>
-
-
-
-
-
-
-
+				{% include 'public/sidebar.html' %}
+			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
 	</div>
@@ -313,8 +195,9 @@ License: You must have a valid license purchased only from themeforest(the above
 <!--END BODY-->
 
 	<!-- END CONTENT -->
-</div>
+	</div>
 <!-- END CONTAINER -->
+</div>
 <!-- BEGIN FOOTER -->
 <div class="footer" >
 	<div class="footer-inner" style="text-align:center;width:100%">
@@ -369,7 +252,9 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="/static/assets/scripts/custom/index.js" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/scripts/custom/index.js" type="text/javascript"></script>
 <script src="/static/assets/scripts/custom/tasks.js" tppabs="http://www.keenthemes.com/preview/metronic_admin//static/assets/scripts/custom/tasks.js" type="text/javascript"></script>
 <script src="/static/assets/plugins/bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
-<script src="/static/assets/extend-js/shinezone.js" type="text/javascript"></script>
+<script src="/static/assets/plugins/shinezone.js" type="text/javascript"></script>
+{% block js %}
+{% endblock %}
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
 jQuery(document).ready(function() {    

@@ -550,6 +550,7 @@ var App = function () {
             var el = jQuery(this).closest(".portlet").children(".portlet-body");
             var url = jQuery(this).attr("data-url");
             var error = $(this).attr("data-error-display");
+            console.info(el,232323)
             if (url) {
                 App.blockUI({target: el, iconOnly: true});
                 $.ajax({

@@ -31,15 +31,15 @@
 												<form action="">
 													<div class="form-group">
 														<label class="control-label">当前密码</label>
-														<input type="password" id='password_current'class="form-control">
+														<input type="password" id='password_current'class="form-control" style="width:30%">
 													</div>
 													<div class="form-group">
 														<label class="control-label">新密码</label>
-														<input type="password" id='password_new' class="form-control">
+														<input type="password" id='password_new' class="form-control" style="width:30%">
 													</div>
 													<div class="form-group">
 														<label class="control-label">重复新密码</label>
-														<input type="password" id='password_new_again'class="form-control">
+														<input type="password" id='password_new_again'class="form-control" style="width:30%">
 													</div>
 													<div class="margin-top-10">
 														<a class="btn green" onclick="chpasswd()">
@@ -63,7 +63,8 @@
 					<!--END TABS-->
 				</div>
 			</div>
-
+{% endblock %}
+{% block js %}
 <script type="text/javascript">
 
 function chpasswd(){
@@ -90,6 +91,6 @@ function reset(){
 	$('#password_new_again').val('')
 };
 </script>
-
 {% endblock %}
+
 
