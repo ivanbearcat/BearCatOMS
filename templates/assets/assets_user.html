@@ -2,6 +2,7 @@
 {% block css %}
 <link href="/static/assets/theme/default/style.min.css" rel="stylesheet"/>
 <!-- BEGIN PAGE LEVEL STYLES -->
+<!--<link href="/static/assets/css/select2.css" rel="stylesheet" />-->
 <link rel="stylesheet" type="text/css" href="/static/assets/plugins/select2/select2.css"/>
 <link rel="stylesheet" type="text/css" href="/static/assets/plugins/select2/select2-metronic.css"/>
 <link rel="stylesheet" href="/static/assets/css/DT_bootstrap.css"/>
@@ -16,19 +17,18 @@
         <div class="portlet box grey tasks-widget">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-globe"></i>资产出入库
+                    <i class="fa fa-globe"></i>员工资产
                 </div>
             </div>
             <div class="portlet-body">
                 <table class="table table-striped table-bordered table-hover table-full-width"  id="datatables">
                     <thead>
                     <tr>
-                        <th>资产名</th>
-                        <th>资产型号</th>
-                        <th>资产编号</th>
+                        <th>姓名</th>
+                        <th>部门</th>
+                        <th>资产</th>
                         <th>备注</th>
-                        <th>发放状态</th>
-                        <th>入库时间</th>
+                        <th>派发时间</th>
                         <th>ID</th>
                     </tr>
                     </thead>
@@ -45,12 +45,12 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title">添加资产</h4>
+                    <h4 class="modal-title">派发资产</h4>
                 </div>
                 <div class="modal-body form">
                     <form action="#" class="form-horizontal form-row-seperated">
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">资产名</label>
+                            <label class="col-sm-4 control-label">姓名</label>
 
                             <div class="col-sm-8">
                                 <div class="input-group">
@@ -73,7 +73,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">资产型号</label>
+                            <label class="col-sm-4 control-label">部门</label>
 
                             <div class="col-sm-8">
                                 <div class="input-group">
@@ -82,7 +82,7 @@
                                                                     <input type="text" class="form-control tt-hint"
                                                                            disabled="" autocomplete="off" spellcheck="false"
                                                                            style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);">
-                                                                    <input type="text" id="assets_type"
+                                                                    <input type="text" id="department"
                                                                            name="typeahead_example_modal_1"
                                                                            class="form-control tt-input" autocomplete="off"
                                                                            spellcheck="false" dir="auto"
@@ -96,28 +96,28 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">资产编号</label>
+                        <label class="col-sm-4 control-label">资产</label>
 
-                            <div class="col-sm-8">
-                                <div class="input-group">
-                                                                <span class="twitter-typeahead"
-                                                                      style="position: relative; display: inline-block;">
-                                                                    <input type="text" class="form-control tt-hint"
-                                                                           disabled="" autocomplete="off" spellcheck="false"
-                                                                           style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);">
-                                                                    <input type="text" id="assets_code"
-                                                                           name="typeahead_example_modal_1"
-                                                                           class="form-control tt-input" autocomplete="off"
-                                                                           spellcheck="false" dir="auto"
-                                                                           style="width: 250px;position: relative; vertical-align: top; background-color: transparent;"><pre
-                                                                        aria-hidden="true"
-                                                                        style="position: absolute; visibility: hidden; white-space: nowrap; font-family: 'Open Sans', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span
-                                                                        class="tt-dropdown-menu"
-                                                                        style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div
-                                                                        class="tt-dataset-1"></div></span></span>
-                                </div>
+                        <div class="col-sm-8">
+                            <div class="input-group">
+															<span class="twitter-typeahead"
+                                                                  style="position: relative; display: inline-block;">
+                                                                <input type="text" class="form-control tt-hint"
+                                                                       disabled="" autocomplete="off" spellcheck="false"
+                                                                       style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);">
+                                                                <div type="text" id="asset"
+                                                                     name="typeahead_example_modal_1"
+                                                                     class="form-control tt-input" autocomplete="off"
+                                                                     spellcheck="false" dir="auto"
+                                                                     style="width: 250px;position: relative; vertical-align: top; background-color: transparent;"></div><pre
+                                                                    aria-hidden="true"
+                                                                    style="position: absolute; visibility: hidden; white-space: nowrap; font-family: 'Open Sans', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span
+                                                                    class="tt-dropdown-menu"
+                                                                    style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div
+                                                                    class="tt-dataset-1"></div></span></span>
                             </div>
                         </div>
+                    </div>
 
                         <div class="form-group last">
                             <label class="col-sm-4 control-label">备注</label>
@@ -147,8 +147,8 @@
 <script type="text/javascript" src="/static/assets/plugins/data-tables/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="/static/assets/plugins/data-tables/DT_bootstrap.js"></script>
 
-<!--<script src="/static/assets/plugins/context.js"></script>-->
-<!--<script src="/static/assets/plugins/jstree/dist/jstree.min.js"></script>-->
+<script src="/static/assets/plugins/context.js"></script>
+<script src="/static/assets/plugins/jstree/dist/jstree.min.js"></script>
 <script src="/static/assets/plugins/holder.js"></script>
 <script src="/static/assets/plugins/stilearn-base.js"></script>
 <script type="text/javascript" src="/static/assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
@@ -169,7 +169,7 @@ $(document).ready(function () {
             {
                 "sExtends": 'text',
 
-                "sButtonText": '<font color="white">增加</font><i class="fa fa-plus"></i>',
+                "sButtonText": '<font color="white">派发</font><i class="fa fa-plus"></i>',
                 "sButtonClass": "btn green ",
                 "fnComplete": function (nButton, oConfig, nRow) {
                     add()
@@ -200,7 +200,7 @@ $(document).ready(function () {
 });
 function loaddata() {
     oTable = $('#datatables').dataTable({
-        "sAjaxSource": "/assets_asset_data/?rand=" + Math.random(),
+        "sAjaxSource": "/assets_user_data/?rand=" + Math.random(),
         "sDom": "<'row-fluid'<'span6'T><'span6'f>r><'table-scrollable't><'fluid'<'span3'l><'span4'i><'span5'p>>",
         "bServerSide": true,
         "bPaginate": true, // 是否使用分页
@@ -222,17 +222,16 @@ function loaddata() {
         },
         "aoColumns": [
             { "sClass": "center", 'sWidth': "10%"},
-            { "sClass": "center", 'sWidth': "15%"},
-            { "sClass": "center", 'sWidth': "15%"},
             { "sClass": "center", 'sWidth': "20%"},
-            { "sClass": "center", 'sWidth': "10%"},
+            { "sClass": "center", 'sWidth': "20%"},
+            { "sClass": "center", 'sWidth': "20%"},
             { "sClass": "center", 'sWidth': "15%"},
             { "sClass": "center", 'sWidth': "10%"}
 
 
         ],
         "aaSorting": [
-            [5, 'desc']
+            [0, 'asc']
         ],
         "oLanguage": {
             "sProcessing": "正在加载数据...",
@@ -271,13 +270,18 @@ function loaddata() {
 }
 
 function rule_save() {
-
-    var assets_type = $('#assets_type').val();
-    var assets_code = $('#assets_code').val();
+    var asset_list = []
+    var asset = $('#asset').select2('data')
+    for (var i in asset) {
+        asset_list.push(asset[i]["id"])
+    }
+    asset = asset_list.join(',')
+    console.info(asset_list)
+    var department = $('#department').val();
     var comment = $('#comment').val();
     var name = $('#name').val();
     var id = $('#id').val();
-    if (assets_type == '' || name == '' || assets_code == '') {
+    if (department == '' || name == '' || asset == '') {
         toastr.error('不能为空')
         return;
     }
@@ -287,13 +291,13 @@ function rule_save() {
 
 
     $.ajax({
-        url: '/assets_asset_save/',
+        url: '/assets_user_save/',
         type: "POST",
         data: {
             id: id,
             comment: comment,
-            assets_type: assets_type,
-            assets_code: assets_code,
+            department: department,
+            asset: asset,
             name: name
         },
         success: function (d) {
@@ -316,9 +320,18 @@ function contain(Array, s) {
     return false;
 }
 function add() {
+    $('#asset').select2("data", "")
+    $.post('/assets_user_dropdown/', {}, function (d) {
+        $('#asset').select2({
+            multiple: true,
+            placeholder: '请选择资产',
+            allowClear: true,
+            data: d
+        });
+
+    })
     $('#name').val("")
-    $('#assets_type').val("")
-    $('#assets_code').val("")
+    $('#department').val("")
     $('#comment').val("")
     $('#id').val("")
     $("#myModal").modal('show')
@@ -329,13 +342,13 @@ function edit() {
     var aData = oTT.fnGetSelectedData();
     if (aData.length == 1) {
         var name = aData[0][0];
-        var assets_type = aData[0][1];
-        var assets_code = aData[0][2];
+        var department = aData[0][1];
+        var asset = aData[0][2];
         var comment = aData[0][3];
         var id = aData[0][5];
         $('#name').val(name)
-        $('#assets_type').val(assets_type)
-        $('#assets_code').val(assets_code)
+        $('#department').val(department)
+        $('#asset').val(asset)
         $('#comment').val(comment)
         $('#id').val(id)
         $("#myModal").modal('show')

@@ -3699,3 +3699,235 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
     "Choices are: %s" % (name, ", ".join(names)))
 FieldError: Cannot resolve keyword 'device_code' into field. Choices are: add_time, assets_code, assets_type, comment, id, name, user
+[2015-06-17 10:45:24,311] WARNING : Not Found: /favicon.ico
+[2015-06-17 10:45:24,342] WARNING : Not Found: /favicon.ico
+[2015-06-17 10:54:32,219] WARNING : Not Found: /assets_asset_del/
+[2015-06-17 11:43:06,329] WARNING : Not Found: /assets_asset_del/
+[2015-06-17 11:43:43,463] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:/BearCatOMS_1.4.20\assets\views.py", line 111, in assets_asset_del
+    orm = asset.objects.get(int(_id))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+[2015-06-17 11:44:04,229] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:/BearCatOMS_1.4.20\assets\views.py", line 111, in assets_asset_del
+    orm = asset.objects.get(int(_id))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+[2015-06-17 11:45:01,572] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:/BearCatOMS_1.4.20\assets\views.py", line 111, in assets_asset_del
+    orm = asset.objects.get(int(_id))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+[2015-06-17 11:46:40,020] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:/BearCatOMS_1.4.20\assets\views.py", line 111, in assets_asset_del
+    orm = asset.objects.get(int(_id))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+[2015-06-17 11:46:43,789] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:/BearCatOMS_1.4.20\assets\views.py", line 111, in assets_asset_del
+    orm = asset.objects.get(int(_id))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+[2015-06-17 11:48:24,315] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:/BearCatOMS_1.4.20\assets\views.py", line 111, in assets_asset_del
+    orm = asset.objects.get(int(_id))
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 358, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 624, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 642, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    can_reuse=used_aliases, force_having=force_having)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1056, in add_filter
+    arg, value = filter_expr
+TypeError: 'int' object is not iterable
+[2015-06-17 11:50:13,625] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:/BearCatOMS_1.4.20\assets\views.py", line 111, in assets_asset_del
+    orm = asset.objects.get(int(_id))
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 358, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 624, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 642, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    can_reuse=used_aliases, force_having=force_having)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1056, in add_filter
+    arg, value = filter_expr
+TypeError: 'int' object is not iterable
+[2015-06-17 11:50:28,224] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:/BearCatOMS_1.4.20\assets\views.py", line 111, in assets_asset_del
+    orm = asset.objects.get(int(_id))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+[2015-06-17 11:51:11,032] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 112, in assets_asset_del
+    orm = asset.objects.get(int(_id))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+[2015-06-17 11:53:55,496] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 112, in assets_asset_del
+    orm = asset.objects.get(int(_id))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+[2015-06-17 11:54:17,913] ERROR : Internal Server Error: /assets_asset_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 92, in assets_asset_save
+    orm = asset.objects.get(id=int(_id))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+[2015-06-17 11:55:14,427] ERROR : Internal Server Error: /assets_asset_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:/BearCatOMS_1.4.20\assets\views.py", line 93, in assets_asset_save
+    orm = asset.objects.get(id=int(_id))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+[2015-06-17 11:55:41,832] ERROR : Internal Server Error: /assets_asset_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:/BearCatOMS_1.4.20\assets\views.py", line 93, in assets_asset_save
+    orm = asset.objects.get(id=int(_id))
+TypeError: int() argument must be a string or a number, not 'NoneType'
+[2015-06-17 11:57:50,385] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 113, in assets_asset_del
+    orm = asset.objects.get(int(_id))
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 358, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 624, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 642, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    can_reuse=used_aliases, force_having=force_having)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1056, in add_filter
+    arg, value = filter_expr
+TypeError: 'int' object is not iterable
+[2015-06-17 12:41:06,266] WARNING : Not Found: /assets_user_data/
+[2015-06-17 12:41:15,701] WARNING : Not Found: /assets_user_data/
+[2015-06-17 13:02:57,253] WARNING : Not Found: /assets_user_data/
+[2015-06-17 13:03:50,141] WARNING : Not Found: /assets_user_data/
+[2015-06-17 13:04:13,384] ERROR : Internal Server Error: /assets_user_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 192, in assets_user_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <asset: asset object> is not JSON serializable
+[2015-06-17 17:40:19,628] WARNING : Not Found: /assets/drop_down_data
+[2015-06-17 17:41:41,517] WARNING : Not Found: /assets/drop_down_data
+[2015-06-17 17:42:32,492] WARNING : Not Found: /assets_user_dropdown
+[2015-06-17 19:21:47,907] ERROR : Internal Server Error: /assets_user_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 219, in assets_user_save
+    k = asset.objects.get(int(i))
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 358, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 624, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 642, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    can_reuse=used_aliases, force_having=force_having)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1056, in add_filter
+    arg, value = filter_expr
+TypeError: 'int' object is not iterable
+[2015-06-17 19:22:18,142] ERROR : Internal Server Error: /assets_user_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 220, in assets_user_save
+    user.add(k)
+AttributeError: type object 'user' has no attribute 'add'
+[2015-06-17 19:22:48,996] ERROR : Internal Server Error: /assets_user_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 220, in assets_user_save
+    user.assets.add(k)
+AttributeError: 'ReverseSingleRelatedObjectDescriptor' object has no attribute 'add'
+[2015-06-17 19:25:02,615] ERROR : Internal Server Error: /assets_user_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 221, in assets_user_save
+    user.save()
+TypeError: unbound method save() must be called with user instance as first argument (got nothing instead)
