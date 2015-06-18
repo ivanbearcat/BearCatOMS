@@ -3,7 +3,8 @@ from login.views import login,login_auth,logout,not_login
 from main.views import main
 from monitor.views import nagios,zabbix
 from user_manage.views import chpasswd,post_chpasswd
-from assets.views import assets_asset,assets_asset_data,assets_asset_save,assets_asset_del,assets_user,assets_user_dropdown,assets_user_data,assets_user_save
+from assets.views import assets_asset,assets_asset_data,assets_asset_save,assets_asset_del,assets_user,assets_user_dropdown,\
+    assets_user_data,assets_user_save,assets_user_del,assets_log,assets_log_data,assets_image,assets_get_data
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -36,5 +37,9 @@ urlpatterns = patterns('',
     url(r'^assets_user_dropdown/', assets_user_dropdown),
     url(r'^assets_user_data/', assets_user_data),
     url(r'^assets_user_save/', assets_user_save),
-    # url(r'^assets_user_del/', assets_user_del),
+    url(r'^assets_user_del/', assets_user_del),
+    url(r'^assets_log/', assets_log),
+    url(r'^assets_log_data/', assets_log_data),
+    url(r'^assets_image/', assets_image),
+    url(r'^assets_get_data/', assets_get_data),
 )

@@ -3931,3 +3931,499 @@ Traceback (most recent call last):
   File "E:\BearCatOMS_1.4.20\assets\views.py", line 221, in assets_user_save
     user.save()
 TypeError: unbound method save() must be called with user instance as first argument (got nothing instead)
+[2015-06-18 10:14:39,446] ERROR : Internal Server Error: /assets_asset_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 94, in assets_asset_save
+    orm = asset(name=name,assets_type=assets_type,assets_code=assets_code,comment=comment,user='')
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 355, in __init__
+    setattr(self, field.name, rel_obj)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\related.py", line 366, in __set__
+    self.field.name, self.field.rel.to._meta.object_name))
+ValueError: Cannot assign "''": "asset.user" must be a "user" instance.
+[2015-06-18 10:20:01,513] ERROR : Internal Server Error: /assets_asset/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 13, in assets_asset
+    print asset.user_id_set.all()
+AttributeError: type object 'asset' has no attribute 'user_id_set'
+[2015-06-18 10:20:10,611] ERROR : Internal Server Error: /assets_asset/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 13, in assets_asset
+    print asset.user_set.all()
+AttributeError: type object 'asset' has no attribute 'user_set'
+[2015-06-18 10:20:23,801] ERROR : Internal Server Error: /assets_asset/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 13, in assets_asset
+    print asset.user_id
+AttributeError: type object 'asset' has no attribute 'user_id'
+[2015-06-18 10:21:39,127] ERROR : Internal Server Error: /assets_asset/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 13, in assets_asset
+    for i in  asset.user:
+TypeError: 'ReverseSingleRelatedObjectDescriptor' object is not iterable
+[2015-06-18 10:23:28,375] ERROR : Internal Server Error: /assets_asset/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 14, in assets_asset
+    for i in  a.user_id:
+TypeError: 'long' object is not iterable
+[2015-06-18 10:30:59,592] ERROR : Internal Server Error: /assets_user_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 200, in assets_user_data
+    '2':i.assets_id,
+AttributeError: 'user' object has no attribute 'assets_id'
+[2015-06-18 11:38:03,266] ERROR : Internal Server Error: /assets_user_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 196, in assets_user_data
+    for i in user.asset_set.all():
+AttributeError: 'ForeignRelatedObjectsDescriptor' object has no attribute 'all'
+[2015-06-18 11:40:55,072] ERROR : Internal Server Error: /assets_user_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 198, in assets_user_data
+    for j in i:
+TypeError: 'user' object is not iterable
+[2015-06-18 11:41:23,812] ERROR : Internal Server Error: /assets_user_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 203, in assets_user_data
+    '2':i.assets_id,
+AttributeError: 'user' object has no attribute 'assets_id'
+[2015-06-18 11:43:25,503] ERROR : Internal Server Error: /assets_user_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 204, in assets_user_data
+    '2':i.assets_id,
+AttributeError: 'user' object has no attribute 'assets_id'
+[2015-06-18 11:43:36,035] ERROR : Internal Server Error: /assets_user_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 204, in assets_user_data
+    '2':i.assets,
+AttributeError: 'user' object has no attribute 'assets'
+[2015-06-18 12:06:36,194] ERROR : Internal Server Error: /assets_asset/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 13, in assets_asset
+    a = asset.objects.get(id=1)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: asset matching query does not exist.
+[2015-06-18 12:08:23,122] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 117, in assets_asset_del
+    orm = asset.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 358, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 624, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 642, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    can_reuse=used_aliases, force_having=force_having)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1185, in add_filter
+    connector)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\where.py", line 69, in add
+    value = obj.prepare(lookup_type, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\where.py", line 320, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 310, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 537, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '2015-06-18 12:08:08'
+[2015-06-18 12:10:35,367] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 117, in assets_asset_del
+    orm = asset.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 358, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 624, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 642, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    can_reuse=used_aliases, force_having=force_having)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1185, in add_filter
+    connector)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\where.py", line 69, in add
+    value = obj.prepare(lookup_type, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\where.py", line 320, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 310, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 537, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '2015-06-18 12:08:08'
+[2015-06-18 12:11:11,078] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 117, in assets_asset_del
+    orm = asset.objects.get(id=int(_id))
+ValueError: invalid literal for int() with base 10: '2015-06-18 12:08:08'
+[2015-06-18 12:13:35,384] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 117, in assets_asset_del
+    orm = asset.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 358, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 624, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 642, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    can_reuse=used_aliases, force_having=force_having)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1185, in add_filter
+    connector)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\where.py", line 69, in add
+    value = obj.prepare(lookup_type, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\where.py", line 320, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 310, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 537, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: '2015-06-18 12:08:08'
+[2015-06-18 12:20:14,654] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 117, in assets_asset_del
+    orm = asset.objects.get(id=int(_id))
+ValueError: invalid literal for int() with base 10: '2015-06-18 12:08:08'
+[2015-06-18 13:11:48,970] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 117, in assets_asset_del
+    orm = asset.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: asset matching query does not exist.
+[2015-06-18 13:43:06,496] ERROR : Internal Server Error: /assets_user_dropdown
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django\middleware\common.py", line 77, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.100.42:8000/assets_user_dropdown/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2015-06-18 13:45:08,201] ERROR : Internal Server Error: /assets_user_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 148, in assets_user_dropdown
+    orm = user.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: user matching query does not exist.
+[2015-06-18 13:46:20,802] ERROR : Internal Server Error: /assets_user_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 148, in assets_user_dropdown
+    orm = user.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: user matching query does not exist.
+[2015-06-18 13:46:25,273] ERROR : Internal Server Error: /assets_user_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 148, in assets_user_dropdown
+    orm = user.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: user matching query does not exist.
+[2015-06-18 13:47:04,558] ERROR : Internal Server Error: /assets_user_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 149, in assets_user_dropdown
+    orm = user.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: user matching query does not exist.
+[2015-06-18 13:47:35,394] ERROR : Internal Server Error: /assets_user_dropdown
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django\middleware\common.py", line 77, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.100.42:8000/assets_user_dropdown/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2015-06-18 13:47:40,411] ERROR : Internal Server Error: /assets_user_dropdown
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django\middleware\common.py", line 77, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.100.42:8000/assets_user_dropdown/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2015-06-18 13:50:48,842] ERROR : Internal Server Error: /assets_user_dropdown
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django\middleware\common.py", line 77, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.100.42:8000/assets_user_dropdown/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2015-06-18 13:52:56,730] ERROR : Internal Server Error: /assets_user_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 151, in assets_user_dropdown
+    orm_assets = asset.objects.get(i)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 358, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 624, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 642, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    can_reuse=used_aliases, force_having=force_having)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1056, in add_filter
+    arg, value = filter_expr
+ValueError: need more than 1 value to unpack
+[2015-06-18 13:58:38,438] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 117, in assets_asset_del
+    orm = asset.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: asset matching query does not exist.
+[2015-06-18 14:48:39,346] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 117, in assets_asset_del
+    orm = asset.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: asset matching query does not exist.
+[2015-06-18 14:50:24,884] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 117, in assets_asset_del
+    orm = asset.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: asset matching query does not exist.
+[2015-06-18 14:51:01,888] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 117, in assets_asset_del
+    orm = asset.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: asset matching query does not exist.
+[2015-06-18 14:51:16,474] ERROR : Internal Server Error: /assets_asset_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 117, in assets_asset_del
+    orm = asset.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: asset matching query does not exist.
+[2015-06-18 14:52:14,983] WARNING : Not Found: /assets_user_del/
+[2015-06-18 14:52:46,174] ERROR : Internal Server Error: /assets_user_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 288, in assets_user_del
+    return HttpResponse(simplejson.dumps({'code':0,'msg':e}),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: AttributeError("'asset' object has no attribute 'code'",) is not JSON serializable
+[2015-06-18 15:27:22,835] WARNING : Not Found: /assets_log_data/
+[2015-06-18 15:27:52,655] ERROR : Internal Server Error: /assets_log_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 342, in assets_log_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2015, 6, 18, 14, 54, 52) is not JSON serializable
+[2015-06-18 16:17:22,951] WARNING : Not Found: /assets_get_data
+[2015-06-18 16:17:47,884] WARNING : Not Found: /assets_get_data
+[2015-06-18 16:37:08,131] WARNING : Not Found: /assets_get_data
+[2015-06-18 16:38:10,355] ERROR : Internal Server Error: /assets_get_data
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django\middleware\common.py", line 77, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 192.168.100.42:8000/assets_get_data/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2015-06-18 18:19:51,170] ERROR : Internal Server Error: /assets_image/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 350, in assets_image
+    'page_name2':u'璧勪骇缁熻鍥?})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 171, in render_to_string
+    return t.render(Context(dictionary))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 140, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 134, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 74, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 101, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 98, in get_parent
+    return get_template(parent)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 271, in parse
+    self.extend_nodelist(nodelist, compiled_result, token)
+  File "C:\Python27\lib\site-packages\django\template\debug.py", line 60, in extend_nodelist
+    super(DebugParser, self).extend_nodelist(nodelist, node, token)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 297, in extend_nodelist
+    "in the template." % node)
+TemplateSyntaxError: <ExtendsNode: extends 'public/sidebar.html'> must be the first tag in the template.

@@ -92,7 +92,7 @@ def assets_asset_save(request):
     print _id,assets_type,comment,assets_code,name
     if _id =='':
         orm = asset(name=name,assets_type=assets_type,assets_code=assets_code,comment=comment)
-        comment_info = u'%s | %s | %s 入库' % (name,assets_type,assets_code)
+        comment_info = u'%s %s %s 入库' % (name,assets_type,assets_code)
         orm_log = log(comment=comment_info)
     else:
         orm = asset.objects.get(id=int(_id))
@@ -100,7 +100,7 @@ def assets_asset_save(request):
         orm.assets_type = assets_type
         orm.assets_code = assets_code
         orm.comment = comment
-        comment_info = u'%s | %s | %s 编辑' % (name,assets_type,assets_code)
+        comment_info = u'%s %s %s 编辑' % (name,assets_type,assets_code)
         orm_log = log(comment=comment_info)
 
     try:
@@ -115,7 +115,7 @@ def assets_asset_save(request):
 def assets_asset_del(request):
     _id = request.POST.get('id')
     orm = asset.objects.get(id=_id)
-    comment_info = u'%s | %s | %s 出库' % (orm.name,orm.assets_type,orm.assets_code)
+    comment_info = u'%s %s %s 出库' % (orm.name,orm.assets_type,orm.assets_code)
     orm_log = log(comment=comment_info)
     try:
         orm_log.save()
@@ -138,10 +138,19 @@ def assets_user(request):
 
 @login_required
 def assets_user_dropdown(request):
-    result = []
+    _id = request.POST.get('id')
+    print _id
+    result = {}
+    result['list'] = []
+    result['edit'] = []
+    if not _id == None:
+        orm = user.objects.get(id=_id)
+        for i in orm.assets_id.split(','):
+            orm_assets = asset.objects.get(id=i)
+            result['edit'].append({'text':orm_assets.name + ' ' + orm_assets.assets_type + ' ' + orm_assets.assets_code,'id':orm_assets.id})
     result_data = asset.objects.filter(status=u'未发放')
     for i in result_data:
-        result.append({'text':i.name+' '+i.assets_type+' '+i.assets_code,'id':i.id})
+        result['list'].append({'text':i.name + ' ' + i.assets_type + ' ' + i.assets_code,'id':i.id})
     return HttpResponse(simplejson.dumps(result),content_type="application/json")
 
 
@@ -165,13 +174,13 @@ def assets_user_data(request):
         else:
             result_data = user.objects.filter(Q(name__contains=sSearch) | \
                                                Q(department__contains=sSearch) | \
-                                               Q(assets_id__contains=sSearch) | \
+                                               Q(assets__contains=sSearch) | \
                                                Q(comment__contains=sSearch) | \
                                                Q(id__contains=sSearch)) \
                                             .order_by(sort[iSortCol_0])[iDisplayStart:iDisplayStart+iDisplayLength]
             iTotalRecords = user.objects.filter(Q(name__contains=sSearch) | \
                                                  Q(department__contains=sSearch) | \
-                                                 Q(assets_id__contains=sSearch) | \
+                                                 Q(assets__contains=sSearch) | \
                                                  Q(comment__contains=sSearch) | \
                                                  Q(id__contains=sSearch)).count()
     else:
@@ -181,20 +190,21 @@ def assets_user_data(request):
         else:
             result_data = user.objects.filter(Q(name__contains=sSearch) | \
                                                Q(department__contains=sSearch) | \
-                                               Q(assets_id__contains=sSearch) | \
+                                               Q(assets__contains=sSearch) | \
                                                Q(comment__contains=sSearch) | \
                                                Q(id__contains=sSearch)) \
                                             .order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
             iTotalRecords = user.objects.filter(Q(name__contains=sSearch) | \
                                                  Q(department__contains=sSearch) | \
-                                                 Q(assets_id__contains=sSearch) | \
+                                                 Q(assets__contains=sSearch) | \
                                                  Q(comment__contains=sSearch) | \
                                                  Q(id__contains=sSearch)).count()
+
     for i in  result_data:
         aaData.append({
                        '0':i.name,
                        '1':i.department,
-                       '2':i.assets_id,
+                       '2':i.assets,
                        '3':i.comment,
                        '4':str(i.modify_time).split('+')[0],
                        '5':i.id
@@ -213,32 +223,156 @@ def assets_user_save(request):
     comment = request.POST.get('comment')
     assets = request.POST.get('asset')
     name = request.POST.get('name')
-    asset_list = []
-
-    for i in assets.split(','):
-        k = asset.objects.get(id=int(i))
-        user.assets = k
-        user.save()
-    print user.assets
-
+    assets_data = ''
     print _id,department,comment,assets,name
-    if _id =='':
-        orm = asset(name=name,assets_type=department,assets_code=assets,comment=comment)
-        comment_info = u'%s | %s | %s 入库' % (name,department,assets)
-        orm_log = log(comment=comment_info)
-    else:
-        orm = asset.objects.get(id=int(_id))
-        orm.name = name
-        orm.assets_type = department
-        orm.assets_code = assets
-        orm.comment = comment
-        comment_info = u'%s | %s | %s 编辑' % (name,department,assets)
-        orm_log = log(comment=comment_info)
+
 
     try:
-        orm_log.save()
-        orm.save()
+        if _id =='':
+            for i in assets.split(','):
+                orm_assets = asset.objects.get(id=i)
+                orm_assets.status = '已发放'
+                if assets_data == '':
+                    assets_data = '< %s %s %s >' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
+                else:
+                    assets_data = '%s< %s %s %s >' % (assets_data,orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
+                orm_assets.save()
+            orm_user = user(name=name,department=department,assets=assets_data,comment=comment,assets_id=assets)
+            comment_info = u'%s %s %s 出库，发放给<%s>' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code,name)
+            orm_log = log(comment=comment_info)
+            orm_user.save()
+            orm_log.save()
+        else:
+            orm = user.objects.get(id=_id)
+            for i in orm.assets_id.split(','):
+                orm_assets = asset.objects.get(id=i)
+                orm_assets.status = '未发放'
+                orm_assets.save()
+            for i in assets.split(','):
+                orm_assets = asset.objects.get(id=i)
+                orm_assets.status = '已发放'
+                if assets_data == '':
+                    assets_data = '< %s %s %s >' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
+                else:
+                    assets_data = '%s< %s %s %s >' % (assets_data,orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
+                orm_assets.save()
+            orm.name = name
+            orm.department = department
+            orm.assets = assets_data
+            orm.comment = comment
+            orm.assets_id = assets
+            comment_info = u'%s %s %s 出库，发放给<%s>' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code,name)
+            orm_log = log(comment=comment_info)
+            orm_log.save()
+            orm.save()
         return HttpResponse(simplejson.dumps({'code':0,'msg':u'保存成功'}),content_type="application/json")
     except Exception,e:
         logger.error(e,comment)
         return HttpResponse(simplejson.dumps({'code':1,'msg':str(e)}),content_type="application/json")
+
+@login_required
+def assets_user_del(request):
+    _id = request.POST.get('id')
+    try:
+        orm = user.objects.get(id=_id)
+        for i in orm.assets_id.split(','):
+            orm_assets = asset.objects.get(id=i)
+            orm_assets.status = "未发放"
+            orm_assets.save()
+            comment_info = u'%s %s %s 入库，从<%s>处收回' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code,orm.name)
+            orm_log = log(comment=comment_info)
+            orm_log.save()
+        orm.delete()
+        return HttpResponse(simplejson.dumps({'code':0,'msg':u'删除成功'}),content_type="application/json")
+    except Exception,e:
+        return HttpResponse(simplejson.dumps({'code':0,'msg':e}),content_type="application/json")
+
+@login_required
+def assets_log(request):
+    path = request.path.split('/')[1]
+    return render_to_response('assets/assets_log.html',{'user':request.user.username,
+                                                           'path1':'assets',
+                                                           'path2':path,
+                                                           'page_name1':u'资产管理',
+                                                           'page_name2':u'出入库记录'})
+
+@login_required
+def assets_log_data(request):
+    sEcho =  request.POST.get('sEcho') #标志，直接返回
+    iDisplayStart = int(request.POST.get('iDisplayStart'))#第几行开始
+    iDisplayLength = int(request.POST.get('iDisplayLength'))#显示多少行
+    iSortCol_0 = int(request.POST.get("iSortCol_0"))#排序行号
+    sSortDir_0 = request.POST.get('sSortDir_0')#asc/desc
+    sSearch = request.POST.get('sSearch')#高级搜索
+
+    aaData = []
+    sort = ['comment','add_time','id']
+
+    if  sSortDir_0 == 'asc':
+        if sSearch == '':
+            result_data = log.objects.all().order_by(sort[iSortCol_0])[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = log.objects.all().count()
+        else:
+            result_data = log.objects.filter(Q(comment__contains=sSearch) | \
+                                               Q(id__contains=sSearch)) \
+                                            .order_by(sort[iSortCol_0])[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = log.objects.filter(Q(comment__contains=sSearch) | \
+                                                 Q(id__contains=sSearch)).count()
+    else:
+        if sSearch == '':
+            result_data = log.objects.all().order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = log.objects.all().count()
+        else:
+            result_data = log.objects.filter(Q(comment__contains=sSearch) | \
+                                               Q(id__contains=sSearch)) \
+                                            .order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = log.objects.filter(Q(comment__contains=sSearch) | \
+                                                 Q(id__contains=sSearch)).count()
+    for i in  result_data:
+        aaData.append({
+                       '0':i.comment,
+                       '1':str(i.add_time).split('+')[0],
+                       '2':i.id
+                      })
+    result = {'sEcho':sEcho,
+               'iTotalRecords':iTotalRecords,
+               'iTotalDisplayRecords':iTotalRecords,
+               'aaData':aaData
+    }
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+
+def assets_image(request):
+    path = request.path.split('/')[1]
+    return render_to_response('assets/assets_image.html',{'user':request.user.username,
+                                                           'path1':'assets',
+                                                           'path2':path,
+                                                           'page_name1':u'资产管理',
+                                                           'page_name2':u'资产统计图'})
+
+def assets_get_data(request):
+    orm = {}
+    assets_list = []
+    orm['data'] = []
+    num = 0
+    not_info = []
+    already_info = []
+    all_info = []
+    orm['not'] = asset.objects.filter(status='未发放').count()
+    orm['already'] = asset.objects.filter(status='已发放').count()
+    orm['all'] = asset.objects.all().count()
+
+    for i in asset.objects.all():
+        assets_list.append(i.name)
+    assets_list_uniq = list(set(assets_list))
+    for i in assets_list_uniq:
+        not_info.append(asset.objects.filter(name=i).filter(status='未发放').count())
+        already_info.append(asset.objects.filter(name=i).filter(status='已发放').count())
+        all_info.append(asset.objects.filter(name=i).count())
+
+    detail = zip(not_info,already_info,all_info)
+    for i in assets_list_uniq:
+        orm['data'].append({'name':i, 'data':list(detail[num])})
+        num += 1
+    return HttpResponse(simplejson.dumps(orm),content_type="application/json")
+
+

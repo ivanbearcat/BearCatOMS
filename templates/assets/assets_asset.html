@@ -227,7 +227,7 @@ function loaddata() {
             { "sClass": "center", 'sWidth': "20%"},
             { "sClass": "center", 'sWidth': "10%"},
             { "sClass": "center", 'sWidth': "15%"},
-            { "sClass": "center", 'sWidth': "10%"}
+            { "sClass": "center", 'sWidth': "5%"}
 
 
         ],
@@ -332,7 +332,7 @@ function edit() {
         var assets_type = aData[0][1];
         var assets_code = aData[0][2];
         var comment = aData[0][3];
-        var id = aData[0][5];
+        var id = aData[0][6];
         $('#name').val(name)
         $('#assets_type').val(assets_type)
         $('#assets_code').val(assets_code)
@@ -348,7 +348,7 @@ function del() {
     var aData = oTT.fnGetSelectedData();
     if (aData.length == 1) {
         showAjaxLoad()
-        $.post('/assets_asset_del/', {id: aData[0][5]}, function (d) {
+        $.post('/assets_asset_del/', {id: aData[0][6]}, function (d) {
             hideAjaxLoad()
             if (d.code == 0) {
                 toastr.success(d.msg)

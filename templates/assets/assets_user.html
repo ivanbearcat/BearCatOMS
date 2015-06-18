@@ -222,16 +222,16 @@ function loaddata() {
         },
         "aoColumns": [
             { "sClass": "center", 'sWidth': "10%"},
+            { "sClass": "center", 'sWidth': "10%"},
+            { "sClass": "center", 'sWidth': "30%"},
             { "sClass": "center", 'sWidth': "20%"},
-            { "sClass": "center", 'sWidth': "20%"},
-            { "sClass": "center", 'sWidth': "20%"},
-            { "sClass": "center", 'sWidth': "15%"},
-            { "sClass": "center", 'sWidth': "10%"}
+            { "sClass": "center", 'sWidth': "10%"},
+            { "sClass": "center", 'sWidth': "5%"}
 
 
         ],
         "aaSorting": [
-            [0, 'asc']
+            [4, 'desc']
         ],
         "oLanguage": {
             "sProcessing": "正在加载数据...",
@@ -276,7 +276,6 @@ function rule_save() {
         asset_list.push(asset[i]["id"])
     }
     asset = asset_list.join(',')
-    console.info(asset_list)
     var department = $('#department').val();
     var comment = $('#comment').val();
     var name = $('#name').val();
@@ -326,7 +325,7 @@ function add() {
             multiple: true,
             placeholder: '请选择资产',
             allowClear: true,
-            data: d
+            data: d['list']
         });
 
     })
@@ -346,9 +345,16 @@ function edit() {
         var asset = aData[0][2];
         var comment = aData[0][3];
         var id = aData[0][5];
+        $.post('/assets_user_dropdown/', {id: id}, function (d) {
+            $('#asset').select2({
+                multiple: true,
+                placeholder: '请选择资产',
+                data: d['list']
+            });
+            $('#asset').select2("data",d['edit'])
+        })
         $('#name').val(name)
         $('#department').val(department)
-        $('#asset').val(asset)
         $('#comment').val(comment)
         $('#id').val(id)
         $("#myModal").modal('show')
@@ -361,7 +367,7 @@ function del() {
     var aData = oTT.fnGetSelectedData();
     if (aData.length == 1) {
         showAjaxLoad()
-        $.post('/assets_asset_del/', {id: aData[0][5]}, function (d) {
+        $.post('/assets_user_del/', {id: aData[0][5]}, function (d) {
             hideAjaxLoad()
             if (d.code == 0) {
                 toastr.success(d.msg)

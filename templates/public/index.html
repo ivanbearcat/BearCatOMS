@@ -185,6 +185,8 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
 <!--[if lt IE 9]>
+<% block test %>
+<% endblock %>
 <script src="/static/assets/plugins/respond.min.js"></script>
 <script src="/static/assets/plugins/excanvas.min.js"></script> 
 <![endif]-->
@@ -222,19 +224,19 @@ License: You must have a valid license purchased only from themeforest(the above
 {% endblock %}
 <!-- END PAGE LEVEL SCRIPTS -->
 <script>
-jQuery(document).ready(function() {    
+jQuery(document).ready(function() {
    App.init(); // initlayout and core plugins
-   Index.init();
-   Index.initCalendar(); // init index page's custom scripts
-   Index.initCharts(); // init index page's custom scripts
-   Index.initChat();
-   Index.initMiniCharts();
-   Index.initDashboardDaterange();
-   Index.initIntro();
-   Tasks.initDashboardWidget();
-
+//   Index.init();
+//   Index.initCalendar(); // init index page's custom scripts
+//   Index.initCharts(); // init index page's custom scripts
+//   Index.initChat();
+//   Index.initMiniCharts();
+//   Index.initDashboardDaterange();
+//   Index.initIntro();
+//   Tasks.initDashboardWidget();
    $('#{{path1}}').attr('class','active');
    $('#{{path2}}').attr('class','active');
+
 });
 
 

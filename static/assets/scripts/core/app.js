@@ -674,7 +674,7 @@ var App = function () {
 
     // Handles Bootstrap Tooltips.
     var handleTooltips = function () {
-       jQuery('.tooltips').tooltip();
+    //   jQuery('.tooltips').tooltip();
     }
 
     // Handles Bootstrap Dropdowns
@@ -705,7 +705,7 @@ var App = function () {
     var lastPopedPopover;
 
     var handlePopovers = function () {
-        jQuery('.popovers').popover();
+//        jQuery('.popovers').popover();
 
         // close last poped popover
 

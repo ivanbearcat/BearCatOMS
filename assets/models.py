@@ -12,9 +12,10 @@ class asset(models.Model):
 class user(models.Model):
     name = models.CharField(verbose_name='员工名', max_length=30, blank=False)
     department = models.CharField(verbose_name='部门', max_length=30, blank=False)
-    assets = models.ForeignKey(asset)
+    assets = models.CharField(verbose_name='拥有的资产', max_length=128, blank=False)
     comment = models.CharField(verbose_name='备注', max_length=256)
     modify_time = models.DateTimeField(verbose_name='修改时间', auto_now=True)
+    assets_id = models.CharField(verbose_name='拥有的资产ID', max_length=30)
 
 class log(models.Model):
     comment = models.CharField(verbose_name='备注', max_length=256)
