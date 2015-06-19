@@ -341,6 +341,7 @@ def assets_log_data(request):
     }
     return HttpResponse(simplejson.dumps(result),content_type="application/json")
 
+@login_required
 def assets_image(request):
     path = request.path.split('/')[1]
     return render_to_response('assets/assets_image.html',{'user':request.user.username,
@@ -349,6 +350,7 @@ def assets_image(request):
                                                            'page_name1':u'资产管理',
                                                            'page_name2':u'资产统计图'})
 
+@login_required
 def assets_get_data(request):
     orm = {}
     assets_list = []
