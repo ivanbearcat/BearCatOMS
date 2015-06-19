@@ -4444,3 +4444,14 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django\db\models\base.py", line 367, in __init__
     raise TypeError("'%s' is an invalid keyword argument for this function" % kwargs.keys()[0])
 TypeError: 'ip' is an invalid keyword argument for this function
+[2015-06-19 15:11:17,549] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view audit.views.audit_get_data didn't return an HttpResponse object.
+[2015-06-19 15:11:41,099] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view audit.views.audit_get_data didn't return an HttpResponse object.
+[2015-06-19 15:23:24,542] WARNING : Not Found: /audit_log_data/

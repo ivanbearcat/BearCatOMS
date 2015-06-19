@@ -11,17 +11,6 @@
 {% endblock %}
 {% block body %}
 <div class="row">
-    <div class="portlet-body">
-        <div class="col-md-2">
-            <div id="reportrange1" class="btn default">
-                <i class="fa fa-calendar"></i>
-                <span>
-                    选择时间查询
-                </span>
-                <b class="fa fa-angle-down"></b>
-            </div>
-        </div>
-    </div>
     <div class="col-md-12">
         <!-- BEGIN EXAMPLE TABLE PORTLET-->
         <div class="portlet box grey tasks-widget">
@@ -81,11 +70,11 @@ $(document).ready(function () {
 
 function loaddata() {
     oTable = $('#datatables').dataTable({
-        "sAjaxSource": "/assets_log_data/?rand=" + Math.random(),
+        "sAjaxSource": "/audit_log_data/?rand=" + Math.random(),
         //"sDom": "<'row-fluid'<'span6'T><'span6'f>r><'table-scrollable't><'fluid'<'span3'l><'span4'i><'span5'p>>",
         "bServerSide": true,
         "bPaginate": true, // 是否使用分页
-        "bProcessing": true, //是否显示正在处理的提示
+        "bProcessing": false, //是否显示正在处理的提示
         "bLengthChange": true, //是否启用设置每页显示记录数
         "bFilter": true, //是否使用搜索
         "bStateSave": false,
@@ -102,14 +91,14 @@ function loaddata() {
             'aButtons': []
         },
         "aoColumns": [
-            { "sClass": "center", 'sWidth': "15%"},
-            { "sClass": "center", 'sWidth': "15%"},
-            { "sClass": "center", 'sWidth': "75%"},
-            { "sClass": "center", 'sWidth': "15%"},
-            { "sClass": "center", 'sWidth': "10%"}
+            { "sClass": "center", 'sWidth': "10%"},
+            { "sClass": "center", 'sWidth': "10%"},
+            { "sClass": "center", 'sWidth': "60%"},
+            { "sClass": "center", 'sWidth': "10%"},
+            { "sClass": "center", 'sWidth': "5%"}
         ],
         "aaSorting": [
-            [1, 'desc']
+            [4, 'desc']
         ],
         "oLanguage": {
             "sProcessing": "正在加载数据...",
@@ -147,51 +136,10 @@ function loaddata() {
     });
 }
 
-$('#reportrange1').daterangepicker({
-    opens: (App.isRTL() ? 'left' : 'right'),
-
-//    startDate: moment().subtract('days', 29),
-//    endDate: moment(),
-    minDate: '2012/01/01',
-    maxDate: '2016/12/31',
-    dateLimit: {
-        days: 800
-    },
-    showDropdowns: false,
-    showWeekNumbers: false,
-    timePicker: false,
-    timePickerIncrement: 1,
-    timePicker12Hour: true,
-    ranges: {
-        'Last Week': [moment().subtract('days', 6), moment()],
-        'Last 30 Days': [moment().subtract('days', 29), moment()],
-        'This Month': [moment().startOf('month'), moment().endOf('month')],
-        'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
-    },
-    buttonClasses: ['btn'],
-    applyClass: 'green',
-    cancelClass: 'default',
-    format: 'YYYY/MM/DD',
-    separator: ' to ',
-    locale: {
-        applyLabel: 'Apply',
-        fromLabel: 'From',
-        toLabel: 'To',
-        customRangeLabel: 'Custom Range',
-        daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-        monthNames: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-        firstDay: 1
-    }
-    },
-    function (start, end) {
-        $('#reportrange1 span').html(start.format('YYYY-MM-DD') + '  ->  ' + end.format('YYYY-MM-DD'));
-        var begin = start.format('YYYY-MM-DD')
-        var end = end.format('YYYY-MM-DD')
-        draw(begin,end)
-        $('#begin_time').val(begin)
-        $('#end_time').val(end)
-    }
-);
+    function div_refresh() {
+        $('#datatables').dataTable().fnDraw()
+    };
+    setInterval("div_refresh()",1000);
 
 </script>
 {% endblock %}
