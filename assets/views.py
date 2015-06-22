@@ -115,14 +115,17 @@ def assets_asset_save(request):
 def assets_asset_del(request):
     _id = request.POST.get('id')
     orm = asset.objects.get(id=_id)
-    comment_info = u'%s %s %s 出库' % (orm.name,orm.assets_type,orm.assets_code)
-    orm_log = log(comment=comment_info)
-    try:
-        orm_log.save()
-        orm.delete()
-        return HttpResponse(simplejson.dumps({'code':0,'msg':u'删除成功'}),content_type="application/json")
-    except Exception,e:
-        return HttpResponse(simplejson.dumps({'code':1,'msg':str(e)}),content_type="application/json")
+    if orm.status == u'已发放':
+        return HttpResponse(simplejson.dumps({'code':2,'msg':u'该物品已被发放，请收回后再删除'}),content_type="application/json")
+    else:
+        comment_info = u'%s %s %s 出库' % (orm.name,orm.assets_type,orm.assets_code)
+        orm_log = log(comment=comment_info)
+        try:
+            orm_log.save()
+            orm.delete()
+            return HttpResponse(simplejson.dumps({'code':0,'msg':u'删除成功'}),content_type="application/json")
+        except Exception,e:
+            return HttpResponse(simplejson.dumps({'code':1,'msg':str(e)}),content_type="application/json")
 
 
 
@@ -232,38 +235,43 @@ def assets_user_save(request):
             for i in assets.split(','):
                 orm_assets = asset.objects.get(id=i)
                 orm_assets.status = '已发放'
-                if assets_data == '':
-                    assets_data = '< %s %s %s >' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
-                else:
-                    assets_data = '%s< %s %s %s >' % (assets_data,orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
                 orm_assets.save()
+                comment_info = u'%s %s %s 出库，发放给<%s>' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code,name)
+                orm_log = log(comment=comment_info)
+                orm_log.save()
+            if assets_data == '':
+                assets_data = '< %s %s %s >' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
+            else:
+                assets_data = '%s< %s %s %s >' % (assets_data,orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
             orm_user = user(name=name,department=department,assets=assets_data,comment=comment,assets_id=assets)
-            comment_info = u'%s %s %s 出库，发放给<%s>' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code,name)
-            orm_log = log(comment=comment_info)
             orm_user.save()
-            orm_log.save()
         else:
             orm = user.objects.get(id=_id)
             for i in orm.assets_id.split(','):
-                orm_assets = asset.objects.get(id=i)
-                orm_assets.status = '未发放'
-                orm_assets.save()
+                if not i in assets.split(','):
+                    orm_assets = asset.objects.get(id=i)
+                    orm_assets.status = '未发放'
+                    orm_assets.save()
+                    comment_info = u'%s %s %s 入库库，从<%s>处收回' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code,name)
+                    orm_log = log(comment=comment_info)
+                    orm_log.save()
             for i in assets.split(','):
-                orm_assets = asset.objects.get(id=i)
-                orm_assets.status = '已发放'
-                if assets_data == '':
-                    assets_data = '< %s %s %s >' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
-                else:
-                    assets_data = '%s< %s %s %s >' % (assets_data,orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
-                orm_assets.save()
+                if not i in orm.assets_id.split(','):
+                    orm_assets = asset.objects.get(id=i)
+                    orm_assets.status = '已发放'
+                    orm_assets.save()
+                    comment_info = u'%s %s %s 出库，发放给<%s>' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code,name)
+                    orm_log = log(comment=comment_info)
+                    orm_log.save()
+            if assets_data == '':
+                assets_data = '< %s %s %s >' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
+            else:
+                assets_data = '%s< %s %s %s >' % (assets_data,orm_assets.name,orm_assets.assets_type,orm_assets.assets_code)
             orm.name = name
             orm.department = department
             orm.assets = assets_data
             orm.comment = comment
             orm.assets_id = assets
-            comment_info = u'%s %s %s 出库，发放给<%s>' % (orm_assets.name,orm_assets.assets_type,orm_assets.assets_code,name)
-            orm_log = log(comment=comment_info)
-            orm_log.save()
             orm.save()
         return HttpResponse(simplejson.dumps({'code':0,'msg':u'保存成功'}),content_type="application/json")
     except Exception,e:
