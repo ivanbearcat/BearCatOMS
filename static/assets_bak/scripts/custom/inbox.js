@@ -97,14 +97,14 @@ var Inbox = function () {
         $('#fileupload').fileupload({
             // Uncomment the following to send cross-domain cookies:
             //xhrFields: {withCredentials: true},
-            url: 'assets/plugins/jquery-file-upload/server/php/',
+            url: 'assets/plugins/jquery-file-operation/server/php/',
             autoUpload: true
         });
 
         // Upload server status check for browsers with CORS support:
         if ($.support.cors) {
             $.ajax({
-                url: 'assets/plugins/jquery-file-upload/server/php/',
+                url: 'assets/plugins/jquery-file-operation/server/php/',
                 type: 'HEAD'
             }).fail(function () {
                 $('<span class="alert alert-error"/>')

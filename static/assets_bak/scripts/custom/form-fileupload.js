@@ -11,7 +11,7 @@ var FormFileUpload = function () {
                 autoUpload: false,
                 // Uncomment the following to send cross-domain cookies:
                 //xhrFields: {withCredentials: true},                
-                url: 'assets/plugins/jquery-file-upload/server/php/'
+                url: 'assets/plugins/jquery-file-operation/server/php/'
             });
 
             // Enable iframe cross-domain access via redirect option:
@@ -38,7 +38,7 @@ var FormFileUpload = function () {
                 // Upload server status check for browsers with CORS support:
             if ($.support.cors) {
                 $.ajax({
-                    url: 'assets/plugins/jquery-file-upload/server/php/',
+                    url: 'assets/plugins/jquery-file-operation/server/php/',
                     type: 'HEAD'
                 }).fail(function () {
                     $('<div class="alert alert-danger"/>')

@@ -28,7 +28,7 @@
     'use strict';
 
     // Detect file input support, based on
-    // http://viljamis.com/blog/2012/file-upload-support-on-mobile/
+    // http://viljamis.com/blog/2012/file-operation-support-on-mobile/
     $.support.fileInput = !(new RegExp(
         // Handle devices which give false positives for the feature detection:
         '(Android (1\\.[0156]|2\\.[01]))' +
@@ -43,7 +43,7 @@
     // as some Safari versions (5?) support XHR file uploads via the FormData API,
     // but not non-multipart XHR file uploads.
     // window.XMLHttpRequestUpload is not available on IE10, so we check for
-    // window.ProgressEvent instead to detect XHR2 file upload capability:
+    // window.ProgressEvent instead to detect XHR2 file operation capability:
     $.support.xhrFileUpload = !!(window.ProgressEvent && window.FileReader);
     $.support.xhrFormDataFileUpload = !!window.FormData;
 
@@ -84,7 +84,7 @@
             // can be a string or an array of strings:
             paramName: undefined,
             // By default, each file of a selection is uploaded using an individual
-            // request for XHR type uploads. Set to false to upload file
+            // request for XHR type uploads. Set to false to operation file
             // selections in one request each:
             singleFileUploads: true,
             // To limit the number of files uploaded with one XHR request,
@@ -98,7 +98,7 @@
             // therefore the following option adds an overhead for each file used
             // in the limitMultiFileUploadSize configuration:
             limitMultiFileUploadSizeOverhead: 512,
-            // Set the following option to true to issue all file upload requests
+            // Set the following option to true to issue all file operation requests
             // in a sequential order:
             sequentialUploads: false,
             // To limit the number of concurrent uploads,
@@ -119,16 +119,16 @@
             // The iframe transport is always using multipart/form-data.
             // Set to false to enable non-multipart XHR uploads:
             multipart: true,
-            // To upload large files in smaller chunks, set the following option
+            // To operation large files in smaller chunks, set the following option
             // to a preferred maximum chunk size. If set to 0, null or undefined,
             // or the browser does not support the required Blob API, files will
             // be uploaded as a whole.
             maxChunkSize: undefined,
-            // When a non-multipart upload or a chunked multipart upload has been
-            // aborted, this option can be used to resume the upload by setting
+            // When a non-multipart operation or a chunked multipart operation has been
+            // aborted, this option can be used to resume the operation by setting
             // it to the size of the already uploaded bytes. This option is most
             // useful when modifying the options object inside of the "add" or
-            // "send" callbacks, as the options are cloned for each file upload.
+            // "send" callbacks, as the options are cloned for each file operation.
             uploadedBytes: undefined,
             // By default, failed (abort or error) file uploads are removed from the
             // global progress calculation. Set the following option to false to
@@ -173,7 +173,7 @@
             // called once for each file in the selection for XHR file uploads, else
             // once for each file selection.
             //
-            // The upload starts when the submit method is invoked on the data parameter.
+            // The operation starts when the submit method is invoked on the data parameter.
             // The data object contains a files property holding the added files
             // and allows you to override plugin options as well as define ajax settings.
             //
@@ -197,10 +197,10 @@
 
             // Other callbacks:
 
-            // Callback for the submit event of each file upload:
+            // Callback for the submit event of each file operation:
             // submit: function (e, data) {}, // .bind('fileuploadsubmit', func);
 
-            // Callback for the start of each file upload request:
+            // Callback for the start of each file operation request:
             // send: function (e, data) {}, // .bind('fileuploadsend', func);
 
             // Callback for successful uploads:
@@ -212,10 +212,10 @@
             // Callback for completed (success, abort or error) requests:
             // always: function (e, data) {}, // .bind('fileuploadalways', func);
 
-            // Callback for upload progress events:
+            // Callback for operation progress events:
             // progress: function (e, data) {}, // .bind('fileuploadprogress', func);
 
-            // Callback for global upload progress events:
+            // Callback for global operation progress events:
             // progressall: function (e, data) {}, // .bind('fileuploadprogressall', func);
 
             // Callback for uploads start, equivalent to the global ajaxStart event:
@@ -236,7 +236,7 @@
             // Callback for dragover events of the dropZone(s):
             // dragover: function (e) {}, // .bind('fileuploaddragover', func);
 
-            // Callback for the start of each chunk upload request:
+            // Callback for the start of each chunk operation request:
             // chunksend: function (e, data) {}, // .bind('fileuploadchunksend', func);
 
             // Callback for successful chunk uploads:
@@ -245,7 +245,7 @@
             // Callback for failed (abort or error) chunk uploads:
             // chunkfail: function (e, data) {}, // .bind('fileuploadchunkfail', func);
 
-            // Callback for completed (success, abort or error) chunk upload requests:
+            // Callback for completed (success, abort or error) chunk operation requests:
             // chunkalways: function (e, data) {}, // .bind('fileuploadchunkalways', func);
 
             // The plugin options are used as settings object for the ajax calls.
@@ -371,7 +371,7 @@
                     data.bitrateInterval
                 );
                 // Trigger a custom progress event with a total data property set
-                // to the file size(s) of the current upload and a loaded data
+                // to the file size(s) of the current operation and a loaded data
                 // property calculated accordingly:
                 this._trigger(
                     'progress',
@@ -392,7 +392,7 @@
             var that = this,
                 xhr = options.xhr ? options.xhr() : $.ajaxSettings.xhr();
             // Accesss to the native XHR object is required to add event listeners
-            // for the upload progress event:
+            // for the operation progress event:
             if (xhr.upload) {
                 $(xhr.upload).bind('progress', function (e) {
                     var oe = e.originalEvent;
@@ -691,7 +691,7 @@
         // by splitting the file up in multiple blob chunks.
         // If the second parameter is true, only tests if the file
         // should be uploaded in chunks, but does not invoke any
-        // upload requests:
+        // operation requests:
         _chunkedUpload: function (options, testOnly) {
             options.uploadedBytes = options.uploadedBytes || 0;
             var that = this,
@@ -719,9 +719,9 @@
                     [null, 'error', file.error]
                 );
             }
-            // The chunk upload method:
+            // The chunk operation method:
             upload = function () {
-                // Clone the options object for each chunk upload:
+                // Clone the options object for each chunk operation:
                 var o = $.extend({}, options),
                     currentLoaded = o._progress.loaded;
                 o.blob = slice.call(
@@ -736,9 +736,9 @@
                 // Expose the chunk bytes position range:
                 o.contentRange = 'bytes ' + ub + '-' +
                     (ub + o.chunkSize - 1) + '/' + fs;
-                // Process the upload data (the blob and potential form data):
+                // Process the operation data (the blob and potential form data):
                 that._initXHRData(o);
-                // Add progress listeners for this chunk upload:
+                // Add progress listeners for this chunk operation:
                 that._initProgressListener(o);
                 jqXHR = ((that._trigger('chunksend', null, o) !== false && $.ajax(o)) ||
                         that._getXHRPromise(false, o.context))
@@ -762,7 +762,7 @@
                         that._trigger('chunkdone', null, o);
                         that._trigger('chunkalways', null, o);
                         if (ub < fs) {
-                            // File upload not yet complete,
+                            // File operation not yet complete,
                             // continue with the next chunk:
                             upload();
                         } else {
@@ -794,7 +794,7 @@
 
         _beforeSend: function (e, data) {
             if (this._active === 0) {
-                // the start callback is triggered when an upload starts
+                // the start callback is triggered when an operation starts
                 // and no other uploads are currently running,
                 // equivalent to the global ajaxStart event:
                 this._trigger('start');
@@ -839,7 +839,7 @@
         _onFail: function (jqXHR, textStatus, errorThrown, options) {
             var response = options._response;
             if (options.recalculateProgress) {
-                // Remove the failed (error or abort) file upload from
+                // Remove the failed (error or abort) file operation from
                 // the global progress calculation:
                 this._progress.loaded -= options._progress.loaded;
                 this._progress.total -= options._progress.total;
@@ -893,7 +893,7 @@
                         that._active -= 1;
                         if (options.limitConcurrentUploads &&
                                 options.limitConcurrentUploads > that._sending) {
-                            // Start the next queued upload,
+                            // Start the next queued operation,
                             // that has not been aborted:
                             var nextSlot = that._slots.shift();
                             while (nextSlot) {
@@ -925,7 +925,7 @@
                     pipe = this._sequence;
                 }
                 // Return the piped Promise object, enhanced with an abort method,
-                // which is delegated to the jqXHR object of the current upload,
+                // which is delegated to the jqXHR object of the current operation,
                 // and jqXHR callbacks mapped to the equivalent Promise methods:
                 pipe.abort = function () {
                     aborted = [undefined, 'abort', 'abort'];
@@ -1337,7 +1337,7 @@
         },
 
         // This method is exposed to the widget API and allows to query
-        // the widget upload progress.
+        // the widget operation progress.
         // It returns an object with loaded, total and bitrate properties
         // for the running uploads:
         progress: function () {
@@ -1368,7 +1368,7 @@
         // using the fileupload API. The data parameter accepts an object which
         // must have a files or fileInput property and can contain additional options:
         // .fileupload('send', {files: filesList});
-        // The method returns a Promise object for the file upload call.
+        // The method returns a Promise object for the file operation call.
         send: function (data) {
             if (data && !this.options.disabled) {
                 if (data.fileInput && !data.files) {

@@ -40,7 +40,7 @@
         'downloadTemplateId'
     );
 
-    // The UI version extends the file upload widget
+    // The UI version extends the file operation widget
     // and adds complete user interface interaction:
     $.widget('blueimp.fileupload', $.blueimp.fileupload, {
 
@@ -49,8 +49,8 @@
             // as the user clicks on the start buttons. To enable automatic
             // uploads, set the following option to true:
             autoUpload: false,
-            // The ID of the upload template:
-            uploadTemplateId: 'template-upload',
+            // The ID of the operation template:
+            uploadTemplateId: 'template-operation',
             // The ID of the download template:
             downloadTemplateId: 'template-download',
             // The container for the list of files. If undefined, it is set to
@@ -59,8 +59,8 @@
             // By default, files are appended to the files container.
             // Set the following option to true, to prepend files instead:
             prependFiles: false,
-            // The expected data type of the upload response, sets the dataType
-            // option of the $.ajax upload requests:
+            // The expected data type of the operation response, sets the dataType
+            // option of the $.ajax operation requests:
             dataType: 'json',
 
             // Function returning the current number of files,
@@ -80,7 +80,7 @@
 
             // The add callback is invoked as soon as files are added to the fileupload
             // widget (via file input selection, drag & drop or add API call).
-            // See the basic file upload widget for more information:
+            // See the basic file operation widget for more information:
             add: function (e, data) {
                 if (e.isDefaultPrevented()) {
                     return false;
@@ -126,7 +126,7 @@
                     }
                 });
             },
-            // Callback for the start of each file upload request:
+            // Callback for the start of each file operation request:
             send: function (e, data) {
                 if (e.isDefaultPrevented()) {
                     return false;
@@ -165,7 +165,7 @@
                 if (data.context) {
                     data.context.each(function (index) {
                         var file = files[index] ||
-                                {error: 'Empty file upload result'};
+                                {error: 'Empty file operation result'};
                         deferred = that._addFinishedDeferreds();
                         that._transition($(this)).done(
                             function () {
@@ -265,7 +265,7 @@
                     that._addFinishedDeferreds().resolve();
                 }
             },
-            // Callback for upload progress events:
+            // Callback for operation progress events:
             progress: function (e, data) {
                 if (e.isDefaultPrevented()) {
                     return false;
@@ -282,7 +282,7 @@
                     });
                 }
             },
-            // Callback for global upload progress events:
+            // Callback for global operation progress events:
             progressall: function (e, data) {
                 if (e.isDefaultPrevented()) {
                     return false;
@@ -504,7 +504,7 @@
         _startHandler: function (e) {
             e.preventDefault();
             var button = $(e.currentTarget),
-                template = button.closest('.template-upload'),
+                template = button.closest('.template-operation'),
                 data = template.data('data');
             button.prop('disabled', true);
             if (data && data.submit) {
@@ -515,7 +515,7 @@
         _cancelHandler: function (e) {
             e.preventDefault();
             var template = $(e.currentTarget)
-                    .closest('.template-upload,.template-download'),
+                    .closest('.template-operation,.template-download'),
                 data = template.data('data') || {};
             data.context = data.context || template;
             if (data.abort) {
