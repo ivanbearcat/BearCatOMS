@@ -4564,3 +4564,169 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django\template\loader.py", line 138, in find_template
     raise TemplateDoesNotExist(name)
 TemplateDoesNotExist: operation/uoload.html
+[2015-06-24 10:43:25,428] WARNING : Not Found: /get_upload/
+[2015-06-24 10:47:03,571] ERROR : Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 18, in upload
+    'page_name2':u'鏂囦欢涓婁紶'})
+  File "C:\Python27\lib\site-packages\django\shortcuts\__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 153, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python27\lib\site-packages\django\template\base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django\template\defaulttags.py", line 755, in do_for
+    " 'for x in y': %s" % token.contents)
+TemplateSyntaxError: 'for' statements should use the format 'for x in y': for (var i=0, file; file=o.files[i]; i++) {
+[2015-06-24 13:29:33,145] WARNING : Not Found: /operation/upload/
+[2015-06-24 14:10:25,923] WARNING : Not Found: /operation/get_upload/
+[2015-06-24 14:28:01,759] ERROR : Internal Server Error: /get_upload/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 46, in get_upload
+    handle_uploaded_file(request.FILES['file'])
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 258, in __getitem__
+    raise MultiValueDictKeyError("Key %r not found in %r" % (key, self))
+MultiValueDictKeyError: "Key 'file' not found in <MultiValueDict: {}>"
+[2015-06-24 14:28:29,846] ERROR : Internal Server Error: /get_upload/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 45, in get_upload
+    print request.FILES['file']
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 258, in __getitem__
+    raise MultiValueDictKeyError("Key %r not found in %r" % (key, self))
+MultiValueDictKeyError: "Key 'file' not found in <MultiValueDict: {}>"
+[2015-06-24 14:28:48,365] ERROR : Internal Server Error: /get_upload/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 45, in get_upload
+    print request.FILES['file']
+  File "C:\Python27\lib\site-packages\django\utils\datastructures.py", line 258, in __getitem__
+    raise MultiValueDictKeyError("Key %r not found in %r" % (key, self))
+MultiValueDictKeyError: "Key 'file' not found in <MultiValueDict: {}>"
+[2015-06-24 17:04:13,914] ERROR : Internal Server Error: /get_upload/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 49, in get_upload
+    handle_uploaded_file(file)
+TypeError: handle_uploaded_file() takes exactly 2 arguments (1 given)
+[2015-06-24 17:39:00,980] ERROR : Internal Server Error: /upload_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 89, in upload_data
+    if len(i.file_size) >= 4 and len(i.file_size) < 7:
+TypeError: object of type 'long' has no len()
+[2015-06-24 17:43:01,331] ERROR : Internal Server Error: /upload_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 93, in upload_data
+    file_size = i.file_size / 1024.0 / 1024.0 + 'M'
+TypeError: unsupported operand type(s) for +: 'float' and 'str'
+[2015-06-24 17:44:21,480] ERROR : Internal Server Error: /upload_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 104, in upload_data
+    '1':file_size.group(),
+AttributeError: 'str' object has no attribute 'group'
+[2015-06-24 17:44:42,183] ERROR : Internal Server Error: /upload_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 90, in upload_data
+    file_size = i.file_size / 1024.0 + 'K'
+TypeError: unsupported operand type(s) for +: 'float' and 'str'
+[2015-06-24 17:45:09,042] ERROR : Internal Server Error: /upload_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 114, in upload_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2015, 6, 24, 17, 13, 40) is not JSON serializable
+[2015-06-24 17:45:31,762] ERROR : Internal Server Error: /upload_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 114, in upload_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2015, 6, 24, 17, 13, 40) is not JSON serializable
+[2015-06-24 17:46:26,186] ERROR : Internal Server Error: /upload_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 114, in upload_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2015, 6, 24, 17, 13, 40) is not JSON serializable
+[2015-06-24 17:50:13,710] ERROR : Internal Server Error: /upload_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 114, in upload_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2015, 6, 24, 17, 13, 40) is not JSON serializable
+[2015-06-24 18:08:22,963] WARNING : Not Found: /upload_del/
+[2015-06-24 18:15:49,203] ERROR : [Error 2] 

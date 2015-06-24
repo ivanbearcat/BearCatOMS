@@ -133,6 +133,7 @@ INSTALLED_APPS = (
     'debugtools',
     'assets',
     'audit',
+    'operation',
 )
 
 # A sample logging configuration. The only tangible logging
