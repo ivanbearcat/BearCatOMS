@@ -4730,3 +4730,11 @@ Traceback (most recent call last):
 TypeError: datetime.datetime(2015, 6, 24, 17, 13, 40) is not JSON serializable
 [2015-06-24 18:08:22,963] WARNING : Not Found: /upload_del/
 [2015-06-24 18:15:49,203] ERROR : [Error 2] 
+[2015-06-25 11:01:11,262] WARNING : Not Found: /
+[2015-06-25 11:01:11,344] WARNING : Not Found: /favicon.ico
+[2015-06-25 11:01:11,351] WARNING : Not Found: /favicon.ico
+[2015-06-25 11:01:29,783] WARNING : Not Found: /
+[2015-06-25 11:01:29,839] WARNING : Not Found: /favicon.ico
+[2015-06-25 11:01:50,776] WARNING : Not Found: /
+[2015-06-25 11:11:17,986] WARNING : <admin> login in fail.
+[2015-06-25 11:11:43,096] INFO : <admin> login in sucess.
