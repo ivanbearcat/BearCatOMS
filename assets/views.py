@@ -82,6 +82,7 @@ def assets_asset_data(request):
     }
     return HttpResponse(simplejson.dumps(result),content_type="application/json")
 
+@login_required
 def assets_asset_save(request):
     _id = request.POST.get('id')
     assets_type = request.POST.get('assets_type')

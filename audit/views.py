@@ -81,6 +81,10 @@ def audit_get_data(request):
     username = request.POST.get('username')
     command = request.POST.get ('command')
     time = request.POST.get ('time')
+    last_command = log.objects.all().order_by('id').reverse()[:1]
+    for i in last_command:
+        if i.command == command:
+            return HttpResponse('duplicate')
     try:
         log.objects.create(source_ip=ip,username=username,command=command,time=time)
         return HttpResponse('success')

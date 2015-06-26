@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import urllib,urllib2,socket,sys,fcntl,struct
+import urllib,urllib2,socket,sys,fcntl,struct,threading
 
 
 def get_local_ip(ifname):
@@ -19,7 +19,13 @@ values = {'ip':ip,
 
 data = urllib.urlencode(values)
 post_url = 'http://192.168.100.42:8000/audit_get_data/'
+
+def run(post_url,data):
+	urllib2.urlopen(post_url,data)
+
 try:
-	conn = urllib2.urlopen(post_url,data)
+	thread = threading.Thread(target=run, args=(post_url,data))
+	thread.start()
+#	conn = urllib2.urlopen(post_url,data)
 except Exception , e:
 	pass

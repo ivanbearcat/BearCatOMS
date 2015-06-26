@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.utils.log import logger
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-import simplejson,re,os,datetime
+import simplejson,re,os,datetime,time,subprocess
 from django.db.models.query_utils import Q
 from operation.models import upload_files
 from django import forms
@@ -22,6 +22,7 @@ class UploadFileForm(forms.Form):
     title = forms.CharField(max_length=50)
     file = forms.FileField()
 
+@login_required
 def handle_uploaded_file(request,f):
     file_name = ''
     try:
@@ -46,12 +47,14 @@ def handle_uploaded_file(request,f):
         logger.error(e)
     return file_name
 
+@login_required
 def get_upload(request):
     file = request.FILES.get('file')
     if not file == None:
         handle_uploaded_file(request,file)
     return HttpResponse(simplejson.dumps({'msg': "上传成功", "code": 0}),content_type="application/json")
 
+@login_required
 def upload_data(request):
     sEcho =  request.POST.get('sEcho') #标志，直接返回
     iDisplayStart = int(request.POST.get('iDisplayStart'))#第几行开始
@@ -115,6 +118,7 @@ def upload_data(request):
     }
     return HttpResponse(simplejson.dumps(result),content_type="application/json")
 
+@login_required
 def upload_del(request):
     _id = request.POST.get('id')
     orm = upload_files.objects.get(id=_id)
@@ -125,3 +129,62 @@ def upload_del(request):
     except Exception,e:
         logger.error(e)
         return HttpResponse(simplejson.dumps({'code':1,'msg':str(e)}),content_type="application/json")
+
+@login_required
+def upload_upload(request):
+    flag = request.POST.get('flag')
+    if flag == 0:
+        #开始传输
+        _id = request.POST.get('id')
+        orm = upload_files.objects.get(id=_id)
+        cmdLine = []
+        cmdLine.append('rsync')
+        cmdLine.append('--progress')
+        cmdLine.append('upload/%s' % orm.file_name)
+        cmdLine.append('192.168.100.206:.')
+        tmpFile = "tmp/upload.tmp"  #临时生成一个文件
+        fpWrite = open(tmpFile,'w')
+        process = subprocess.Popen(cmdLine,stdout = fpWrite,stderr = subprocess.PIPE);
+        while True:
+            fpRead = open(tmpFile,'r')  #这里又重新创建了一个文件读取对象，不知为何，用上面的就是读不出来，改w+也不>行
+            lines = fpRead.readlines()
+            for line in lines:
+                a = re.search(r'\d+%',line)
+                if a:
+                    with open('tmp/percent.tmp','a') as f:
+                            f.write(a.group())
+                    print a.group()
+            if  process.poll() == 0:
+                break;
+            elif process.poll() == None:
+                pass
+            else:
+                print 'error'
+                break
+            fpWrite.truncate()  #此处清空文件，等待记录下一次输出的进度
+            fpRead.close()
+            time.sleep(0.5)
+        fpWrite.close()
+    #    error = process.stderr.read()
+    #    if not error == None:
+    #        print 'error info:%s' % error
+    #     os.remove(tmpFile) #删除临时文件
+    #     os.remove('tmp/percent.tmp')
+        return HttpResponse(simplejson.dumps({'code':0,'msg':u'文件开始传输'}),content_type="application/json")
+    elif flag == 1:
+        #获取百分比
+        process = 1
+        if not os.path.exists('tmp/percent.tmp'):
+            process = 0
+        with open('tmp/percent.tmp') as f:
+            data = f.readline()
+            if data:
+                last_percent = re.search(r'\d{1,2}%$',data)
+                if last_percent:
+                    print last_percent.group()
+                    return HttpResponse(simplejson.dumps({'code':0,'percent':last_percent.group(),'process':process}),content_type="application/json")
+                else:
+                    return HttpResponse(simplejson.dumps({'code':0,'percent':0,'process':process}),content_type="application/json")
+    else:
+        pass
+        return HttpResponse(simplejson.dumps({'code':1,'msg':u'文件传输失败'}),content_type="application/json")

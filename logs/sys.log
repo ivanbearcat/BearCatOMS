@@ -4738,3 +4738,136 @@ TypeError: datetime.datetime(2015, 6, 24, 17, 13, 40) is not JSON serializable
 [2015-06-25 11:01:50,776] WARNING : Not Found: /
 [2015-06-25 11:11:17,986] WARNING : <admin> login in fail.
 [2015-06-25 11:11:43,096] INFO : <admin> login in sucess.
+[2015-06-26 15:01:48,573] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 84, in audit_get_data
+    if command_cache == command:
+UnboundLocalError: local variable 'command_cache' referenced before assignment
+[2015-06-26 15:05:19,230] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 84, in audit_get_data
+    command_cache = log.objects.all()[-1]
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 174, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+[2015-06-26 15:07:23,095] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 86, in audit_get_data
+    if command_cache.command == command:
+AttributeError: 'QuerySet' object has no attribute 'command'
+[2015-06-26 15:10:05,296] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 84, in audit_get_data
+    command_cache = log.objects.all()[-1]
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 174, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+[2015-06-26 16:10:01,430] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 87, in audit_get_data
+    print command_cache.command,command
+AttributeError: 'QuerySet' object has no attribute 'command'
+[2015-06-26 16:12:35,345] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 85, in audit_get_data
+    print command_cache[-1].command
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 174, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+[2015-06-26 16:30:59,471] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 85, in audit_get_data
+    print command_cache.command,command
+AttributeError: 'QuerySet' object has no attribute 'command'
+[2015-06-26 16:32:05,279] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 85, in audit_get_data
+    for i in command_cache:
+TypeError: 'log' object is not iterable
+[2015-06-26 16:34:05,740] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 84, in audit_get_data
+    command_cache = log.objects.all()[-1:0]
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 174, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+[2015-06-26 16:34:52,588] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 84, in audit_get_data
+    command_cache = log.objects.all().order_by(id)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 759, in order_by
+    obj.query.add_ordering(*field_names)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1683, in add_ordering
+    if not ORDER_PATTERN.match(item):
+TypeError: expected string or buffer
+[2015-06-26 16:36:06,552] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 85, in audit_get_data
+    for i in command_cache:
+TypeError: 'log' object is not iterable
+[2015-06-26 16:36:10,573] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 85, in audit_get_data
+    for i in command_cache:
+TypeError: 'log' object is not iterable
+[2015-06-26 16:36:35,694] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 85, in audit_get_data
+    for i in command_cache:
+TypeError: 'log' object is not iterable
+[2015-06-26 16:36:45,177] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 85, in audit_get_data
+    for i in command_cache:
+TypeError: 'log' object is not iterable
+[2015-06-26 16:37:00,563] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 85, in audit_get_data
+    for i in command_cache:
+TypeError: 'log' object is not iterable
+[2015-06-26 16:37:22,471] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 84, in audit_get_data
+    command_cache = log.objects.all().order_by('id')[:-1]
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 174, in __getitem__
+    "Negative indexing is not supported."
+AssertionError: Negative indexing is not supported.
+[2015-06-26 16:37:46,177] ERROR : Internal Server Error: /audit_get_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "E:\BearCatOMS_1.4.20\audit\views.py", line 85, in audit_get_data
+    for i in command_cache:
+TypeError: 'log' object is not iterable
