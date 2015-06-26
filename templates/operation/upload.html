@@ -261,7 +261,7 @@ function upload() {
     var oTT = TableTools.fnGetInstance('datatables');
     var aData = oTT.fnGetSelectedData();
     if (aData.length == 1) {
-        $.post('/upload_upload/', {id: aData[0][0], flag: 0}, function (d) {
+        $.post('/upload_upload/', {file_name: aData[0][4], flag: 0}, function (d) {
             if (d.code == 0) {
                 toastr.success(d.msg)
             } else {

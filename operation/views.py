@@ -135,12 +135,12 @@ def upload_upload(request):
     flag = request.POST.get('flag')
     if flag == 0:
         #开始传输
-        _id = request.POST.get('id')
-        orm = upload_files.objects.get(id=_id)
+        file_name = request.POST.get('file_name')
+        # orm = upload_files.objects.get(file_name=file_name)
         cmdLine = []
         cmdLine.append('rsync')
         cmdLine.append('--progress')
-        cmdLine.append('upload/%s' % orm.file_name)
+        cmdLine.append('upload/%s' % file_name)
         cmdLine.append('192.168.100.206:.')
         tmpFile = "tmp/upload.tmp"  #临时生成一个文件
         fpWrite = open(tmpFile,'w')
