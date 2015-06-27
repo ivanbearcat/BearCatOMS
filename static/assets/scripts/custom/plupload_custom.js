@@ -12,7 +12,7 @@ var PluploadCustom = function () {
             url : "/get_upload/",
              
             filters : {
-                max_file_size : '10000mb',
+                max_file_size : '100000000mb',
                 mime_types: [
                     {title : "Zip files", extensions : "zip"}
 

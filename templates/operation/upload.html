@@ -108,23 +108,25 @@ $(document).ready(function () {
                 "sButtonClass": "btn blue",
                 "fnComplete": function (nButton, oConfig, nRow) {
                     upload()
+		    toastr.success('文件开始传输')
                     var temp = setInterval(function() {
                         var oTT = TableTools.fnGetInstance('datatables');
                         var aData = oTT.fnGetSelectedData();
                         if (aData.length == 1) {
-                            $.post('/upload_upload/', {id: aData[0][0], flag: 1}, function (d) {
+                            $.post('/upload_upload/', {file_name: aData[0][0], flag: 1}, function (d) {
                                 if (d.code == 0) {
-                                    $('#process').attr('style', 'width:' + d.percent + '%');
+                                    $('#process').attr('style', 'width:' + d.percent);
                                 } else {
                                     toastr.error(d.msg)
                                 }
                                 if (d.process == 0) {
+				    $('#process').attr('style', 'width: 100%');
+				    setTimeout('clear_percent()',2000)
                                     clearInterval(temp);
                                 }
                             })
                         }
-                    })
-                $('#process').attr('style', 'width: 0%');
+                    },1000)
                 }
             },
             {
@@ -261,7 +263,7 @@ function upload() {
     var oTT = TableTools.fnGetInstance('datatables');
     var aData = oTT.fnGetSelectedData();
     if (aData.length == 1) {
-        $.post('/upload_upload/', {file_name: aData[0][4], flag: 0}, function (d) {
+        $.post('/upload_upload/', {file_name: aData[0][0], flag: 0}, function (d) {
             if (d.code == 0) {
                 toastr.success(d.msg)
             } else {
@@ -286,6 +288,10 @@ function del() {
             }
         })
     }
+}
+
+function clear_percent() {
+    $('#process').attr('style', 'width: 0%');
 }
 
 </script>

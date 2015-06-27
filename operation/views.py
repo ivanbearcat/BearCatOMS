@@ -133,17 +133,19 @@ def upload_del(request):
 @login_required
 def upload_upload(request):
     flag = request.POST.get('flag')
-    if flag == 0:
+    file_name = request.POST.get('file_name')
+    if int(flag) == 0:
         #开始传输
-        file_name = request.POST.get('file_name')
         # orm = upload_files.objects.get(file_name=file_name)
         cmdLine = []
         cmdLine.append('rsync')
         cmdLine.append('--progress')
-        cmdLine.append('upload/%s' % file_name)
-        cmdLine.append('192.168.100.206:.')
+        cmdLine.append('uploads/%s' % file_name)
+        cmdLine.append('192.168.1.12:.')
         tmpFile = "tmp/upload.tmp"  #临时生成一个文件
         fpWrite = open(tmpFile,'w')
+	with open('tmp/rsync_status_file.tmp','w') as f:
+	    pass
         process = subprocess.Popen(cmdLine,stdout = fpWrite,stderr = subprocess.PIPE);
         while True:
             fpRead = open(tmpFile,'r')  #这里又重新创建了一个文件读取对象，不知为何，用上面的就是读不出来，改w+也不>行
@@ -163,28 +165,32 @@ def upload_upload(request):
                 break
             fpWrite.truncate()  #此处清空文件，等待记录下一次输出的进度
             fpRead.close()
-            time.sleep(0.5)
+            time.sleep(0.7)
         fpWrite.close()
+	os.remove('tmp/rsync_status_file.tmp')
     #    error = process.stderr.read()
     #    if not error == None:
     #        print 'error info:%s' % error
-    #     os.remove(tmpFile) #删除临时文件
-    #     os.remove('tmp/percent.tmp')
-        return HttpResponse(simplejson.dumps({'code':0,'msg':u'文件开始传输'}),content_type="application/json")
-    elif flag == 1:
+        os.remove(tmpFile) #删除临时文件
+        os.remove('tmp/percent.tmp')
+        return HttpResponse(simplejson.dumps({'code':0,'msg':u'文件传输成功'}),content_type="application/json")
+    elif int(flag) == 1:
         #获取百分比
-        process = 1
-        if not os.path.exists('tmp/percent.tmp'):
+	if os.path.exists('tmp/rsync_status_file.tmp'):
+            process = 1
+	else:
             process = 0
-        with open('tmp/percent.tmp') as f:
-            data = f.readline()
-            if data:
-                last_percent = re.search(r'\d{1,2}%$',data)
-                if last_percent:
-                    print last_percent.group()
-                    return HttpResponse(simplejson.dumps({'code':0,'percent':last_percent.group(),'process':process}),content_type="application/json")
-                else:
-                    return HttpResponse(simplejson.dumps({'code':0,'percent':0,'process':process}),content_type="application/json")
+	if os.path.exists('tmp/percent.tmp'):
+            with open('tmp/percent.tmp') as f:
+                data = f.readline()
+                if data:
+                    last_percent = re.search(r'\d{1,2}%$',data)
+                    if last_percent:
+                        print last_percent.group()
+                        return HttpResponse(simplejson.dumps({'code':0,'percent':last_percent.group(),'process':process}),content_type="application/json")
+        else:
+            return HttpResponse(simplejson.dumps({'code':0,'percent':0,'process':process}),content_type="application/json")
+	    
     else:
         pass
         return HttpResponse(simplejson.dumps({'code':1,'msg':u'文件传输失败'}),content_type="application/json")

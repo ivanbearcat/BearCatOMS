@@ -21,7 +21,7 @@ DATABASES = {
         'NAME': 'BearCatOMS',
 	    'USER': 'BearCat',
 	    'PASSWORD': 'xzm_123.',
-	    'HOST': '192.168.100.151',
+	    'HOST': '192.168.1.11',
     }
 }
 
@@ -130,7 +130,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'debugtools',
+    # 'debugtools',
     'assets',
     'audit',
     'operation',
