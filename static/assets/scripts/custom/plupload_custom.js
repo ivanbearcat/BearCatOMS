@@ -13,6 +13,7 @@ var PluploadCustom = function () {
              
             filters : {
                 max_file_size : '100000000mb',
+                chunk_size : '1000mb',
                 mime_types: [
                     {title : "Zip files", extensions : "zip"}
 
@@ -49,7 +50,6 @@ var PluploadCustom = function () {
                 },
          
                 UploadProgress: function(up, file) {
-
                     $('#uploaded_file_' + file.id + ' > .status').html(file.percent + '%');
                 },
 

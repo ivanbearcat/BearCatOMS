@@ -31,7 +31,7 @@ def handle_uploaded_file(request,f):
         if not os.path.exists(path):
             os.makedirs(path)
         if os.path.isfile(file_name):
-            time = datetime.datetime.now().strftime('%Y%m%d%H%M')
+            time = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
             os.rename(file_name,file_name + '_' + time)
             orm = upload_files.objects.get(file_name=f.name)
             orm.file_name = f.name + '_' + time
@@ -42,17 +42,24 @@ def handle_uploaded_file(request,f):
         file.close()
         file_size = os.path.getsize(file_name)
         upload_files.objects.create(file_name=f.name,file_size=file_size,upload_user=request.user.username)
+        result_code = 0
     except Exception, e:
         print e
         logger.error(e)
-    return file_name
+        result_code = 1
+    return result_code
 
 @login_required
 def get_upload(request):
     file = request.FILES.get('file')
     if not file == None:
-        handle_uploaded_file(request,file)
-    return HttpResponse(simplejson.dumps({'msg': "上传成功", "code": 0}),content_type="application/json")
+        result_code = handle_uploaded_file(request,file)
+        if result_code == 0:
+            return HttpResponse(simplejson.dumps({'msg': "上传成功", "code": 0}),content_type="application/json")
+        else:
+            return HttpResponse(simplejson.dumps({'msg': "上传失败", "code": 1}),content_type="application/json")
+    else:
+        return HttpResponse(simplejson.dumps({'msg': "上传失败", "code": 1}),content_type="application/json")
 
 @login_required
 def upload_data(request):
