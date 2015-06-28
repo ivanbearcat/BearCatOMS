@@ -4998,3 +4998,38 @@ Traceback (most recent call last):
     raise errorclass, errorvalue
 DatabaseError: (1146, "Table 'BearCatOMS.django_session' doesn't exist")
 [2015-06-28 14:58:16,464] INFO : <admin> login in sucess.
+[2015-06-28 22:15:18,515] WARNING : Not Found: /server_list/
+[2015-06-28 22:28:37,700] ERROR : Internal Server Error: /server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 241, in server_list
+    result_data = server_list.objects.all().order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
+AttributeError: 'function' object has no attribute 'objects'
+[2015-06-28 22:57:16,318] WARNING : Not Found: /search_server_list/
+[2015-06-28 22:57:28,341] WARNING : Not Found: /search_server_list/
+[2015-06-28 22:58:16,677] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.
+[2015-06-28 23:02:25,746] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 273, in search_server_list
+    cmd = crypt.strong_encrypt(SECRET_KEY,{'salt':1,'act':'test.ping','hosts':'*'})
+  File "E:\BearCatOMS\libs\crypt.py", line 56, in strong_encrypt
+    data = base64.b64encode(text)
+  File "C:\Python27\lib\base64.py", line 53, in b64encode
+    encoded = binascii.b2a_base64(s)[:-1]
+TypeError: must be string or buffer, not dict
+[2015-06-28 23:03:30,595] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.

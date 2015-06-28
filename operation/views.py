@@ -6,8 +6,10 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 import simplejson,re,os,datetime,time,subprocess
 from django.db.models.query_utils import Q
-from operation.models import upload_files
+from operation.models import upload_files,server_list
 from django import forms
+from libs import crypt
+from BearCatOMS.settings import SECRET_KEY
 
 @login_required
 def upload(request):
@@ -151,8 +153,8 @@ def upload_upload(request):
         cmdLine.append('192.168.1.12:.')
         tmpFile = "tmp/upload.tmp"  #临时生成一个文件
         fpWrite = open(tmpFile,'w')
-	with open('tmp/rsync_status_file.tmp','w') as f:
-	    pass
+        with open('tmp/rsync_status_file.tmp','w') as f:
+            pass
         process = subprocess.Popen(cmdLine,stdout = fpWrite,stderr = subprocess.PIPE);
         while True:
             fpRead = open(tmpFile,'r')  #这里又重新创建了一个文件读取对象，不知为何，用上面的就是读不出来，改w+也不>行
@@ -174,7 +176,7 @@ def upload_upload(request):
             fpRead.close()
             time.sleep(0.7)
         fpWrite.close()
-	os.remove('tmp/rsync_status_file.tmp')
+        os.remove('tmp/rsync_status_file.tmp')
     #    error = process.stderr.read()
     #    if not error == None:
     #        print 'error info:%s' % error
@@ -183,11 +185,11 @@ def upload_upload(request):
         return HttpResponse(simplejson.dumps({'code':0,'msg':u'文件传输成功'}),content_type="application/json")
     elif int(flag) == 1:
         #获取百分比
-	if os.path.exists('tmp/rsync_status_file.tmp'):
+        if os.path.exists('tmp/rsync_status_file.tmp'):
             process = 1
-	else:
+        else:
             process = 0
-	if os.path.exists('tmp/percent.tmp'):
+        if os.path.exists('tmp/percent.tmp'):
             with open('tmp/percent.tmp') as f:
                 data = f.readline()
                 if data:
@@ -197,7 +199,77 @@ def upload_upload(request):
                         return HttpResponse(simplejson.dumps({'code':0,'percent':last_percent.group(),'process':process}),content_type="application/json")
         else:
             return HttpResponse(simplejson.dumps({'code':0,'percent':0,'process':process}),content_type="application/json")
-	    
+
     else:
         pass
         return HttpResponse(simplejson.dumps({'code':1,'msg':u'文件传输失败'}),content_type="application/json")
+
+@login_required
+def server_operation(request):
+    path = request.path.split('/')[1]
+    return render_to_response('operation/server_operation.html',{'user':request.user.username,
+                                                           'path1':'operation',
+                                                           'path2':path,
+                                                           'page_name1':u'运维操作',
+                                                           'page_name2':u'服务器操作'})
+@login_required
+def get_server_list(request):
+    sEcho =  request.POST.get('sEcho') #标志，直接返回
+    iDisplayStart = int(request.POST.get('iDisplayStart'))#第几行开始
+    iDisplayLength = int(request.POST.get('iDisplayLength'))#显示多少行
+    iSortCol_0 = int(request.POST.get("iSortCol_0"))#排序行号
+    sSortDir_0 = request.POST.get('sSortDir_0')#asc/desc
+    sSearch = request.POST.get('sSearch')#高级搜索
+
+    aaData = []
+    sort = ['server_name','ip','os','comment']
+
+    if  sSortDir_0 == 'asc':
+        if sSearch == '':
+            result_data = server_list.objects.all().order_by(sort[iSortCol_0])[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = server_list.objects.all().count()
+        else:
+            result_data = server_list.objects.filter(Q(server_name__contains=sSearch) | \
+                                               Q(ip__contains=sSearch) | \
+                                               Q(comment__contains=sSearch) | \
+                                               Q(os__contains=sSearch)) \
+                                            .order_by(sort[iSortCol_0])[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = server_list.objects.filter(Q(server_name__contains=sSearch) | \
+                                                 Q(ip__contains=sSearch) | \
+                                                 Q(comment__contains=sSearch) | \
+                                                 Q(os__contains=sSearch)).count()
+    else:
+        if sSearch == '':
+            result_data = server_list.objects.all().order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = server_list.objects.all().count()
+        else:
+            result_data = server_list.objects.filter(Q(server_name__contains=sSearch) | \
+                                               Q(ip__contains=sSearch) | \
+                                               Q(comment__contains=sSearch) | \
+                                               Q(os__contains=sSearch)) \
+                                            .order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = server_list.objects.filter(Q(server_name__contains=sSearch) | \
+                                                 Q(ip__contains=sSearch) | \
+                                                 Q(comment__contains=sSearch) | \
+                                                 Q(os__contains=sSearch)).count()
+
+    for i in  result_data:
+        aaData.append({
+                       '0':i.server_name,
+                       '1':i.ip,
+                       '2':i.os,
+                       '3':i.comment,
+                       '4':i.id
+                      })
+    result = {'sEcho':sEcho,
+               'iTotalRecords':iTotalRecords,
+               'iTotalDisplayRecords':iTotalRecords,
+               'aaData':aaData
+    }
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+
+@login_required
+def search_server_list(request):
+    cmd = crypt.strong_encrypt(SECRET_KEY,"{'salt':1,'act':'test.ping','hosts':'*'}")
+    print cmd
+    
