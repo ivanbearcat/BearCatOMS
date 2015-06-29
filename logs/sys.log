@@ -5100,3 +5100,392 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
     raise errorclass, errorvalue
 DatabaseError: (1146, "Table 'BearCatOMS.operation_server_list' doesn't exist")
+[2015-06-29 15:08:16,424] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 281, in search_server_list
+    recv_data = crypt.strong_decrypt(SECRET_KEY,str(recv_data))
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 62, in strong_decrypt
+    data = base64.b64decode(data)
+  File "C:\Python27\lib\base64.py", line 76, in b64decode
+    raise TypeError(msg)
+TypeError: Incorrect padding
+[2015-06-29 15:16:17,193] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 284, in search_server_list
+    yaml_data = yaml.dump(eval(recv_data))
+  File "<string>", line 1
+    QFeD?     ^
+SyntaxError: invalid syntax
+[2015-06-29 15:24:19,973] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 284, in search_server_list
+    yaml_data = yaml.dump(eval(str(recv_data)))
+  File "<string>", line 1
+    QFeD?     ^
+SyntaxError: invalid syntax
+[2015-06-29 15:25:06,836] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 284, in search_server_list
+    print yaml_data
+NameError: global name 'yaml_data' is not defined
+[2015-06-29 15:25:25,661] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.
+[2015-06-29 15:26:00,226] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 281, in search_server_list
+    recv_data = crypt.strong_decrypt(SECRET_KEY,str(recv_data))
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 62, in strong_decrypt
+    data = base64.b64decode(data)
+  File "C:\Python27\lib\base64.py", line 76, in b64decode
+    raise TypeError(msg)
+TypeError: Incorrect padding
+[2015-06-29 15:28:22,388] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 281, in search_server_list
+    recv_data = crypt.strong_decrypt(SECRET_KEY,str(recv_data))
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 64, in strong_decrypt
+    data = base64.decodestring(data[:lenx])
+  File "C:\Python27\lib\base64.py", line 321, in decodestring
+    return binascii.a2b_base64(s)
+Error: Incorrect padding
+[2015-06-29 15:30:32,380] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 281, in search_server_list
+    recv_data = crypt.strong_decrypt(SECRET_KEY,str(recv_data))
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 62, in strong_decrypt
+    data = base64.b64decode(data)
+  File "C:\Python27\lib\base64.py", line 76, in b64decode
+    raise TypeError(msg)
+TypeError: Incorrect padding
+[2015-06-29 15:32:23,233] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 281, in search_server_list
+    recv_data = crypt.strong_decrypt(SECRET_KEY,str(recv_data))
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 62, in strong_decrypt
+    data = base64.b64decode(data)
+  File "C:\Python27\lib\base64.py", line 76, in b64decode
+    raise TypeError(msg)
+TypeError: Incorrect padding
+[2015-06-29 15:33:53,834] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.
+[2015-06-29 15:35:32,328] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.
+[2015-06-29 15:41:19,344] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 275, in search_server_list
+    send_data = crypt.strong_encrypt(SECRET_KEY,"{'salt':1,'act':'test.ping','hosts':'*','argv':[]}")
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 57, in strong_encrypt
+    data = encrypt(key,data)
+UnboundLocalError: local variable 'data' referenced before assignment
+[2015-06-29 15:42:20,773] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.
+[2015-06-29 15:48:57,357] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 286, in search_server_list
+    yaml_data = yaml.dump(eval(data))
+  File "<string>", line 1
+    ]URRGZUT6/KN:
+    ^
+SyntaxError: invalid syntax
+[2015-06-29 17:11:57,829] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.
+[2015-06-29 17:12:59,891] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.
+[2015-06-29 17:13:24,933] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.
+[2015-06-29 17:14:02,165] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 284, in search_server_list
+    yaml_data = yaml.dump(simplejson.loads(recv_data))
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 505, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python27\lib\site-packages\simplejson\decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "C:\Python27\lib\site-packages\simplejson\decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+[2015-06-29 17:22:59,888] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 284, in search_server_list
+    for k,v in recv_data:
+ValueError: need more than 1 value to unpack
+[2015-06-29 17:23:49,375] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 285, in search_server_list
+    for k,v in recv_data:
+ValueError: need more than 1 value to unpack
+[2015-06-29 17:24:33,420] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 285, in search_server_list
+    for k,v in recv_data:
+ValueError: need more than 1 value to unpack
+[2015-06-29 17:26:17,582] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.
+[2015-06-29 17:27:46,446] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.
+[2015-06-29 17:45:48,913] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 274, in search_server_list
+    recv_data = client_send_data("{'salt':1,'act':'test.ping','hosts':'*','argv':[]}",CENTER_SERVER[i][0],CENTER_SERVER[i][1])
+  File "E:\BearCatOMS_1.4.20\libs\socket_send_data.py", line 12, in client_send_data
+    recv_data = s.recvall
+AttributeError: '_socketobject' object has no attribute 'recvall'
+[2015-06-29 17:46:06,388] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 274, in search_server_list
+    recv_data = client_send_data("{'salt':1,'act':'test.ping','hosts':'*','argv':[]}",CENTER_SERVER[i][0],CENTER_SERVER[i][1])
+  File "E:\BearCatOMS_1.4.20\libs\socket_send_data.py", line 12, in client_send_data
+    recv_data = s.recvall()
+AttributeError: '_socketobject' object has no attribute 'recvall'
+[2015-06-29 17:48:32,148] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 274, in search_server_list
+    recv_data = client_send_data("{'salt':1,'act':'test.ping','hosts':'*','argv':[]}",CENTER_SERVER[i][0],CENTER_SERVER[i][1])
+  File "E:\BearCatOMS_1.4.20\libs\socket_send_data.py", line 11, in client_send_data
+    s.connect(addr)
+  File "C:\Python27\lib\socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 10035] 
+[2015-06-29 17:49:29,631] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.search_server_list didn't return an HttpResponse object.
+[2015-06-29 18:16:43,921] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 281, in search_server_list
+    ip[k]['ipv4'].pop(0)
+TypeError: string indices must be integers, not str
+[2015-06-29 18:19:47,203] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 282, in search_server_list
+    ip[k]['ipv4'].pop(0)
+TypeError: string indices must be integers, not str
+[2015-06-29 18:22:03,210] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 281, in search_server_list
+    print ip[k]
+TypeError: string indices must be integers, not str
+[2015-06-29 18:22:50,857] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 281, in search_server_list
+    print ip['%s' % k]['ipv4'].pop(0)
+TypeError: string indices must be integers, not str
+[2015-06-29 18:41:25,434] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 284, in search_server_list
+    server_list.objects.create(server_name=k,ip=ip,os=os,belong_to=belong_to)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 137, in create
+    return self.get_query_set().create(**kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 377, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 1593, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 912, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Data truncated for column 'ip' at row 1
+[2015-06-29 18:44:11,321] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 284, in search_server_list
+    server_list.objects.create(server_name=k,ip=ip,os=os,belong_to=belong_to)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 137, in create
+    return self.get_query_set().create(**kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 377, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "C:\Python27\lib\site-packages\django\db\models\base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 1593, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 912, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 176, in execute
+    if not self._defer_warnings: self._warning_check()
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 92, in _warning_check
+    warn(w[-1], self.Warning, 3)
+Warning: Data truncated for column 'ip' at row 1
+[2015-06-29 18:51:23,871] ERROR : Internal Server Error: /get_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 243, in get_server_list
+    result_data = server_list.objects.all().order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
+IndexError: list index out of range
+[2015-06-29 18:52:54,783] ERROR : Internal Server Error: /get_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 245, in get_server_list
+    result_data = server_list.objects.all().order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
+IndexError: list index out of range
+[2015-06-29 19:06:06,394] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 282, in search_server_list
+    uniq_test = server_list.objects.get(server_name=k)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 368, in get
+    % (self.model._meta.object_name, num, kwargs))
+MultipleObjectsReturned: get() returned more than one server_list -- it returned 2! Lookup parameters were {'server_name': 'test-01'}
+[2015-06-29 19:08:15,499] ERROR : Internal Server Error: /search_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 282, in search_server_list
+    uniq_test = server_list.objects.get(server_name=k)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: server_list matching query does not exist.
+[2015-06-29 20:45:39,125] WARNING : Not Found: /run_cmd/

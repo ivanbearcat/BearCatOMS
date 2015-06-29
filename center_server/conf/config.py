@@ -2,7 +2,7 @@
 #coding=utf-8
 server = {}
 server['port'] = 7777
-server['allow'] = ['127.0.0.1', '192.168.100.204']
+server['allow'] = ['127.0.0.1', '192.168.100.206']
 server['suggestThreadPoolSize'] = 10
 
 factory = {}

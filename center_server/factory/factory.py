@@ -6,6 +6,7 @@ from conf.config import factory,server
 # from libs.log import logger
 import time,os
 from twisted.internet import reactor
+from libs import crypt
 # from lib.data_analysis import ProtoControl
 # from lib.c_include import *
 # from orm.factorywork import server_info_save, load_history_online, workRegos, workLostClient,query_device, check_online
@@ -32,9 +33,6 @@ class server_protocol(Protocol):
     def connectionMade(self):
         """
         #第一次连接时需要做的事情
-        发送数据
-        act:行为，告诉cm需要做什么
-        1. 登入服务器
         """
         ip = self.transport.getPeer().host
         if not ip in server['allow']:
@@ -42,7 +40,7 @@ class server_protocol(Protocol):
             禁IP
             """
             self.transport.write('The IP (%s) not allow' % ip)
-            self.transport.loseConnection()
+	    self.transport.loseConnection()
             # logger.info('The IP (%s) not allow' % ip)
         # else:
         #     self.factory.clientips.append(ip)
@@ -78,15 +76,18 @@ class server_protocol(Protocol):
     #     self.transport.loseConnection()
 
     def dataReceived(self, data):
-
-        def in_func(self ,data):
-            self.recvBuf += data
-            while len(self.recvBuf):
-                try:
-                    self.transport.write('data')
-                except Exception, e:
-                    print e
-        threads.deferToThread(in_func,self,data)
+        try:
+	    print data
+	    data = crypt.strong_decrypt('#ioag^zjg!+wq^=x-jum(qz*)*&amp;*h&amp;v@_#@_ks%7l3=dyzqu_t',str(data))
+	    data = eval(data)
+	    if data.get('salt') == 1:
+		result = self.factory.call_saltstack(data)
+		result = crypt.strong_encrypt('#ioag^zjg!+wq^=x-jum(qz*)*&amp;*h&amp;v@_#@_ks%7l3=dyzqu_t',str(result))
+		self.transport.write(result)
+	    else:
+		pass
+        except Exception, e:
+            print e
 
 
 
@@ -143,4 +144,13 @@ class server_factory(Factory):
 
     def __init__(self):
         pass
+    def call_saltstack(self,data):
+	import salt.client
+	client = salt.client.LocalClient()
+	act = data.get('act')
+	hosts = data.get('hosts')
+	argv = data.get('argv')
+	result = client.cmd(hosts,act,argv)
+	return result
+	
 

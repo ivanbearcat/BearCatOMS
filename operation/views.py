@@ -4,12 +4,12 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.utils.log import logger
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-import simplejson,re,os,datetime,time,subprocess
+import simplejson,re,os,datetime,time,subprocess,socket,yaml
 from django.db.models.query_utils import Q
 from operation.models import upload_files,server_list
 from django import forms
-from libs import crypt
-from BearCatOMS.settings import SECRET_KEY,BASE_DIR
+from libs.socket_send_data import client_send_data
+from BearCatOMS.settings import BASE_DIR,CENTER_SERVER
 
 @login_required
 def upload(request):
@@ -222,7 +222,7 @@ def get_server_list(request):
     sSearch = request.POST.get('sSearch')#高级搜索
 
     aaData = []
-    sort = ['server_name','ip','os','comment']
+    sort = ['server_name','ip','os','belong_to','comment']
 
     if  sSortDir_0 == 'asc':
         if sSearch == '':
@@ -232,11 +232,13 @@ def get_server_list(request):
             result_data = server_list.objects.filter(Q(server_name__contains=sSearch) | \
                                                Q(ip__contains=sSearch) | \
                                                Q(comment__contains=sSearch) | \
+                                               Q(belong_to__contains=sSearch) | \
                                                Q(os__contains=sSearch)) \
                                             .order_by(sort[iSortCol_0])[iDisplayStart:iDisplayStart+iDisplayLength]
             iTotalRecords = server_list.objects.filter(Q(server_name__contains=sSearch) | \
                                                  Q(ip__contains=sSearch) | \
                                                  Q(comment__contains=sSearch) | \
+                                                 Q(belong_to__contains=sSearch) | \
                                                  Q(os__contains=sSearch)).count()
     else:
         if sSearch == '':
@@ -246,11 +248,13 @@ def get_server_list(request):
             result_data = server_list.objects.filter(Q(server_name__contains=sSearch) | \
                                                Q(ip__contains=sSearch) | \
                                                Q(comment__contains=sSearch) | \
+                                               Q(belong_to__contains=sSearch) | \
                                                Q(os__contains=sSearch)) \
                                             .order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
             iTotalRecords = server_list.objects.filter(Q(server_name__contains=sSearch) | \
                                                  Q(ip__contains=sSearch) | \
                                                  Q(comment__contains=sSearch) | \
+                                                 Q(belong_to__contains=sSearch) | \
                                                  Q(os__contains=sSearch)).count()
 
     for i in  result_data:
@@ -258,8 +262,9 @@ def get_server_list(request):
                        '0':i.server_name,
                        '1':i.ip,
                        '2':i.os,
-                       '3':i.comment,
-                       '4':i.id
+                       '3':i.belong_to,
+                       '4':i.comment,
+                       '5':i.id
                       })
     result = {'sEcho':sEcho,
                'iTotalRecords':iTotalRecords,
@@ -270,6 +275,18 @@ def get_server_list(request):
 
 @login_required
 def search_server_list(request):
-    cmd = crypt.strong_encrypt(SECRET_KEY,"{'salt':1,'act':'test.ping','hosts':'*'}")
-    print cmd
-    
+    for i in CENTER_SERVER.keys():
+        recv_data = client_send_data("{'salt':1,'act':'test.ping','hosts':'*','argv':[]}",CENTER_SERVER[i][0],CENTER_SERVER[i][1])
+        dict_data = eval(recv_data)
+        for k,v in dict_data.items():
+            uniq_test = server_list.objects.filter(server_name=k)
+            if v == True and not uniq_test:
+                ip = client_send_data("{'salt':1,'act':'grains.item','hosts':'%s','argv':['ipv4']}" % k,CENTER_SERVER[i][0],CENTER_SERVER[i][1])
+                ip = eval(ip)
+                ip[k]['ipv4'].pop(0)
+                os = client_send_data("{'salt':1,'act':'grains.item','hosts':'%s','argv':['os']}" % k,CENTER_SERVER[i][0],CENTER_SERVER[i][1])
+                os = eval(os)
+                belong_to = i
+                print belong_to
+                server_list.objects.create(server_name=k,ip=ip[k]['ipv4'],os=os[k]['os'],belong_to=belong_to)
+    return HttpResponse(simplejson.dumps({'code':0,'msg':u'获取完成'}),content_type="application/json")

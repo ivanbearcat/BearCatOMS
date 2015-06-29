@@ -59,9 +59,5 @@ def strong_encrypt(key,text):
 
 def strong_decrypt(key,text):
     data = decrypt(key,text)
-    # data = base64.b64decode(data)
-    # return data
-    missing_padding = 4 - len(data) % 4
-    if missing_padding:
-            data += b'='* missing_padding
-    return base64.decodestring(data)
+    data = base64.b64decode(data)
+    return data
