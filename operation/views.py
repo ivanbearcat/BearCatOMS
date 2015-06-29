@@ -9,7 +9,7 @@ from django.db.models.query_utils import Q
 from operation.models import upload_files,server_list
 from django import forms
 from libs import crypt
-from BearCatOMS.settings import SECRET_KEY
+from BearCatOMS.settings import SECRET_KEY,BASE_DIR
 
 @login_required
 def upload(request):
@@ -132,7 +132,7 @@ def upload_del(request):
     _id = request.POST.get('id')
     orm = upload_files.objects.get(id=_id)
     try:
-        os.remove('uploads/' + orm.file_name)
+        os.remove(BASE_DIR + '/uploads/' + orm.file_name)
         orm.delete()
         return HttpResponse(simplejson.dumps({'code':0,'msg':u'删除成功'}),content_type="application/json")
     except Exception,e:
@@ -150,10 +150,10 @@ def upload_upload(request):
         cmdLine.append('rsync')
         cmdLine.append('--progress')
         cmdLine.append('uploads/%s' % file_name)
-        cmdLine.append('192.168.1.12:.')
-        tmpFile = "tmp/upload.tmp"  #临时生成一个文件
+        cmdLine.append('192.168.100.206:.')
+        tmpFile = BASE_DIR + "/tmp/upload.tmp"  #临时生成一个文件
         fpWrite = open(tmpFile,'w')
-        with open('tmp/rsync_status_file.tmp','w') as f:
+        with open(BASE_DIR + '/tmp/rsync_status_file.tmp','w') as f:
             pass
         process = subprocess.Popen(cmdLine,stdout = fpWrite,stderr = subprocess.PIPE);
         while True:
@@ -162,7 +162,7 @@ def upload_upload(request):
             for line in lines:
                 a = re.search(r'\d+%',line)
                 if a:
-                    with open('tmp/percent.tmp','a') as f:
+                    with open(BASE_DIR + '/tmp/percent.tmp','a') as f:
                             f.write(a.group())
                     print a.group()
             if  process.poll() == 0:
@@ -176,21 +176,21 @@ def upload_upload(request):
             fpRead.close()
             time.sleep(0.7)
         fpWrite.close()
-        os.remove('tmp/rsync_status_file.tmp')
+        os.remove(BASE_DIR + '/tmp/rsync_status_file.tmp')
     #    error = process.stderr.read()
     #    if not error == None:
     #        print 'error info:%s' % error
         os.remove(tmpFile) #删除临时文件
-        os.remove('tmp/percent.tmp')
+        os.remove(BASE_DIR + '/tmp/percent.tmp')
         return HttpResponse(simplejson.dumps({'code':0,'msg':u'文件传输成功'}),content_type="application/json")
     elif int(flag) == 1:
         #获取百分比
-        if os.path.exists('tmp/rsync_status_file.tmp'):
+        if os.path.exists(BASE_DIR + '/tmp/rsync_status_file.tmp'):
             process = 1
         else:
             process = 0
-        if os.path.exists('tmp/percent.tmp'):
-            with open('tmp/percent.tmp') as f:
+        if os.path.exists(BASE_DIR + '/tmp/percent.tmp'):
+            with open(BASE_DIR + '/tmp/percent.tmp') as f:
                 data = f.readline()
                 if data:
                     last_percent = re.search(r'\d{1,2}%$',data)
