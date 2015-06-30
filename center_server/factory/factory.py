@@ -77,15 +77,15 @@ class server_protocol(Protocol):
 
     def dataReceived(self, data):
         try:
-	    print data
-	    data = crypt.strong_decrypt('#ioag^zjg!+wq^=x-jum(qz*)*&amp;*h&amp;v@_#@_ks%7l3=dyzqu_t',str(data))
-	    data = eval(data)
-	    if data.get('salt') == 1:
-		result = self.factory.call_saltstack(data)
-		result = crypt.strong_encrypt('#ioag^zjg!+wq^=x-jum(qz*)*&amp;*h&amp;v@_#@_ks%7l3=dyzqu_t',str(result))
-		self.transport.write(result)
-	    else:
-		pass
+            data = crypt.strong_decrypt('#ioag^zjg!+wq^=x-jum(qz*)*&amp;*h&amp;v@_#@_ks%7l3=dyzqu_t',str(data))
+            print data
+            data = eval(data)
+            if data.get('salt') == 1:
+                result = self.factory.call_saltstack(data)
+                result = crypt.strong_encrypt('#ioag^zjg!+wq^=x-jum(qz*)*&amp;*h&amp;v@_#@_ks%7l3=dyzqu_t',str(result))
+                self.transport.write(result)
+            else:
+                pass
         except Exception, e:
             print e
 
@@ -145,12 +145,15 @@ class server_factory(Factory):
     def __init__(self):
         pass
     def call_saltstack(self,data):
-	import salt.client
-	client = salt.client.LocalClient()
-	act = data.get('act')
-	hosts = data.get('hosts')
-	argv = data.get('argv')
-	result = client.cmd(hosts,act,argv)
-	return result
+        import salt.client
+        client = salt.client.LocalClient()
+        act = data.get('act')
+        hosts = data.get('hosts')
+        argv = data.get('argv')
+        if len(hosts.split(',')) > 1:
+            result = client.cmd(hosts,act,argv,expr_form='list')
+        else:
+            result = client.cmd(hosts,act,argv)
+        return result
 	
 

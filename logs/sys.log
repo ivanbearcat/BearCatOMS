@@ -5489,3 +5489,164 @@ Traceback (most recent call last):
     % self.model._meta.object_name)
 DoesNotExist: server_list matching query does not exist.
 [2015-06-29 20:45:39,125] WARNING : Not Found: /run_cmd/
+[2015-06-30 10:01:54,326] INFO : <admin> login in sucess.
+[2015-06-30 10:01:58,236] WARNING : Not Found: /run_cmd/
+[2015-06-30 10:03:24,252] WARNING : Not Found: /run_cmd/
+[2015-06-30 10:03:52,802] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.run_cmd didn't return an HttpResponse object.
+[2015-06-30 10:04:22,993] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.run_cmd didn't return an HttpResponse object.
+[2015-06-30 10:06:19,444] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.run_cmd didn't return an HttpResponse object.
+[2015-06-30 10:07:21,362] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.run_cmd didn't return an HttpResponse object.
+[2015-06-30 10:08:39,369] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.run_cmd didn't return an HttpResponse object.
+[2015-06-30 10:08:49,671] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.run_cmd didn't return an HttpResponse object.
+[2015-06-30 10:09:43,979] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 297, in run_cmd
+    for i in server_names.split(','):
+AttributeError: 'NoneType' object has no attribute 'split'
+[2015-06-30 10:10:24,016] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.run_cmd didn't return an HttpResponse object.
+[2015-06-30 10:12:08,163] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.run_cmd didn't return an HttpResponse object.
+[2015-06-30 10:12:28,938] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.run_cmd didn't return an HttpResponse object.
+[2015-06-30 11:25:59,242] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 300, in run_cmd
+    cmd_result = client_send_data("{'salt':1,'act':'grains.item','hosts':'%s','argv':['os']}" % k,CENTER_SERVER[i][0],CENTER_SERVER[i][1])
+NameError: global name 'k' is not defined
+[2015-06-30 11:26:40,665] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 300, in run_cmd
+    cmd_result = client_send_data("{'salt':1,'act':'grains.item','hosts':'%s','argv':['os']}" % i,CENTER_SERVER[i][0],CENTER_SERVER[i][1])
+KeyError: u'test-02'
+[2015-06-30 11:33:26,618] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.run_cmd didn't return an HttpResponse object.
+[2015-06-30 12:04:42,079] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 303, in run_cmd
+    cmd_results.append(cmd_result[1])
+KeyError: 1
+[2015-06-30 12:10:28,918] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 303, in run_cmd
+    cmd_result = cmd_result[i].replace('\n','<br>')
+KeyError: u'test-02'
+[2015-06-30 12:12:03,104] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 303, in run_cmd
+    cmd_result = cmd_result[i].replace('\n','<br>')
+KeyError: u'test-02'
+[2015-06-30 12:13:26,216] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 303, in run_cmd
+    cmd_result = cmd_result[i].replace('\n','<br>')
+KeyError: u'test-02'
+[2015-06-30 12:15:05,355] ERROR : u'test-02'
+[2015-06-30 12:15:10,878] ERROR : u'test-02'
+[2015-06-30 13:17:58,719] ERROR : u'test-02'
+[2015-06-30 13:36:37,987] ERROR : zip argument #2 must support iteration
+[2015-06-30 13:36:59,933] ERROR : zip argument #2 must support iteration
+[2015-06-30 13:41:13,463] ERROR : 'NoneType' object has no attribute 'split'
+[2015-06-30 13:41:32,013] ERROR : 'NoneType' object has no attribute 'split'
+[2015-06-30 13:44:47,395] ERROR : 'NoneType' object has no attribute 'split'
+[2015-06-30 13:44:56,091] ERROR : 'NoneType' object has no attribute 'split'
+[2015-06-30 13:45:17,184] ERROR : 'NoneType' object has no attribute 'split'
+[2015-06-30 14:41:26,095] ERROR : unexpected EOF while parsing (<string>, line 0)
+[2015-06-30 14:47:03,654] ERROR : unexpected EOF while parsing (<string>, line 0)
+[2015-06-30 14:47:03,655] ERROR : unexpected EOF while parsing (<string>, line 0)
+[2015-06-30 14:47:03,657] ERROR : unexpected EOF while parsing (<string>, line 0)
+[2015-06-30 14:57:55,459] ERROR : 'dict' object has no attribute 'replace'
+[2015-06-30 14:59:22,938] ERROR : 'dict' object has no attribute 'replace'
+[2015-06-30 15:22:15,857] ERROR : 'dict' object has no attribute 'replace'
+[2015-06-30 15:23:30,289] ERROR : 'dict' object has no attribute 'replace'
+[2015-06-30 15:23:45,318] ERROR : 'dict' object has no attribute 'replace'
+[2015-06-30 16:08:07,319] ERROR : unexpected character after line continuation character (<string>, line 1)
+[2015-06-30 16:08:13,806] ERROR : unexpected character after line continuation character (<string>, line 1)
+[2015-06-30 16:09:12,372] ERROR : unexpected character after line continuation character (<string>, line 1)
+[2015-06-30 16:11:55,407] ERROR : unexpected character after line continuation character (<string>, line 1)
+[2015-06-30 16:15:15,897] ERROR : unexpected character after line continuation character (<string>, line 1)
+[2015-06-30 16:48:49,723] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 9, in <module>
+    from operation.views import upload,get_upload,upload_data,upload_del,upload_upload,server_operation,get_server_list,search_server_list,run_cmd
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 11, in <module>
+    from libs.socket_send_data import client_send_data
+  File "E:\BearCatOMS_1.4.20\libs\socket_send_data.py", line 3, in <module>
+    from libs import crypt,yaml
+ImportError: cannot import name yaml
+[2015-06-30 16:50:19,401] ERROR : unexpected character after line continuation character (<string>, line 1)
+[2015-06-30 16:54:31,213] ERROR : u'beijing'

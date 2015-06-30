@@ -6,7 +6,7 @@ from user_manage.views import chpasswd,post_chpasswd
 from assets.views import assets_asset,assets_asset_data,assets_asset_save,assets_asset_del,assets_user,assets_user_dropdown,\
     assets_user_data,assets_user_save,assets_user_del,assets_log,assets_log_data,assets_image,assets_get_data
 from audit.views import audit_log,audit_get_data,audit_log_data
-from operation.views import upload,get_upload,upload_data,upload_del,upload_upload,server_operation,get_server_list,search_server_list
+from operation.views import upload,get_upload,upload_data,upload_del,upload_upload,server_operation,get_server_list,search_server_list,run_cmd
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -55,4 +55,5 @@ urlpatterns = patterns('',
     url(r'^server_operation/', server_operation),
     url(r'^get_server_list/', get_server_list),
     url(r'^search_server_list/', search_server_list),
+    url(r'^run_cmd/', run_cmd),
 )

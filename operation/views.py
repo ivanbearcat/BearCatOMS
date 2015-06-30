@@ -4,11 +4,12 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.utils.log import logger
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-import simplejson,re,os,datetime,time,subprocess,socket,yaml
+import simplejson,re,os,datetime,time,subprocess
 from django.db.models.query_utils import Q
 from operation.models import upload_files,server_list
 from django import forms
 from libs.socket_send_data import client_send_data
+from libs.str_to_html import convert_str_to_html
 from BearCatOMS.settings import BASE_DIR,CENTER_SERVER
 
 @login_required
@@ -46,7 +47,6 @@ def handle_uploaded_file(request,f):
         upload_files.objects.create(file_name=f.name,file_size=file_size,upload_user=request.user.username)
         result_code = 0
     except Exception, e:
-        print e
         logger.error(e)
         result_code = 1
     return result_code
@@ -164,13 +164,11 @@ def upload_upload(request):
                 if a:
                     with open(BASE_DIR + '/tmp/percent.tmp','a') as f:
                             f.write(a.group())
-                    print a.group()
             if  process.poll() == 0:
                 break;
             elif process.poll() == None:
                 pass
             else:
-                print 'error'
                 break
             fpWrite.truncate()  #此处清空文件，等待记录下一次输出的进度
             fpRead.close()
@@ -195,7 +193,6 @@ def upload_upload(request):
                 if data:
                     last_percent = re.search(r'\d{1,2}%$',data)
                     if last_percent:
-                        print last_percent.group()
                         return HttpResponse(simplejson.dumps({'code':0,'percent':last_percent.group(),'process':process}),content_type="application/json")
         else:
             return HttpResponse(simplejson.dumps({'code':0,'percent':0,'process':process}),content_type="application/json")
@@ -275,18 +272,48 @@ def get_server_list(request):
 
 @login_required
 def search_server_list(request):
-    for i in CENTER_SERVER.keys():
-        recv_data = client_send_data("{'salt':1,'act':'test.ping','hosts':'*','argv':[]}",CENTER_SERVER[i][0],CENTER_SERVER[i][1])
-        dict_data = eval(recv_data)
-        for k,v in dict_data.items():
-            uniq_test = server_list.objects.filter(server_name=k)
-            if v == True and not uniq_test:
-                ip = client_send_data("{'salt':1,'act':'grains.item','hosts':'%s','argv':['ipv4']}" % k,CENTER_SERVER[i][0],CENTER_SERVER[i][1])
-                ip = eval(ip)
-                ip[k]['ipv4'].pop(0)
-                os = client_send_data("{'salt':1,'act':'grains.item','hosts':'%s','argv':['os']}" % k,CENTER_SERVER[i][0],CENTER_SERVER[i][1])
-                os = eval(os)
-                belong_to = i
-                print belong_to
-                server_list.objects.create(server_name=k,ip=ip[k]['ipv4'],os=os[k]['os'],belong_to=belong_to)
-    return HttpResponse(simplejson.dumps({'code':0,'msg':u'获取完成'}),content_type="application/json")
+    try:
+        for i in CENTER_SERVER.keys():
+            recv_data = client_send_data("{'salt':1,'act':'test.ping','hosts':'*','argv':[]}",CENTER_SERVER[i][0],CENTER_SERVER[i][1])
+            dict_data = eval(recv_data)
+            for k,v in dict_data.items():
+                uniq_test = server_list.objects.filter(server_name=k)
+                if v == True and not uniq_test:
+                    ip = client_send_data("{'salt':1,'act':'grains.item','hosts':'%s','argv':['ipv4']}" % k,CENTER_SERVER[i][0],CENTER_SERVER[i][1])
+                    ip = eval(ip)
+                    ip[k]['ipv4'].pop(0)
+                    os = client_send_data("{'salt':1,'act':'grains.item','hosts':'%s','argv':['os']}" % k,CENTER_SERVER[i][0],CENTER_SERVER[i][1])
+                    os = eval(os)
+                    belong_to = i
+                    server_list.objects.create(server_name=k,ip=ip[k]['ipv4'],os=os[k]['os'],belong_to=belong_to)
+        return HttpResponse(simplejson.dumps({'code':0,'msg':u'获取完成'}),content_type="application/json")
+    except Exception,e:
+        logger.error(e)
+        return HttpResponse(simplejson.dumps({'code':1,'msg':u'获取失败'}),content_type="application/json")
+
+@login_required
+def run_cmd(request):
+    try:
+        server_names = request.POST.get('server_names')
+        belong_tos = request.POST.get('belong_tos')
+        server_names = server_names.split(',')
+        belong_tos = belong_tos.split(',')
+        cmd = request.POST.get('cmd')
+        servers = {}
+        cmd_results = ''
+        for i in  zip(server_names,belong_tos):
+            if not servers.has_key(i[1]):
+                servers[i[1]] = []
+            servers[i[1]].append(i[0])
+        for k,v in servers.items():
+            v = ','.join(v)
+            cmd_result = client_send_data("{'salt':1,'act':'cmd.run','hosts':'%s','argv':%s}" % (v,cmd.split(',')),CENTER_SERVER[k][0],CENTER_SERVER[k][1])
+            cmd_result = convert_str_to_html(cmd_result)
+            if cmd_results:
+                cmd_results = cmd_result
+            else:
+                cmd_results = cmd_results + '<br><br><br><br>' + cmd_result
+        return HttpResponse(simplejson.dumps({'code':0,'msg':u'完成执行完成','cmd_results':cmd_results}),content_type="application/json")
+    except Exception,e:
+        logger.error(e)
+        return HttpResponse(simplejson.dumps({'code':1,'msg':u'完成执行失败'}),content_type="application/json")
