@@ -5650,3 +5650,261 @@ Traceback (most recent call last):
 ImportError: cannot import name yaml
 [2015-06-30 16:50:19,401] ERROR : unexpected character after line continuation character (<string>, line 1)
 [2015-06-30 16:54:31,213] ERROR : u'beijing'
+[2015-07-01 11:59:25,496] ERROR : Invalid format string
+[2015-07-01 11:59:35,357] ERROR : Invalid format string
+[2015-07-01 12:00:30,329] ERROR : Invalid format string
+[2015-07-01 12:01:25,053] ERROR : Internal Server Error: /run_cmd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 296, in run_cmd
+    time_now = datetime.datetime.now().strftime('%F %X')
+ValueError: Invalid format string
+[2015-07-01 12:03:50,779] ERROR : 'list' object has no attribute 'split'
+[2015-07-01 12:04:10,375] ERROR : 'list' object has no attribute 'items'
+[2015-07-01 12:04:16,644] ERROR : 'list' object has no attribute 'items'
+[2015-07-01 12:04:37,470] ERROR : 'list' object has no attribute 'split'
+[2015-07-01 12:05:02,811] ERROR : 'list' object has no attribute 'split'
+[2015-07-01 13:37:48,717] WARNING : Not Found: /favicon.ico
+[2015-07-01 13:37:48,739] WARNING : Not Found: /favicon.ico
+[2015-07-01 16:43:29,789] ERROR : Internal Server Error: /server_group_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 369, in server_group_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'server_group_name' into field. Choices are: comment, id, members_server, serve_group_name
+[2015-07-01 16:44:44,390] ERROR : Internal Server Error: /server_group_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 369, in server_group_data
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 808, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 72, in as_sql
+    ordering, ordering_group_by = self.get_ordering()
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 401, in get_ordering
+    self.query.model._meta, default_order=asc):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 427, in find_ordering_name
+    field, col, alias, joins, opts = self._setup_joins(pieces, opts, alias)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 460, in _setup_joins
+    opts, alias, False)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1316, in setup_joins
+    "Choices are: %s" % (name, ", ".join(names)))
+FieldError: Cannot resolve keyword 'server_group_name' into field. Choices are: comment, id, members_server, serve_group_name
+[2015-07-01 17:08:33,864] WARNING : Not Found: /server_group_dropdown/
+[2015-07-01 17:14:05,322] WARNING : Not Found: /server_group_save/
+[2015-07-01 17:26:12,078] ERROR : (1062, "Duplicate entry '\xe9\x87\x91\xe5\xb1\xb1' for key 'server_group_name'")
+[2015-07-01 17:27:05,375] ERROR : (1062, "Duplicate entry '1' for key 'server_group_name'")
+[2015-07-01 17:27:15,345] ERROR : (1062, "Duplicate entry '1' for key 'server_group_name'")
+[2015-07-01 17:37:25,275] ERROR : Internal Server Error: /server_group_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 411, in server_group_dropdown
+    orm = server_list.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: server_list matching query does not exist.
+[2015-07-01 17:37:43,371] ERROR : Internal Server Error: /server_group_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 411, in server_group_dropdown
+    orm = server_list.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: server_list matching query does not exist.
+[2015-07-01 17:37:51,184] ERROR : Internal Server Error: /server_group_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 411, in server_group_dropdown
+    orm = server_list.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: server_list matching query does not exist.
+[2015-07-01 17:44:04,663] ERROR : Internal Server Error: /assets_user_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 293, in assets_user_del
+    return HttpResponse(simplejson.dumps({'code':0,'msg':e}),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: DoesNotExist('user matching query does not exist.',) is not JSON serializable
+[2015-07-01 17:44:29,795] ERROR : Internal Server Error: /assets_user_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 293, in assets_user_del
+    return HttpResponse(simplejson.dumps({'code':0,'msg':e}),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: DoesNotExist('user matching query does not exist.',) is not JSON serializable
+[2015-07-01 17:45:42,187] ERROR : Internal Server Error: /assets_user_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 293, in assets_user_del
+    return HttpResponse(simplejson.dumps({'code':0,'msg':e}),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: DoesNotExist('user matching query does not exist.',) is not JSON serializable
+[2015-07-01 17:46:43,063] ERROR : Internal Server Error: /assets_user_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\assets\views.py", line 293, in assets_user_del
+    return HttpResponse(simplejson.dumps({'code':0,'msg':e}),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: DoesNotExist('user matching query does not exist.',) is not JSON serializable
+[2015-07-01 17:57:27,210] ERROR : Internal Server Error: /user_perm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 49, in user_perm
+    print  request.user.is_superuser()
+TypeError: 'bool' object is not callable
+[2015-07-01 18:00:06,256] INFO : <xuezhimin> login in sucess.
+[2015-07-01 18:25:10,533] WARNING : <admin> login in fail.
+[2015-07-01 18:25:18,522] WARNING : <admin> login in fail.
+[2015-07-01 18:25:24,164] INFO : <admin> login in sucess.
+[2015-07-01 18:26:12,982] ERROR : Internal Server Error: /server_group_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 358, in server_group_data
+    result_data = server_group_list.objects.all().order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
+IndexError: list index out of range
+[2015-07-01 18:30:42,480] WARNING : Not Found: /user_perm_data/
+[2015-07-01 18:38:27,546] WARNING : Not Found: /user_perm_data/
+[2015-07-01 18:39:01,421] ERROR : Internal Server Error: /user_perm_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 115, in user_perm_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.date(2015, 7, 1) is not JSON serializable
+[2015-07-01 18:39:42,463] ERROR : Internal Server Error: /user_perm_data/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 116, in user_perm_data
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.date(2015, 7, 1) is not JSON serializable
+[2015-07-01 19:18:49,951] WARNING : Not Found: /user_perm_dropdown/
+[2015-07-01 19:19:07,523] WARNING : Not Found: /user_perm_dropdown/
+[2015-07-01 19:49:33,878] ERROR : Internal Server Error: /user_perm_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 151, in user_perm_dropdown
+    result['name_list'].append({'text':i,'id':count})
+KeyError: 'name_list'

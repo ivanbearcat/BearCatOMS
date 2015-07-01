@@ -2,11 +2,11 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect,HttpResponse
 from django.utils.log import logger
-from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 import simplejson,re,os,datetime,time,subprocess
 from django.db.models.query_utils import Q
-from operation.models import upload_files,server_list
+from operation.models import upload_files,server_list,server_group_list
+from audit.models import log
 from django import forms
 from libs.socket_send_data import client_send_data
 from libs.str_to_html import convert_str_to_html
@@ -299,6 +299,7 @@ def run_cmd(request):
         server_names = server_names.split(',')
         belong_tos = belong_tos.split(',')
         cmd = request.POST.get('cmd')
+        time_now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         servers = {}
         cmd_results = ''
         for i in  zip(server_names,belong_tos):
@@ -313,7 +314,115 @@ def run_cmd(request):
                 cmd_results = cmd_result
             else:
                 cmd_results = cmd_results + '<br><br><br><br>' + cmd_result
+        for i in server_names:
+            log.objects.create(source_ip=i,username=request.user.username,command=cmd,time=time_now)
         return HttpResponse(simplejson.dumps({'code':0,'msg':u'完成执行完成','cmd_results':cmd_results}),content_type="application/json")
     except Exception,e:
         logger.error(e)
         return HttpResponse(simplejson.dumps({'code':1,'msg':u'完成执行失败'}),content_type="application/json")
+
+@login_required
+def server_group(request):
+    path = request.path.split('/')[1]
+    return render_to_response('operation/server_group.html',{'user':request.user.username,
+                                                           'path1':'operation',
+                                                           'path2':path,
+                                                           'page_name1':u'运维操作',
+                                                           'page_name2':u'服务器组管理'})
+@login_required
+def server_group_data(request):
+    sEcho =  request.POST.get('sEcho') #标志，直接返回
+    iDisplayStart = int(request.POST.get('iDisplayStart'))#第几行开始
+    iDisplayLength = int(request.POST.get('iDisplayLength'))#显示多少行
+    iSortCol_0 = int(request.POST.get("iSortCol_0"))#排序行号
+    sSortDir_0 = request.POST.get('sSortDir_0')#asc/desc
+    sSearch = request.POST.get('sSearch')#高级搜索
+
+    aaData = []
+    sort = ['server_group_name','members_server','comment']
+
+    if  sSortDir_0 == 'asc':
+        if sSearch == '':
+            result_data = server_group_list.objects.all().order_by(sort[iSortCol_0])[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = server_group_list.objects.all().count()
+        else:
+            result_data = server_group_list.objects.filter(Q(server_group_name__contains=sSearch) | \
+                                               Q(members_server__contains=sSearch) | \
+                                               Q(comment__contains=sSearch)) \
+                                            .order_by(sort[iSortCol_0])[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = server_group_list.objects.filter(Q(server_group_name__contains=sSearch) | \
+                                                 Q(members_server__contains=sSearch) | \
+                                                 Q(comment__contains=sSearch)).count()
+    else:
+        if sSearch == '':
+            result_data = server_group_list.objects.all().order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = server_group_list.objects.all().count()
+        else:
+            result_data = server_group_list.objects.filter(Q(server_group_name__contains=sSearch) | \
+                                               Q(members_server__contains=sSearch) | \
+                                               Q(comment__contains=sSearch)) \
+                                            .order_by(sort[iSortCol_0]).reverse()[iDisplayStart:iDisplayStart+iDisplayLength]
+            iTotalRecords = server_group_list.objects.filter(Q(server_group_name__contains=sSearch) | \
+                                                 Q(members_server__contains=sSearch) | \
+                                                 Q(comment__contains=sSearch)).count()
+
+    for i in  result_data:
+        aaData.append({
+                       '0':i.server_group_name,
+                       '1':i.members_server,
+                       '2':i.comment,
+                       '3':i.id
+                      })
+    result = {'sEcho':sEcho,
+               'iTotalRecords':iTotalRecords,
+               'iTotalDisplayRecords':iTotalRecords,
+               'aaData':aaData
+    }
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+
+@login_required
+def server_group_save(request):
+    _id = request.POST.get('id')
+    comment = request.POST.get('comment')
+    server_group_name = request.POST.get('server_group_name')
+    members_server = request.POST.get('members_server')
+
+    try:
+        if _id =='':
+            server_group_list.objects.create(server_group_name=server_group_name,members_server=members_server,comment=comment)
+        else:
+            orm = server_group_list.objects.get(id=_id)
+            orm.server_group_name = server_group_name
+            orm.members_server = members_server
+            orm.comment = comment
+            orm.save()
+        return HttpResponse(simplejson.dumps({'code':0,'msg':u'保存成功'}),content_type="application/json")
+    except Exception,e:
+        logger.error(e)
+        return HttpResponse(simplejson.dumps({'code':1,'msg':str(e)}),content_type="application/json")
+
+@login_required
+def server_group_dropdown(request):
+    _id = request.POST.get('id')
+    result = {}
+    result['list'] = []
+    result['edit'] = []
+    if not _id == None:
+        orm = server_group_list.objects.get(id=_id)
+        for i in orm.members_server.split(','):
+            orm_server = server_list.objects.get(server_name=i)
+            result['edit'].append({'text':i,'id':orm_server.id})
+    result_data = server_list.objects.all()
+    for i in result_data:
+        result['list'].append({'text':i.server_name,'id':i.id})
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
+
+@login_required
+def server_group_del(request):
+    _id = request.POST.get('id')
+    try:
+        orm = server_group_list.objects.get(id=_id)
+        orm.delete()
+        return HttpResponse(simplejson.dumps({'code':0,'msg':u'删除成功'}),content_type="application/json")
+    except Exception,e:
+        return HttpResponse(simplejson.dumps({'code':1,'msg':e}),content_type="application/json")

@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     # 'debugtools',
+    'user_manage',
     'assets',
     'audit',
     'operation',
@@ -186,3 +187,4 @@ LOGGING = {
 
 #custom
 CENTER_SERVER = {'kingsoft':['192.168.100.151',7777]}
+MULTI_CHANGE_PASSWD = 'if ! id %s;then useradd -e date $("+%D" -d "+3 months") %s;fi;echo "test$(awk /^id:/"{print $2}" /etc/salt/minion)" |passwd admin --stdin' #%s = username

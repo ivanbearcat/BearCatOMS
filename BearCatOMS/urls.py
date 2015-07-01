@@ -2,11 +2,12 @@ from django.conf.urls import patterns, include, url
 from login.views import login,login_auth,logout,not_login
 from main.views import main
 from monitor.views import nagios,zabbix
-from user_manage.views import chpasswd,post_chpasswd
+from user_manage.views import chpasswd,post_chpasswd,user_perm,user_perm_data,user_perm_dropdown
 from assets.views import assets_asset,assets_asset_data,assets_asset_save,assets_asset_del,assets_user,assets_user_dropdown,\
     assets_user_data,assets_user_save,assets_user_del,assets_log,assets_log_data,assets_image,assets_get_data
 from audit.views import audit_log,audit_get_data,audit_log_data
-from operation.views import upload,get_upload,upload_data,upload_del,upload_upload,server_operation,get_server_list,search_server_list,run_cmd
+from operation.views import upload,get_upload,upload_data,upload_del,upload_upload,server_operation,get_server_list,search_server_list,run_cmd,\
+    server_group,server_group_data,server_group_dropdown,server_group_save,server_group_del
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -56,4 +57,12 @@ urlpatterns = patterns('',
     url(r'^get_server_list/', get_server_list),
     url(r'^search_server_list/', search_server_list),
     url(r'^run_cmd/', run_cmd),
+    url(r'^server_group/', server_group),
+    url(r'^server_group_data/', server_group_data),
+    url(r'^server_group_dropdown/', server_group_dropdown),
+    url(r'^server_group_save/', server_group_save),
+    url(r'^server_group_del/', server_group_del),
+    url(r'^user_perm/', user_perm),
+    url(r'^user_perm_data/', user_perm_data),
+    url(r'^user_perm_dropdown/', user_perm_dropdown),
 )

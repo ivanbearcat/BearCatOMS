@@ -90,7 +90,6 @@ def assets_asset_save(request):
     assets_code = request.POST.get('assets_code')
     name = request.POST.get('name')
 
-    print _id,assets_type,comment,assets_code,name
     if _id =='':
         orm = asset(name=name,assets_type=assets_type,assets_code=assets_code,comment=comment)
         comment_info = u'%s %s %s 入库' % (name,assets_type,assets_code)
@@ -143,7 +142,6 @@ def assets_user(request):
 @login_required
 def assets_user_dropdown(request):
     _id = request.POST.get('id')
-    print _id
     result = {}
     result['list'] = []
     result['edit'] = []
@@ -228,8 +226,6 @@ def assets_user_save(request):
     assets = request.POST.get('asset')
     name = request.POST.get('name')
     assets_data = ''
-    print _id,department,comment,assets,name
-
 
     try:
         if _id =='':
