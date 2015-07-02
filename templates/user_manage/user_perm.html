@@ -128,7 +128,7 @@
                                                                     <input type="text" class="form-control tt-hint"
                                                                            disabled="" autocomplete="off" spellcheck="false"
                                                                            style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);">
-                                                                    <input type="text" id="server_password"
+                                                                    <input type="password" id="server_password"
                                                                            name="typeahead_example_modal_1"
                                                                            class="form-control tt-input" autocomplete="off"
                                                                            spellcheck="false" dir="auto"
@@ -309,16 +309,24 @@ function loaddata() {
 }
 
 function rule_save() {
-    var members_server_list = []
-    var members_server = $('#members_server').select2('data')
-    for (var i in members_server) {
-        members_server_list.push(members_server[i]["text"])
+    var username = $('#username').select2('data')
+    username = username["text"]
+    var web_perm_list = []
+    var web_perm = $('#web_perm').select2('data')
+    for (var i in web_perm) {
+        web_perm_list.push(web_perm[i]["text"])
     }
-    members_server = members_server_list.join(',')
-    var comment = $('#comment').val();
-    var server_group_name = $('#server_group_name').val();
+    web_perm = web_perm_list.join(',')
+    var server_groups_list = []
+    var server_groups = $('#server_groups').select2('data')
+    for (var i in server_groups) {
+        server_groups_list.push(server_groups[i]["text"])
+    }
+    server_groups = server_groups_list.join(',')
+    var name = $('#name').val();
+    var server_password = $('#server_password').val();
     var id = $('#id').val();
-    if (server_group_name == '' || members_server == '') {
+    if (username == '') {
         toastr.error('不能为空')
         return;
     }
@@ -326,15 +334,16 @@ function rule_save() {
     showAjaxLoad()
     $(self).button('loading');//正在登陆中，显示data-loading-text 标记内容
 
-
     $.ajax({
-        url: '/server_group_save/',
+        url: '/user_perm_save/',
         type: "POST",
         data: {
             id: id,
-            comment: comment,
-            members_server: members_server,
-            server_group_name: server_group_name
+            username: username,
+            name: name,
+            web_perm: web_perm,
+            server_password: server_password,
+            server_groups: server_groups
         },
         success: function (d) {
             hideAjaxLoad()
@@ -357,10 +366,11 @@ function contain(Array, s) {
 }
 function add() {
     $('#username').select2("data", "")
+    $('#web_perm').select2("data", "")
     $('#server_groups').select2("data", "")
     $.post('/user_perm_dropdown/', {}, function (d) {
         $('#username').select2({
-            multiple: true,
+            multiple: false,
             placeholder: '请选择用户名',
             allowClear: true,
             data: d['username_list']
@@ -378,9 +388,8 @@ function add() {
             data: d['server_groups_list']
         });
     })
-    $('#server_group_name').val("")
-    $('#comment').val("")
-    $('#id').val("")
+    $('#name').val("")
+    $('#server_password').val("")
     $("#myModal").modal('show')
 }
 function edit() {
@@ -388,20 +397,35 @@ function edit() {
     var oTT = TableTools.fnGetInstance('datatables');
     var aData = oTT.fnGetSelectedData();
     if (aData.length == 1) {
-        var server_group_name = aData[0][0];
-        var members_server = aData[0][1];
-        var comment = aData[0][2];
-        var id = aData[0][3];
-        $.post('/server_group_dropdown/', {id: id}, function (d) {
-            $('#members_server').select2({
-                multiple: true,
-                placeholder: '请选择资产',
-                data: d['list']
+        var name = aData[0][1];
+        var web_perm = aData[0][2];
+        var server_password = aData[0][3];
+        var server_groups = aData[0][5];
+        var id = aData[0][6];
+        $.post('/user_perm_dropdown/', {id: id,server_groups: server_groups,web_perm: web_perm}, function (d) {
+            $('#username').select2({
+            multiple: false,
+            placeholder: '请选择用户名',
+            allowClear: true,
+            data: d['username_list']
             });
-            $('#members_server').select2("data",d['edit'])
+            $('#web_perm').select2({
+                multiple: true,
+                placeholder: '请选择页面权限',
+                allowClear: true,
+                data: d['web_perm_list']
+            });
+            $('#server_groups').select2({
+                multiple: true,
+                placeholder: '请选择服务器组',
+                allowClear: true,
+                data: d['server_groups_list']
+            });
+            $('#username').select2("data",d['username_edit'])
+            $('#web_perm').select2("data",d['web_perm_edit'])
+            $('#server_groups').select2("data",d['server_groups_edit'])
         })
-        $('#server_group_name').val(server_group_name)
-        $('#comment').val(comment)
+        $('#name').val(name)
         $('#id').val(id)
         $("#myModal").modal('show')
     }
@@ -413,7 +437,7 @@ function del() {
     var aData = oTT.fnGetSelectedData();
     if (aData.length == 1) {
         showAjaxLoad()
-        $.post('/server_group_del/', {id: aData[0][3]}, function (d) {
+        $.post('/user_perm_del/', {id: aData[0][6]}, function (d) {
             hideAjaxLoad()
             if (d.code == 0) {
                 toastr.success(d.msg)

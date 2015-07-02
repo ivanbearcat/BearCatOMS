@@ -71,7 +71,7 @@
 														<input type="password" id='server_password_new_again'class="form-control" style="width:30%">
 													</div>
 													<div class="margin-top-10">
-														<a class="btn green" onclick="chpasswd()">
+														<a class="btn green" onclick="server_chpasswd()">
 															 修改密码
 														</a>
 														<a class="btn default" onclick="reset()">
@@ -114,10 +114,31 @@ $('#password_new_again').val('')
 hideAjaxLoad()
 };
 
+function server_chpasswd(){
+var server_password_current = $('#server_password_current').val()
+var server_password_new = $('#server_password_new').val()
+var server_password_new_again = $('#server_password_new_again').val()
+showAjaxLoad()
+$.post('/post_server_chpasswd/', {server_password_current:server_password_current,server_password_new:server_password_new,server_password_new_again:server_password_new_again}, function (d) {
+            if (d.code == 0) {
+                toastr.success(d.msg)
+            } else {
+                toastr.error(d.msg);
+            }
+        })
+$('#server_password_current').val('')
+$('#server_password_new').val('')
+$('#server_password_new_again').val('')
+hideAjaxLoad()
+};
+
 function reset(){
 	$('#password_current').val('')
 	$('#password_new').val('')
 	$('#password_new_again').val('')
+    $('#server_password_current').val('')
+	$('#server_password_new').val('')
+	$('#server_password_new_again').val('')
 };
 </script>
 {% endblock %}

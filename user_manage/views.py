@@ -4,14 +4,20 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.utils.log import logger
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-import simplejson,re
+import simplejson,re,datetime
 from user_manage.models import perm
-from operation.models import server_group_list
+from operation.models import server_group_list,server_list
 from django.db.models.query_utils import Q
-from BearCatOMS.settings import BASE_DIR
+from BearCatOMS.settings import BASE_DIR,SECRET_KEY
+from libs import crypt
+from libs.check_perm import check_permission
+
 
 @login_required
 def chpasswd(request):
+    flag = check_permission(u'修改密码',request.user.username)
+    if flag < 1:
+        return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('user_manage/chpasswd.html',{'user':request.user.username,
                                                            'path1':'user_manage',
@@ -24,7 +30,6 @@ def post_chpasswd(request):
     password_current = request.POST.get('password_current')
     password_new = request.POST.get('password_new')
     password_new_again = request.POST.get('password_new_again')
-    print password_current,password_new,password_new_again
     user = User.objects.get(username=request.user.username)
     if not user.check_password(password_current):
         code = 1
@@ -42,14 +47,47 @@ def post_chpasswd(request):
             code = 0
             msg = u'密码修改成功'
         except Exception,e:
-            print e
+            code = 4
+            msg = u'密码修改失败'
+    return HttpResponse(simplejson.dumps({'code':code,'msg':msg}),content_type="application/json")
+
+@login_required
+def post_server_chpasswd(request):
+    server_password_current = request.POST.get('server_password_current')
+    server_password_new = request.POST.get('server_password_new')
+    server_password_new_again = request.POST.get('server_password_new_again')
+    orm = perm.objects.get(username=request.user.username)
+    three_months_later = datetime.datetime.now()+datetime.timedelta(91)
+    aes = crypt.crypt_aes(SECRET_KEY[:32])
+    orm_server_password = aes.decrypt_aes(orm.server_password)
+    print server_password_current
+    print orm_server_password
+    if server_password_current != orm_server_password:
+        code = 1
+        msg = u'当前密码错误'
+    elif server_password_new == '' or server_password_new_again == '':
+        code = 2
+        msg = u'新密码不能为空'
+    elif not server_password_new == server_password_new_again:
+        code = 3
+        msg = u'新密码不一致'
+    else:
+        server_password_new = aes.encrypt_aes(server_password_new)
+        try:
+            orm.server_password = server_password_new
+            orm.server_password_expire = three_months_later.strftime('%Y-%m-%d')
+            orm.save()
+            code = 0
+            msg = u'密码修改成功'
+        except Exception,e:
             code = 4
             msg = u'密码修改失败'
     return HttpResponse(simplejson.dumps({'code':code,'msg':msg}),content_type="application/json")
 
 @login_required
 def user_perm(request):
-    if not request.user.is_superuser:
+    flag = check_permission(u'用户权限管理',request.user.username)
+    if flag < 1:
         return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('user_manage/user_perm.html',{'user':request.user.username,
@@ -119,38 +157,87 @@ def user_perm_data(request):
 @login_required
 def user_perm_dropdown(request):
     _id = request.POST.get('id')
+    server_groups = request.POST.get('server_groups')
+    web_perm = request.POST.get('web_perm')
     result = {}
     result['username_list'] = []
-    result['username_edit'] = []
+    result['username_edit'] = ''
     result['web_perm_list'] = []
     result['web_perm_edit'] = []
     result['server_groups_list'] = []
     result['server_groups_edit'] = []
+    count = 0
     if not _id == None:
-        orm = server_group_list.objects.get(id=_id)
-        for i in orm.members_server.split(','):
-            orm_server = server_list.objects.get(server_name=i)
-            result['edit'].append({'text':i,'id':orm_server.id})
+        orm = perm.objects.get(id=_id)
+        result['username_edit'] = {'text':orm.username}
+        if web_perm:
+            for i in orm.web_perm.split(','):
+                result['web_perm_edit'].append({'text':i,'id':count})
+                count += 1
+        if server_groups:
+            for i in orm.server_groups.split(','):
+                orm_server_groups = server_group_list.objects.get(server_group_name=i)
+                result['server_groups_edit'].append({'text':i,'id':orm_server_groups.id})
     orm_User = User.objects.all()
     for i in orm_User:
         result['username_list'].append({'text':i.username,'id':i.id})
     sidebar_list = []
-    sidebar_list2 = []
-    count = 0
+    sidebar_list.append('所有权限')
     with open(BASE_DIR + '/templates/public/sidebar.html') as f:
         line = f.readline()
         while line:
-            data = re.search(r'/.*/',line)
+            data = re.search(r'name=".*"',line)
             if data:
-                sidebar_list.append(data.group().replace('/',''))
+                data = data.group().replace('"','')
+                sidebar_list.append(data.replace('name=',''))
             line = f.readline()
     for i in sidebar_list:
-        if  i != 'main' or i != 'user_perm':
-            sidebar_list2.append(i)
-    for i in sidebar_list2:
         result['web_perm_list'].append({'text':i,'id':count})
         count += 1
     orm_server_group = server_group_list.objects.all()
     for i in orm_server_group:
         result['server_groups_list'].append({'text':i.server_group_name,'id':i.id})
     return HttpResponse(simplejson.dumps(result),content_type="application/json")
+
+@login_required
+def user_perm_save(request):
+    _id = request.POST.get('id')
+    username = request.POST.get('username')
+    name = request.POST.get('name')
+    web_perm = request.POST.get('web_perm')
+    server_password = request.POST.get('server_password')
+    server_groups = request.POST.get('server_groups')
+    three_months_later = datetime.datetime.now()+datetime.timedelta(91)
+    aes = crypt.crypt_aes(SECRET_KEY[:32])
+    server_password = aes.encrypt_aes(server_password)
+    try:
+        if _id =='':
+            if server_password:
+                perm.objects.create(username=username,name=name,web_perm=web_perm,server_password=server_password,server_groups=server_groups,\
+                                    server_password_expire=three_months_later.strftime('%Y-%m-%d'))
+            else:
+                perm.objects.create(username=username,name=name,web_perm=web_perm,server_password=server_password,server_groups=server_groups)
+
+        else:
+            orm = perm.objects.get(id=_id)
+            orm.username = username
+            orm.name = name
+            orm.web_perm = web_perm
+            if server_password:
+                orm.server_password = server_password
+            orm.server_groups = server_groups
+            orm.save()
+        return HttpResponse(simplejson.dumps({'code':0,'msg':u'保存成功'}),content_type="application/json")
+    except Exception,e:
+        logger.error(e)
+        return HttpResponse(simplejson.dumps({'code':1,'msg':str(e)}),content_type="application/json")
+
+@login_required
+def user_perm_del(request):
+    _id = request.POST.get('id')
+    try:
+        orm = perm.objects.get(id=_id)
+        orm.delete()
+        return HttpResponse(simplejson.dumps({'code':0,'msg':u'删除成功'}),content_type="application/json")
+    except Exception,e:
+        return HttpResponse(simplejson.dumps({'code':1,'msg':e}),content_type="application/json")

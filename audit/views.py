@@ -7,9 +7,13 @@ from django.contrib.auth.decorators import login_required
 import simplejson,re
 from django.db.models.query_utils import Q
 from audit.models import log
+from libs.check_perm import check_permission
 
 @login_required
 def audit_log(request):
+    flag = check_permission(u'操作日志',request.user.username)
+    if flag < 1:
+        return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('audit/audit_log.html',{'user':request.user.username,
                                                            'path1':'audit',

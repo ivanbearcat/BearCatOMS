@@ -5908,3 +5908,500 @@ Traceback (most recent call last):
   File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 151, in user_perm_dropdown
     result['name_list'].append({'text':i,'id':count})
 KeyError: 'name_list'
+[2015-07-02 10:02:29,424] ERROR : Internal Server Error: /server_group_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 411, in server_group_dropdown
+    orm = server_group_list.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: server_group_list matching query does not exist.
+[2015-07-02 10:02:47,525] ERROR : (1048, "Column 'server_group_name' cannot be null")
+[2015-07-02 10:03:11,339] ERROR : Internal Server Error: /server_group_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 411, in server_group_dropdown
+    orm = server_group_list.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: server_group_list matching query does not exist.
+[2015-07-02 10:03:15,325] ERROR : Internal Server Error: /server_group_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 411, in server_group_dropdown
+    orm = server_group_list.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: server_group_list matching query does not exist.
+[2015-07-02 10:03:19,871] ERROR : Internal Server Error: /server_group_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 411, in server_group_dropdown
+    orm = server_group_list.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: server_group_list matching query does not exist.
+[2015-07-02 10:24:38,779] WARNING : Not Found: /user_perm_save/
+[2015-07-02 10:24:49,437] WARNING : Not Found: /user_perm_save/
+[2015-07-02 10:25:10,608] WARNING : Not Found: /user_perm_save/
+[2015-07-02 10:26:33,269] WARNING : Not Found: /user_perm_save/
+[2015-07-02 10:26:42,062] WARNING : Not Found: /user_perm_save/
+[2015-07-02 10:29:16,559] WARNING : Not Found: /user_perm_save/
+[2015-07-02 10:32:47,328] WARNING : Not Found: /user_perm_save/
+[2015-07-02 10:34:26,892] ERROR : (1048, "Column 'username' cannot be null")
+[2015-07-02 10:35:24,496] ERROR : (1048, "Column 'username' cannot be null")
+[2015-07-02 10:37:13,881] ERROR : (1048, "Column 'server_password_expire' cannot be null")
+[2015-07-02 10:40:03,285] ERROR : (1048, "Column 'server_password_expire' cannot be null")
+[2015-07-02 10:40:33,858] ERROR : (1048, "Column 'server_password_expire' cannot be null")
+[2015-07-02 10:49:20,007] ERROR : [u"'0000-00-00' value has the correct format (YYYY-MM-DD) but it is an invalid date."]
+[2015-07-02 10:49:32,055] ERROR : [u"'0000-00-00' value has the correct format (YYYY-MM-DD) but it is an invalid date."]
+[2015-07-02 10:51:32,056] ERROR : [u"'' value has an invalid date format. It must be in YYYY-MM-DD format."]
+[2015-07-02 11:09:33,674] ERROR : Internal Server Error: /user_perm_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 131, in user_perm_dropdown
+    orm = perm.objects.get(id=_id)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 358, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 624, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 642, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1250, in add_q
+    can_reuse=used_aliases, force_having=force_having)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\query.py", line 1185, in add_filter
+    connector)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\where.py", line 69, in add
+    value = obj.prepare(lookup_type, value)
+  File "C:\Python27\lib\site-packages\django\db\models\sql\where.py", line 320, in prepare
+    return self.field.get_prep_lookup(lookup_type, value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 310, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django\db\models\fields\__init__.py", line 537, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+[2015-07-02 11:11:09,506] ERROR : Internal Server Error: /user_perm_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 131, in user_perm_dropdown
+    orm = perm.objects.get(id=int(_id))
+ValueError: invalid literal for int() with base 10: ''
+[2015-07-02 11:13:02,917] ERROR : Internal Server Error: /user_perm_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 138, in user_perm_dropdown
+    orm_server_groups = server_group_list.objects.get(server_group_name=i)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: server_group_list matching query does not exist.
+[2015-07-02 11:22:10,246] ERROR : server_group_list matching query does not exist.
+[2015-07-02 11:23:10,549] ERROR : server_group_list matching query does not exist.
+[2015-07-02 11:25:24,269] ERROR : Invalid format string
+[2015-07-02 11:25:36,134] ERROR : Invalid format string
+[2015-07-02 11:29:10,292] ERROR : (1062, "Duplicate entry 'xuezhimin' for key 'username'")
+[2015-07-02 11:29:29,256] ERROR : (1062, "Duplicate entry 'xuezhimin' for key 'username'")
+[2015-07-02 11:34:18,101] ERROR : Internal Server Error: /user_perm_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 173, in user_perm_save
+    print three_months_later.strftime('%F')
+ValueError: Invalid format string
+[2015-07-02 11:35:30,703] ERROR : (1062, "Duplicate entry 'xuezhimin' for key 'username'")
+[2015-07-02 11:39:46,322] ERROR : Internal Server Error: /user_perm_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 175, in user_perm_save
+    server_password = strong_encrypt(server_password)
+TypeError: strong_encrypt() takes exactly 2 arguments (1 given)
+[2015-07-02 11:41:23,986] ERROR : Incorrect string value: '\x82`qs' for column 'server_password' at row 1
+[2015-07-02 11:42:03,724] ERROR : (1062, "Duplicate entry 'xuezhimin' for key 'username'")
+[2015-07-02 11:50:40,970] ERROR : Incorrect string value: '\x82`qs' for column 'server_password' at row 1
+[2015-07-02 11:53:23,450] ERROR : Incorrect string value: '\x87\x94\x92' for column 'server_password' at row 1
+[2015-07-02 12:03:09,943] ERROR : Incorrect string value: '\x93\x92\x91\x82\x92\x87...' for column 'server_password' at row 1
+[2015-07-02 12:04:00,404] ERROR : Incorrect string value: '\x87\x94\x92' for column 'server_password' at row 1
+[2015-07-02 12:05:46,683] ERROR : Incorrect string value: '\x87\x94\x92' for column 'server_password' at row 1
+[2015-07-02 12:06:45,796] ERROR : (1062, "Duplicate entry 'admin' for key 'username'")
+[2015-07-02 12:07:05,969] ERROR : Incorrect string value: '\x82`qs' for column 'server_password' at row 1
+[2015-07-02 12:32:38,233] ERROR : Internal Server Error: /user_perm_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import chpasswd,post_chpasswd,user_perm,user_perm_data,user_perm_dropdown,user_perm_save
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11, in <module>
+    from BearCatOMS.settings import BASE_DIR,SECRET_KEY2
+ImportError: cannot import name SECRET_KEY2
+[2015-07-02 12:33:43,693] ERROR : Internal Server Error: /user_perm_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import chpasswd,post_chpasswd,user_perm,user_perm_data,user_perm_dropdown,user_perm_save
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 12, in <module>
+    from libs.crypt import crypt_aes
+ImportError: cannot import name crypt_aes
+[2015-07-02 13:07:36,190] ERROR : Internal Server Error: /user_perm_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 176, in user_perm_save
+    print aes.encrypt_aes(server_password)
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 15, in encrypt_aes
+    cryptor = AES.new(self.key,self.mode)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 95, in new
+    return AESCipher(key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 59, in __init__
+    blockalgo.BlockAlgo.__init__(self, _AES, key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\blockalgo.py", line 141, in __init__
+    self._cipher = factory.new(key, *args, **kwargs)
+ValueError: IV must be 16 bytes long
+[2015-07-02 13:09:18,022] ERROR : Internal Server Error: /user_perm_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 176, in user_perm_save
+    print aes.encrypt_aes(server_password)
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 15, in encrypt_aes
+    cryptor = AES.new(self.key,self.mode)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 95, in new
+    return AESCipher(key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 59, in __init__
+    blockalgo.BlockAlgo.__init__(self, _AES, key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\blockalgo.py", line 141, in __init__
+    self._cipher = factory.new(key, *args, **kwargs)
+ValueError: IV must be 16 bytes long
+[2015-07-02 13:15:17,459] ERROR : Internal Server Error: /user_perm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS_1.4.20\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import chpasswd,post_chpasswd,user_perm,user_perm_data,user_perm_dropdown,user_perm_save
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 11, in <module>
+    from BearCatOMS.settings import BASE_DIR,SECRET_KEY_AES
+ImportError: cannot import name SECRET_KEY_AES
+[2015-07-02 13:15:42,473] ERROR : Internal Server Error: /user_perm_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 176, in user_perm_save
+    print aes.encrypt_aes(server_password)
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 15, in encrypt_aes
+    cryptor = AES.new(self.key,self.mode)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 95, in new
+    return AESCipher(key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 59, in __init__
+    blockalgo.BlockAlgo.__init__(self, _AES, key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\blockalgo.py", line 141, in __init__
+    self._cipher = factory.new(key, *args, **kwargs)
+ValueError: IV must be 16 bytes long
+[2015-07-02 13:19:15,029] ERROR : Internal Server Error: /user_perm_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 176, in user_perm_save
+    print aes.encrypt_aes(server_password)
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 15, in encrypt_aes
+    cryptor = AES.new(self.key,self.mode)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 95, in new
+    return AESCipher(key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 59, in __init__
+    blockalgo.BlockAlgo.__init__(self, _AES, key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\blockalgo.py", line 141, in __init__
+    self._cipher = factory.new(key, *args, **kwargs)
+ValueError: IV must be 16 bytes long
+[2015-07-02 13:21:45,786] ERROR : Internal Server Error: /user_perm_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 176, in user_perm_save
+    print aes.encrypt_aes(server_password)
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 15, in encrypt_aes
+    cryptor = AES.new(self.key,self.mode)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 95, in new
+    return AESCipher(key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 59, in __init__
+    blockalgo.BlockAlgo.__init__(self, _AES, key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\blockalgo.py", line 141, in __init__
+    self._cipher = factory.new(key, *args, **kwargs)
+ValueError: IV must be 16 bytes long
+[2015-07-02 13:22:23,130] ERROR : Internal Server Error: /user_perm_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 176, in user_perm_save
+    print aes.encrypt_aes(server_password)
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 15, in encrypt_aes
+    cryptor = AES.new(self.key,self.mode)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 95, in new
+    return AESCipher(key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 59, in __init__
+    blockalgo.BlockAlgo.__init__(self, _AES, key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\blockalgo.py", line 141, in __init__
+    self._cipher = factory.new(key, *args, **kwargs)
+ValueError: IV must be 16 bytes long
+[2015-07-02 13:28:42,887] ERROR : Internal Server Error: /user_perm_save/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 178, in user_perm_save
+    print aes.decrypt_aes(server_password)
+  File "E:\BearCatOMS_1.4.20\libs\crypt.py", line 35, in decrypt_aes
+    cryptor = AES.new(self.key,self.mode)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 95, in new
+    return AESCipher(key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\AES.py", line 59, in __init__
+    blockalgo.BlockAlgo.__init__(self, _AES, key, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\Crypto\Cipher\blockalgo.py", line 141, in __init__
+    self._cipher = factory.new(key, *args, **kwargs)
+ValueError: IV must be 16 bytes long
+[2015-07-02 13:35:59,292] ERROR : Column 'username' cannot be null
+[2015-07-02 13:37:22,147] ERROR : Internal Server Error: /user_perm_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 135, in user_perm_dropdown
+    orm_User = User.objects.get(username=orm.username)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: User matching query does not exist.
+[2015-07-02 13:37:31,388] ERROR : Column 'username' cannot be null
+[2015-07-02 13:39:33,474] ERROR : Internal Server Error: /user_perm_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 135, in user_perm_dropdown
+    orm_User = User.objects.get(username=orm.username)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: User matching query does not exist.
+[2015-07-02 13:39:58,987] ERROR : Internal Server Error: /user_perm_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 135, in user_perm_dropdown
+    orm_User = User.objects.get(username=orm.username)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: User matching query does not exist.
+[2015-07-02 13:40:23,265] ERROR : Column 'username' cannot be null
+[2015-07-02 13:42:56,665] ERROR : (1062, "Duplicate entry '' for key 'username'")
+[2015-07-02 13:43:15,961] ERROR : (1062, "Duplicate entry '' for key 'username'")
+[2015-07-02 13:54:25,039] ERROR : Column 'username' cannot be null
+[2015-07-02 13:54:29,457] ERROR : Internal Server Error: /user_perm_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 135, in user_perm_dropdown
+    orm_User = User.objects.get(username=orm.username)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: User matching query does not exist.
+[2015-07-02 14:01:33,868] ERROR : Internal Server Error: /user_perm_dropdown/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 139, in user_perm_dropdown
+    result['web_perm_edit'].append({'text':i,'id':count})
+AttributeError: 'str' object has no attribute 'append'
+[2015-07-02 14:09:37,490] WARNING : Not Found: /user_perm_del/
+[2015-07-02 14:10:08,490] ERROR : Internal Server Error: /user_perm_del/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 209, in user_perm_del
+    return HttpResponse(simplejson.dumps({'code':1,'msg':e}),content_type="application/json")
+  File "C:\Python27\lib\site-packages\simplejson\__init__.py", line 370, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 270, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 352, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\site-packages\simplejson\encoder.py", line 247, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: ValueError("invalid literal for int() with base 10: '81ede0219a16e2e4b87d8fb0d8dfffd8'",) is not JSON serializable
+[2015-07-02 14:15:30,701] INFO : <xuezhimin> login in sucess.
+[2015-07-02 14:21:07,536] INFO : <admin> login in sucess.
+[2015-07-02 14:21:14,022] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 17, in chpasswd
+    orm = perm.objects.get(username=request.user.username)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: perm matching query does not exist.
+[2015-07-02 14:22:10,076] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 17, in chpasswd
+    orm = perm.objects.get(username=request.user.username)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: perm matching query does not exist.
+[2015-07-02 14:26:54,246] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 20, in chpasswd
+    if '淇敼瀵嗙爜'.decode('utf-8') == i.decode('utf-8'):
+  File "C:\Python27\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+[2015-07-02 14:29:09,967] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 20, in chpasswd
+    if str('淇敼瀵嗙爜') == str(i):
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+[2015-07-02 15:01:50,232] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+TypeError: __check_permission() takes no arguments (1 given)
+[2015-07-02 15:03:00,920] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+TypeError: __check_permission() takes no arguments (1 given)
+[2015-07-02 15:03:08,165] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+TypeError: __check_permission() takes no arguments (1 given)
+[2015-07-02 15:04:25,223] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+TypeError: __check_permission() takes no arguments (1 given)
+[2015-07-02 15:05:38,078] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\user_manage\views.py", line 18, in chpasswd
+    check_permission(u'淇敼瀵嗙爜')
+  File "E:\BearCatOMS_1.4.20\libs\check_perm.py", line 8, in check_permission
+    orm = perm.objects.get(username=request.user.username)
+NameError: global name 'request' is not defined
+[2015-07-02 15:16:20,369] INFO : <xuezhimin> login in sucess.
+[2015-07-02 15:19:12,460] INFO : <admin> login in sucess.
+[2015-07-02 15:20:24,875] INFO : <xuezhimin> login in sucess.
+[2015-07-02 15:21:15,046] INFO : <admin> login in sucess.
+[2015-07-02 15:34:40,036] WARNING : Not Found: /post_server_chpasswd/
+[2015-07-02 15:37:47,677] INFO : <admin> login in sucess.

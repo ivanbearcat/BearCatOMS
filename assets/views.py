@@ -7,9 +7,13 @@ from django.contrib.auth.decorators import login_required
 import simplejson
 from django.db.models.query_utils import Q
 from assets.models import asset,user,log
+from libs.check_perm import check_permission
 
 @login_required
 def assets_asset(request):
+    flag = check_permission(u'资产出入库',request.user.username)
+    if flag < 1:
+        return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('assets/assets_asset.html',{'user':request.user.username,
                                                            'path1':'assets',
@@ -132,6 +136,9 @@ def assets_asset_del(request):
 
 @login_required
 def assets_user(request):
+    flag = check_permission(u'员工资产',request.user.username)
+    if flag < 1:
+        return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('assets/assets_user.html',{'user':request.user.username,
                                                            'path1':'assets',
@@ -294,6 +301,9 @@ def assets_user_del(request):
 
 @login_required
 def assets_log(request):
+    flag = check_permission(u'出入库记录',request.user.username)
+    if flag < 1:
+        return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('assets/assets_log.html',{'user':request.user.username,
                                                            'path1':'assets',
@@ -348,6 +358,9 @@ def assets_log_data(request):
 
 @login_required
 def assets_image(request):
+    flag = check_permission(u'资产统计图',request.user.username)
+    if flag < 1:
+        return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('assets/assets_image.html',{'user':request.user.username,
                                                            'path1':'assets',

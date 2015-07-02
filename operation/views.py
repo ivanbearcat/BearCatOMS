@@ -11,9 +11,13 @@ from django import forms
 from libs.socket_send_data import client_send_data
 from libs.str_to_html import convert_str_to_html
 from BearCatOMS.settings import BASE_DIR,CENTER_SERVER
+from libs.check_perm import check_permission
 
 @login_required
 def upload(request):
+    flag = check_permission(u'文件上传',request.user.username)
+    if flag < 1:
+        return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('operation/upload.html',{'user':request.user.username,
                                                            'path1':'operation',
@@ -203,6 +207,9 @@ def upload_upload(request):
 
 @login_required
 def server_operation(request):
+    flag = check_permission(u'服务器操作',request.user.username)
+    if flag < 1:
+        return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('operation/server_operation.html',{'user':request.user.username,
                                                            'path1':'operation',
@@ -323,6 +330,9 @@ def run_cmd(request):
 
 @login_required
 def server_group(request):
+    flag = check_permission(u'服务器组管理',request.user.username)
+    if flag < 1:
+        return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('operation/server_group.html',{'user':request.user.username,
                                                            'path1':'operation',

@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from login.views import login,login_auth,logout,not_login
 from main.views import main
 from monitor.views import nagios,zabbix
-from user_manage.views import chpasswd,post_chpasswd,user_perm,user_perm_data,user_perm_dropdown
+from user_manage.views import chpasswd,post_chpasswd,post_server_chpasswd,user_perm,user_perm_data,user_perm_dropdown,user_perm_save,user_perm_del
 from assets.views import assets_asset,assets_asset_data,assets_asset_save,assets_asset_del,assets_user,assets_user_dropdown,\
     assets_user_data,assets_user_save,assets_user_del,assets_log,assets_log_data,assets_image,assets_get_data
 from audit.views import audit_log,audit_get_data,audit_log_data
@@ -32,6 +32,7 @@ urlpatterns = patterns('',
     url(r'^zabbix/', zabbix),
     url(r'^chpasswd/', chpasswd),
     url(r'^post_chpasswd/', post_chpasswd),
+    url(r'^post_server_chpasswd/', post_server_chpasswd),
     url(r'^assets_asset/', assets_asset),
     url(r'^assets_asset_data/', assets_asset_data),
     url(r'^assets_asset_save/', assets_asset_save),
@@ -65,4 +66,6 @@ urlpatterns = patterns('',
     url(r'^user_perm/', user_perm),
     url(r'^user_perm_data/', user_perm_data),
     url(r'^user_perm_dropdown/', user_perm_dropdown),
+    url(r'^user_perm_save/', user_perm_save),
+    url(r'^user_perm_del/', user_perm_del),
 )

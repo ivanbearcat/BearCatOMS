@@ -5,11 +5,10 @@ sidebar_list2 = []
 with open(BASE_DIR + '/templates/public/sidebar.html') as f:
     line = f.readline()
     while line:
-        data = re.search(r'/.*/',line)
+        data = re.search(r'name=".*"',line)
         if data:
-            sidebar_list.append(data.group().replace('/',''))
+            data = data.group().replace('"','')
+            sidebar_list.append(data.replace('name=',''))
         line = f.readline()
 for i in sidebar_list:
-    if  i != 'main' or i != 'user_perm':
-        sidebar_list2.append(i)
-print sidebar_list2
+    print i
