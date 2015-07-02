@@ -6405,3 +6405,43 @@ NameError: global name 'request' is not defined
 [2015-07-02 15:21:15,046] INFO : <admin> login in sucess.
 [2015-07-02 15:34:40,036] WARNING : Not Found: /post_server_chpasswd/
 [2015-07-02 15:37:47,677] INFO : <admin> login in sucess.
+[2015-07-02 16:09:50,789] WARNING : Not Found: /sync_password/
+[2015-07-02 16:10:31,354] ERROR : Internal Server Error: /sync_password/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.sync_password didn't return an HttpResponse object.
+[2015-07-02 16:30:03,033] ERROR : Internal Server Error: /sync_password/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.sync_password didn't return an HttpResponse object.
+[2015-07-02 16:40:52,226] ERROR : not enough arguments for format string
+[2015-07-02 16:41:13,700] ERROR : Internal Server Error: /sync_password/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 453, in sync_password
+    cmd = MULTI_CHANGE_PASSWD % request.user.username
+TypeError: not enough arguments for format string
+[2015-07-02 16:43:34,757] ERROR : Internal Server Error: /sync_password/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 453, in sync_password
+    cmd = MULTI_CHANGE_PASSWD % (request.user.username,request.user.username,request.user.username)
+ValueError: unsupported format character 'D' (0x44) at index 29
+[2015-07-02 17:00:46,190] ERROR : Internal Server Error: /sync_password/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.sync_password didn't return an HttpResponse object.
+[2015-07-02 17:01:57,680] ERROR : Internal Server Error: /sync_password/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.sync_password didn't return an HttpResponse object.

@@ -7,11 +7,13 @@ import simplejson,re,os,datetime,time,subprocess
 from django.db.models.query_utils import Q
 from operation.models import upload_files,server_list,server_group_list
 from audit.models import log
+from user_manage.models import perm
 from django import forms
 from libs.socket_send_data import client_send_data
 from libs.str_to_html import convert_str_to_html
-from BearCatOMS.settings import BASE_DIR,CENTER_SERVER
+from BearCatOMS.settings import BASE_DIR,CENTER_SERVER,SECRET_KEY
 from libs.check_perm import check_permission
+from libs.crypt import crypt_aes
 
 @login_required
 def upload(request):
@@ -436,3 +438,33 @@ def server_group_del(request):
         return HttpResponse(simplejson.dumps({'code':0,'msg':u'删除成功'}),content_type="application/json")
     except Exception,e:
         return HttpResponse(simplejson.dumps({'code':1,'msg':e}),content_type="application/json")
+
+@login_required
+def sync_password(request):
+    # try:
+        have_server = ''
+        orm_user_perm = perm.objects.get(username=request.user.username)
+        for i in orm_user_perm.server_groups.split(','):
+            orm_server_group = server_group_list.objects.get(server_group_name=i)
+            if have_server == '':
+                have_server = orm_server_group.members_server
+            else:
+                have_server = have_server + ',' + orm_server_group.members_server
+        servers = {}
+        aes = crypt_aes(SECRET_KEY[:32])
+        password = aes.decrypt_aes(orm_user_perm.server_password)
+        cmd = 'if ! id ' + request.user.username + ';then useradd -e date $("+%D" -d "+3 months") ' + request.user.username + ';fi;echo "' + password + '$(sed -n "/^id:/p" /etc/salt/minion|cut -d" " -f2)" |passwd ' + request.user.username + ' --stdin'
+        print cmd
+        for i in have_server.split(','):
+            orm_server = server_list.objects.get(server_name=i)
+            if not servers.has_key(orm_server.belong_to):
+                servers[orm_server.belong_to] = []
+            servers[orm_server.belong_to].append(i)
+        for k,v in servers.items():
+            v = ','.join(v)
+            client_send_data("{'salt':1,'act':'cmd.run','hosts':'%s','argv':%s}" % (v,cmd.split(',')),CENTER_SERVER[k][0],CENTER_SERVER[k][1])
+        return HttpResponse(simplejson.dumps({'code':0,'msg':u'密码同步完成'}),content_type="application/json")
+    # except Exception,e:
+    #     logger.error(e)
+    #     return HttpResponse(simplejson.dumps({'code':1,'msg':u'密码同步失败'}),content_type="application/json")
+
