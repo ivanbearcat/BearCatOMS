@@ -453,8 +453,8 @@ def sync_password(request):
         servers = {}
         aes = crypt_aes(SECRET_KEY[:32])
         password = aes.decrypt_aes(orm_user_perm.server_password)
-        cmd = 'if ! id ' + request.user.username + ';then useradd -e date $("+%D" -d "+3 months") ' + request.user.username + ';fi;echo "' + password + '$(sed -n "/^id:/p" /etc/salt/minion|cut -d" " -f2)" |passwd ' + request.user.username + ' --stdin'
-        print cmd
+        expire_time = orm_user_perm.server_password_expire
+        cmd = 'if ! id ' + request.user.username + ';then useradd -e $(date "+%D" -d "+3 months") ' + request.user.username + ';fi;echo "' + password + '$(sed -n "/^id:/p" /etc/salt/minion|cut -d" " -f2)" |passwd ' + request.user.username + ' --stdin;usermod -e $(date -d "' + expire_time + '" "+%D") ' + request.user.username
         for i in have_server.split(','):
             orm_server = server_list.objects.get(server_name=i)
             if not servers.has_key(orm_server.belong_to):
