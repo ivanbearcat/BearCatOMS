@@ -1,5 +1,21 @@
 #coding:utf-8
-import commands
+from multiprocessing import Process
+import Queue
+import time,os
 
-code,result = commands.getstatusoutput('/usr/local/shellinabox/bin/shellinabox -u shellinabox -g shellinabox -b -c /var/lib/shellinabox -p %s -s /:SSH:%s' % (port,i))
-print code,result
+
+def a():
+    while 1:
+        print 1
+        time.sleep(1)
+
+
+if __name__ == '__main__':
+    q = Queue.Queue()
+    s = Process(target=a)
+    q.put(s)
+    s.start()
+    l = q.get()
+    print l
+    time.sleep(5)
+    l.terminate()
