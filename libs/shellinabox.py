@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #coding:utf-8
 import os,socket,Queue
-from multiprocessing import Process
+from threading import Thread
 
 class open_web_shell(object):
 
@@ -17,7 +17,7 @@ class open_web_shell(object):
                 if self.q.qsize() >= 10:
                     process = self.q.get()
                     process.terminate()
-                process = Process(target=self.open,args=(port,i))
+                process = Thread(target=self.open,args=(port,i))
                 self.q.put(process)
                 process.start()
                 return True

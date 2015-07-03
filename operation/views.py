@@ -16,6 +16,8 @@ from libs.check_perm import check_permission
 from libs.crypt import crypt_aes
 from libs.shellinabox import open_web_shell
 
+from multiprocessing import Process
+
 @login_required
 def upload(request):
     flag = check_permission(u'文件上传',request.user.username)
@@ -487,11 +489,15 @@ def sync_password(request):
 
 @login_required
 def login_server(request):
-    server_ips = request.POST.get('server_ips')
-    for i in server_ips.split(','):
-        shellinabox = open_web_shell()
-        if shellinabox.open(i):
-            return HttpResponse(simplejson.dumps({'code':1,'msg':u'shell开启失败'}),content_type="application/json")
-        else:
-            return HttpResponse(simplejson.dumps({'code':0,'msg':u'shell开启成功'}),content_type="application/json")
+    shellinabox = open_web_shell()
+    a = Process(target=shellinabox.open,args=(20002,'192.168.100.151'))
+    a.start()
+    return HttpResponse(simplejson.dumps({'code':0,'msg':u'shell开启成功'}),content_type="application/json")
+    # server_ips = request.POST.get('server_ips')
+    # for i in server_ips.split(','):
+    #     shellinabox = open_web_shell()
+    #     if shellinabox.process(i):
+    #         return HttpResponse(simplejson.dumps({'code':1,'msg':u'shell开启失败'}),content_type="application/json")
+    #     else:
+    #         return HttpResponse(simplejson.dumps({'code':0,'msg':u'shell开启成功'}),content_type="application/json")
 
