@@ -112,6 +112,14 @@ $(document).ready(function () {
                 }
             },
             {
+                "sExtends": 'text',
+                "sButtonText": '<font color="white">全选/不选</font><i class="fa fa-check"></i>',
+                "sButtonClass": "btn yellow",
+                "fnComplete": function (nButton, oConfig, nRow) {
+                    select_all()
+                }
+            },
+            {
                 "sExtends": 'select',
                 "sButtonText": '<font color="white">执行命令</font><i class="fa fa-toggle-right"></i>',
                 "sButtonClass": "btn blue",
@@ -121,18 +129,18 @@ $(document).ready(function () {
             },
             {
                 "sExtends": 'text',
-                "sButtonText": '<font color="white">全选/不选</font><i class="fa fa-check"></i>',
-                "sButtonClass": "btn yellow",
-                "fnComplete": function (nButton, oConfig, nRow) {
-                    select_all()
-                }
-            },
-            {
-                "sExtends": 'text',
                 "sButtonText": '<font color="white">同步服务器密码</font><i class="fa fa-arrow-circle-o-right"></i>',
                 "sButtonClass": "btn red",
                 "fnComplete": function (nButton, oConfig, nRow) {
                     sync_password()
+                }
+            },
+            {
+                "sExtends": 'text',
+                "sButtonText": '<font color="white">登录到服务器</font><i class="fa fa-laptop"></i>',
+                "sButtonClass": "btn purple",
+                "fnComplete": function (nButton, oConfig, nRow) {
+                    login_server()
                 }
             }
         ]
@@ -211,51 +219,6 @@ function loaddata() {
     });
 }
 
-{#function rule_save() {#}
-{##}
-{#    var assets_type = $('#assets_type').val();#}
-{#    var assets_code = $('#assets_code').val();#}
-{#    var comment = $('#comment').val();#}
-{#    var name = $('#name').val();#}
-{#    var id = $('#id').val();#}
-{#    if (assets_type == '' || name == '' || assets_code == '') {#}
-{#        toastr.error('不能为空')#}
-{#        return;#}
-{#    }#}
-{##}
-{#    showAjaxLoad()#}
-{#    $(self).button('loading');//正在登陆中，显示data-loading-text 标记内容#}
-{##}
-{##}
-{#    $.ajax({#}
-{#        url: '/assets_asset_save/',#}
-{#        type: "POST",#}
-{#        data: {#}
-{#            id: id,#}
-{#            comment: comment,#}
-{#            assets_type: assets_type,#}
-{#            assets_code: assets_code,#}
-{#            name: name#}
-{#        },#}
-{#        success: function (d) {#}
-{#            hideAjaxLoad()#}
-{#            if (d.code == 0) {#}
-{#                toastr.success(d.msg)#}
-{#                $('#datatables').dataTable().fnDraw()#}
-{#            } else {#}
-{#                toastr.error(d.msg)#}
-{#            }#}
-{#        }#}
-{#    });#}
-{#    $('#myModal').modal('hide')#}
-{#    $(self).button('complete')#}
-{#}#}
-{#function contain(Array, s) {#}
-{#    for (var i = 0; i < Array.length; i++)#}
-{#        if (Array[i] == s)#}
-{#            return true;#}
-{#    return false;#}
-{#}#}
 function search_server_list() {
     showAjaxLoad()
     $.post('/search_server_list/', {}, function (d) {
@@ -318,22 +281,24 @@ function sync_password() {
         })
 }
 
-{#function del() {#}
-{#    var oTT = TableTools.fnGetInstance('datatables');#}
-{#    var aData = oTT.fnGetSelectedData();#}
-{#    if (aData.length == 1) {#}
-{#        showAjaxLoad()#}
-{#        $.post('/assets_asset_del/', {id: aData[0][6]}, function (d) {#}
-{#            hideAjaxLoad()#}
-{#            if (d.code == 0) {#}
-{#                toastr.success(d.msg)#}
-{#                $('#datatables').dataTable().fnDraw()#}
-{#            } else {#}
-{#                toastr.error(d.msg)#}
-{#            }#}
-{#        })#}
-{#    }#}
-{#}#}
+function login_server() {
+    var oTT = TableTools.fnGetInstance('datatables');
+    var aData = oTT.fnGetSelectedData();
+    if (aData.length != 0) {
+        var server_ips = []
+        for(var i in aData) {
+            server_ips.push(aData[i][1])
+            server_ips = server_ips.join(',')
+            $.post('/login_server/', {server_ips: server_ips}, function (d) {
+                if (d.code == 0) {
+                    toastr.success(d.msg)
+                } else {
+                    toastr.error(d.msg)
+                }
+            })
+        }
+    }
+}
 
 </script>
 {% endblock %}

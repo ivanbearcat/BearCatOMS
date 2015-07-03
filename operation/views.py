@@ -14,6 +14,7 @@ from libs.str_to_html import convert_str_to_html
 from BearCatOMS.settings import BASE_DIR,CENTER_SERVER,SECRET_KEY
 from libs.check_perm import check_permission
 from libs.crypt import crypt_aes
+from libs.shellinabox import open_web_shell
 
 @login_required
 def upload(request):
@@ -457,7 +458,7 @@ def server_group_del(request):
 
 @login_required
 def sync_password(request):
-    # try:
+    try:
         have_server = ''
         orm_user_perm = perm.objects.get(username=request.user.username)
         for i in orm_user_perm.server_groups.split(','):
@@ -480,7 +481,17 @@ def sync_password(request):
             v = ','.join(v)
             client_send_data("{'salt':1,'act':'cmd.run','hosts':'%s','argv':%s}" % (v,cmd.split(',')),CENTER_SERVER[k][0],CENTER_SERVER[k][1])
         return HttpResponse(simplejson.dumps({'code':0,'msg':u'密码同步完成'}),content_type="application/json")
-    # except Exception,e:
-    #     logger.error(e)
-    #     return HttpResponse(simplejson.dumps({'code':1,'msg':u'密码同步失败'}),content_type="application/json")
+    except Exception,e:
+        logger.error(e)
+        return HttpResponse(simplejson.dumps({'code':1,'msg':u'密码同步失败'}),content_type="application/json")
+
+@login_required
+def login_server(request):
+    server_ips = request.POST.get('server_ips')
+    for i in server_ips.split(','):
+        shellinabox = open_web_shell()
+        if shellinabox.open(i):
+            return HttpResponse(simplejson.dumps({'code':1,'msg':u'shell开启失败'}),content_type="application/json")
+        else:
+            return HttpResponse(simplejson.dumps({'code':0,'msg':u'shell开启成功'}),content_type="application/json")
 

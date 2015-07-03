@@ -6535,3 +6535,25 @@ TemplateDoesNotExist: operation/../templates/user_manage/server_group.html
 [2015-07-03 11:51:59,275] INFO : <xuezhimin> login in sucess.
 [2015-07-03 11:52:27,484] INFO : <admin> login in sucess.
 [2015-07-03 13:56:41,210] ERROR : server_list matching query does not exist.
+[2015-07-03 15:33:05,499] ERROR : Internal Server Error: /login_server/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 493, in login_server
+    if shellinabox.open(i):
+  File "E:\BearCatOMS_1.4.20\libs\shellinabox.py", line 12, in open
+    self.in_use_port.append(port)
+AttributeError: 'open_web_shell' object has no attribute 'in_use_port'
+[2015-07-03 15:33:41,926] ERROR : Internal Server Error: /login_server/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS_1.4.20\operation\views.py", line 493, in login_server
+    if shellinabox.open(i):
+  File "E:\BearCatOMS_1.4.20\libs\shellinabox.py", line 13, in open
+    if self.port_test(i,port):
+TypeError: port_test() takes exactly 2 arguments (3 given)
