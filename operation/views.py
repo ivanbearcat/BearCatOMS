@@ -497,7 +497,7 @@ def login_server(request):
     for i in server_ips.split(','):
         shellinabox = open_web_shell()
         if shellinabox.process(i):
-            return HttpResponse(simplejson.dumps({'code':1,'msg':u'shell开启失败'}),content_type="application/json")
-        else:
             return HttpResponse(simplejson.dumps({'code':0,'msg':u'shell开启成功'}),content_type="application/json")
+        else:
+            return HttpResponse(simplejson.dumps({'code':1,'msg':u'shell开启失败'}),content_type="application/json")
 
