@@ -87,8 +87,7 @@ def post_server_chpasswd(request):
 
 @login_required
 def user_perm(request):
-    flag = check_permission(u'用户权限管理',request.user.username)
-    if flag < 1:
+    if not request.user.is_superuser:
         return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('user_manage/user_perm.html',{'user':request.user.username,

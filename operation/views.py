@@ -149,9 +149,6 @@ def upload_del(request):
 def upload_upload(request):
     flag = request.POST.get('flag')
     file_name = request.POST.get('file_name')
-    rsync_dest = request.POST.get('rsync_dest')
-    rsync_ip = CENTER_SERVER[rsync_dest][0]
-    rsync_dir = CENTER_SERVER[rsync_dest][2]
     if int(flag) == 0:
         #开始传输
         # orm = upload_files.objects.get(file_name=file_name)
@@ -192,6 +189,9 @@ def upload_upload(request):
         return HttpResponse(simplejson.dumps({'code':0,'msg':u'文件传输成功'}),content_type="application/json")
     elif int(flag) == 1:
         #获取百分比
+        rsync_dest = request.POST.get('rsync_dest')
+        rsync_ip = CENTER_SERVER[rsync_dest][0]
+        rsync_dir = CENTER_SERVER[rsync_dest][2]
         if os.path.exists(BASE_DIR + '/tmp/rsync_status_file.tmp'):
             process = 1
         else:
@@ -345,8 +345,7 @@ def run_cmd(request):
 
 @login_required
 def server_group(request):
-    flag = check_permission(u'服务器组管理',request.user.username)
-    if flag < 1:
+    if not request.user.is_superuser:
         return render_to_response('public/no_passing.html')
     path = request.path.split('/')[1]
     return render_to_response('operation/server_group.html',{'user':request.user.username,
