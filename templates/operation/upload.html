@@ -137,22 +137,29 @@ $(document).ready(function () {
                     var oTT = TableTools.fnGetInstance('datatables');
                     var aData = oTT.fnGetSelectedData();
                     if (aData.length == 1) {
-                        upload()
-                        toastr.success('文件开始传输')
-                        var temp = setInterval(function() {
-                            $.post('/upload_upload/', {file_name: aData[0][0], flag: 1}, function (d) {
-                                if (d.code == 0) {
-                                    $('#process').attr('style', 'width:' + d.percent);
-                                } else {
-                                    toastr.error(d.msg)
-                                }
-                                if (d.process == 0) {
-                                    $('#process').attr('style', 'width: 100%');
-                                    setTimeout('clear_percent()',2000)
-                                    clearInterval(temp);
-                                }
-                            })
-                        },1000)
+                        var rsync_dest = $('#rsync_dest').select2('data')
+                        if (rsync_dest == null) {
+                            toastr.error('请选择中心服务器')
+                        }else{
+                            upload()
+                            toastr.success('文件开始传输')
+                            var temp = setInterval(function () {
+                                $.post('/upload_upload/', {file_name: aData[0][0], flag: 1}, function (d) {
+                                    if (d.code == 0) {
+                                        $('#process').attr('style', 'width:' + d.percent);
+                                    } else {
+                                        toastr.error(d.msg)
+                                    }
+                                    if (d.process == 0) {
+                                        $('#process').attr('style', 'width: 100%');
+                                        setTimeout('clear_percent()', 2000)
+                                        clearInterval(temp);
+                                    }
+                                })
+                            }, 1000)
+                        }
+                    }else{
+                        toastr.error('请选择要传输的文件')
                     }
                 }
             },
@@ -245,17 +252,15 @@ function loaddata() {
 function upload() {
     var oTT = TableTools.fnGetInstance('datatables');
     var aData = oTT.fnGetSelectedData();
-    if (aData.length == 1) {
-        var rsync_dest = $('#rsync_dest').select2('data')
-        rsync_dest = rsync_dest["text"]
-        $.post('/upload_upload/', {file_name: aData[0][0],rsync_dest: rsync_dest, flag: 0}, function (d) {
-            if (d.code == 0) {
-                toastr.success(d.msg)
-            } else {
-                toastr.error(d.msg)
-            }
-        })
-    }
+    var rsync_dest = $('#rsync_dest').select2('data')
+    rsync_dest = rsync_dest["text"]
+    $.post('/upload_upload/', {file_name: aData[0][0],rsync_dest: rsync_dest, flag: 0}, function (d) {
+        if (d.code == 0) {
+            toastr.success(d.msg)
+        } else {
+            toastr.error(d.msg)
+        }
+    })
 }
 
 function del() {
