@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #coding:utf-8
-import commands,socket
+import os,socket
 
 class open_web_shell(object):
 
@@ -11,7 +11,9 @@ class open_web_shell(object):
             port = self.port_pool.pop(0)
             self.port_pool.append(port)
             if self.port_test(i,port):
-                code,result = commands.getstatusoutput('/usr/local/shellinabox/bin/shellinabox -u shellinabox -g shellinabox -b -c /var/lib/shellinabox -p %s -s /:SSH:%s' % (port,i))
+                if os.system('netstat -natp|grep shellinabox|grep %s' % port):
+                    os.system('''kill `netstat -natp|grep shellinabox|grep 10000|awk '{print $7}'|awk -F'/' '{print $1}'`''')
+                code,result = os.system('/usr/local/shellinabox/bin/shellinaboxd -u shellinabox -g shellinabox -b -c /var/lib/shellinabox -p %s -s /:SSH:%s' % (port,i))
                 return code
             else:
                 return 1
