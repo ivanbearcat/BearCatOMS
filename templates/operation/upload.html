@@ -48,6 +48,24 @@
                         </span>
                     </div>
                 </div>
+                            <div class="input-group">
+															<span class="twitter-typeahead"
+                                                                  style="position: relative; display: inline-block;">
+                                                                <input type="text" class="form-control tt-hint"
+                                                                       disabled="" autocomplete="off" spellcheck="false"
+                                                                       style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);">
+                                                                <div type="text" id="rsync_dest"
+                                                                     name="typeahead_example_modal_1"
+                                                                     class="form-control tt-input" autocomplete="off"
+                                                                     spellcheck="false" dir="auto"
+                                                                     style="width: 250px;position: relative; vertical-align: top; background-color: transparent;"></div><pre
+                                                                    aria-hidden="true"
+                                                                    style="position: absolute; visibility: hidden; white-space: nowrap; font-family: 'Open Sans', sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span
+                                                                    class="tt-dropdown-menu"
+                                                                    style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div
+                                                                    class="tt-dataset-1"></div></span></span>
+                            </div>
+
 
                 <table class="table table-striped table-bordered table-hover table-full-width"  id="datatables">
                     <thead>
@@ -101,18 +119,27 @@ var aButtons
 /* Formating function for row details */
 
 $(document).ready(function () {
+    $.post('/rsync_dest_dropdown/', {}, function (d) {
+        $('#rsync_dest').select2({
+            multiple: false,
+            placeholder: '请选传到哪个中心服务器',
+            allowClear: true,
+            data: d['rsync_dest_dropdown_list']
+        });
+    })
+
     aButtons = [
             {
                 "sExtends": 'select',
                 "sButtonText": '<i class="fa fa-share"><font color="white"> 传到CenterServer</font></i>',
                 "sButtonClass": "btn blue",
                 "fnComplete": function (nButton, oConfig, nRow) {
-                    upload()
-		    toastr.success('文件开始传输')
-                    var temp = setInterval(function() {
-                        var oTT = TableTools.fnGetInstance('datatables');
-                        var aData = oTT.fnGetSelectedData();
-                        if (aData.length == 1) {
+                    var oTT = TableTools.fnGetInstance('datatables');
+                    var aData = oTT.fnGetSelectedData();
+                    if (aData.length == 1) {
+                        upload()
+                        toastr.success('文件开始传输')
+                        var temp = setInterval(function() {
                             $.post('/upload_upload/', {file_name: aData[0][0], flag: 1}, function (d) {
                                 if (d.code == 0) {
                                     $('#process').attr('style', 'width:' + d.percent);
@@ -120,13 +147,13 @@ $(document).ready(function () {
                                     toastr.error(d.msg)
                                 }
                                 if (d.process == 0) {
-				    $('#process').attr('style', 'width: 100%');
-				    setTimeout('clear_percent()',2000)
+                                    $('#process').attr('style', 'width: 100%');
+                                    setTimeout('clear_percent()',2000)
                                     clearInterval(temp);
                                 }
                             })
-                        }
-                    },1000)
+                        },1000)
+                    }
                 }
             },
             {
@@ -141,8 +168,10 @@ $(document).ready(function () {
     PluploadCustom.init();
     loaddata()
 
-
 });
+
+
+
 function loaddata() {
     oTable = $('#datatables').dataTable({
         "sAjaxSource": "/upload_data/?rand=" + Math.random(),
@@ -213,57 +242,13 @@ function loaddata() {
     });
 }
 
-function rule_save() {
-
-    var assets_type = $('#assets_type').val();
-    var assets_code = $('#assets_code').val();
-    var comment = $('#comment').val();
-    var name = $('#name').val();
-    var id = $('#id').val();
-    if (assets_type == '' || name == '' || assets_code == '') {
-        toastr.error('不能为空')
-        return;
-    }
-
-    showAjaxLoad()
-    $(self).button('loading');//正在登陆中，显示data-loading-text 标记内容
-
-
-    $.ajax({
-        url: '/assets_asset_save/',
-        type: "POST",
-        data: {
-            id: id,
-            comment: comment,
-            assets_type: assets_type,
-            assets_code: assets_code,
-            name: name
-        },
-        success: function (d) {
-            hideAjaxLoad()
-            if (d.code == 0) {
-                toastr.success(d.msg)
-                $('#datatables').dataTable().fnDraw()
-            } else {
-                toastr.error(d.msg)
-            }
-        }
-    });
-    $('#myModal').modal('hide')
-    $(self).button('complete')
-}
-function contain(Array, s) {
-    for (var i = 0; i < Array.length; i++)
-        if (Array[i] == s)
-            return true;
-    return false;
-}
-
 function upload() {
     var oTT = TableTools.fnGetInstance('datatables');
     var aData = oTT.fnGetSelectedData();
     if (aData.length == 1) {
-        $.post('/upload_upload/', {file_name: aData[0][0], flag: 0}, function (d) {
+        var rsync_dest = $('#rsync_dest').select2('data')
+        rsync_dest = rsync_dest["text"]
+        $.post('/upload_upload/', {file_name: aData[0][0],rsync_dest: rsync_dest, flag: 0}, function (d) {
             if (d.code == 0) {
                 toastr.success(d.msg)
             } else {

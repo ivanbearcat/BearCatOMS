@@ -149,6 +149,9 @@ def upload_del(request):
 def upload_upload(request):
     flag = request.POST.get('flag')
     file_name = request.POST.get('file_name')
+    rsync_dest = request.POST.get('rsync_dest')
+    rsync_ip = CENTER_SERVER[rsync_dest][0]
+    rsync_dir = CENTER_SERVER[rsync_dest][2]
     if int(flag) == 0:
         #开始传输
         # orm = upload_files.objects.get(file_name=file_name)
@@ -156,7 +159,7 @@ def upload_upload(request):
         cmdLine.append('rsync')
         cmdLine.append('--progress')
         cmdLine.append('uploads/%s' % file_name)
-        cmdLine.append('192.168.100.206:.')
+        cmdLine.append('%s:%s' % (rsync_ip,rsync_dir))
         tmpFile = BASE_DIR + "/tmp/upload.tmp"  #临时生成一个文件
         fpWrite = open(tmpFile,'w')
         with open(BASE_DIR + '/tmp/rsync_status_file.tmp','w') as f:
@@ -206,6 +209,16 @@ def upload_upload(request):
     else:
         pass
         return HttpResponse(simplejson.dumps({'code':1,'msg':u'文件传输失败'}),content_type="application/json")
+
+@login_required
+def rsync_dest_dropdown(request):
+    result = {}
+    count = 0
+    result['rsync_dest_dropdown_list'] = []
+    for k in CENTER_SERVER.keys():
+        result['rsync_dest_dropdown_list'].append({'text':k, 'id': count})
+        count += 1
+    return HttpResponse(simplejson.dumps(result),content_type="application/json")
 
 @login_required
 def server_operation(request):
