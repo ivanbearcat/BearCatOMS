@@ -6724,3 +6724,58 @@ Traceback (most recent call last):
 DoesNotExist: perm matching query does not exist.
 [2015-07-05 18:19:11,898] INFO : <admin> login in sucess.
 [2015-07-05 18:27:34,220] ERROR : perm matching query does not exist.
+[2015-07-05 20:52:33,411] ERROR : perm matching query does not exist.
+[2015-07-05 21:01:12,920] ERROR : Internal Server Error: /get_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 283, in get_server_list
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 201, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python27\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1054, "Unknown column 'operation_server_list.belong_to' in 'field list'")
+[2015-07-05 21:01:29,549] ERROR : Internal Server Error: /get_server_list/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 283, in get_server_list
+    for i in  result_data:
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 201, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python27\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1054, "Unknown column 'operation_server_list.belong_to' in 'field list'")
