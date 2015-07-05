@@ -6557,3 +6557,170 @@ Traceback (most recent call last):
   File "E:\BearCatOMS_1.4.20\libs\shellinabox.py", line 13, in open
     if self.port_test(i,port):
 TypeError: port_test() takes exactly 2 arguments (3 given)
+[2015-07-05 17:06:25,388] ERROR : Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import chpasswd,post_chpasswd,post_server_chpasswd,user_perm,user_perm_data,user_perm_dropdown,user_perm_save,user_perm_del
+  File "E:\BearCatOMS\user_manage\views.py", line 12, in <module>
+    from libs import crypt
+  File "E:\BearCatOMS\libs\crypt.py", line 4, in <module>
+    from Crypto.Cipher import AES
+ImportError: No module named Crypto.Cipher
+[2015-07-05 17:06:25,709] ERROR : Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django\middleware\common.py", line 67, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 557, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 446, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import chpasswd,post_chpasswd,post_server_chpasswd,user_perm,user_perm_data,user_perm_dropdown,user_perm_save,user_perm_del
+  File "E:\BearCatOMS\user_manage\views.py", line 12, in <module>
+    from libs import crypt
+  File "E:\BearCatOMS\libs\crypt.py", line 4, in <module>
+    from Crypto.Cipher import AES
+ImportError: No module named Crypto.Cipher
+[2015-07-05 17:06:25,805] ERROR : Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 87, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django\middleware\common.py", line 67, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 557, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 446, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import chpasswd,post_chpasswd,post_server_chpasswd,user_perm,user_perm_data,user_perm_dropdown,user_perm_save,user_perm_del
+  File "E:\BearCatOMS\user_manage\views.py", line 12, in <module>
+    from libs import crypt
+  File "E:\BearCatOMS\libs\crypt.py", line 4, in <module>
+    from Crypto.Cipher import AES
+ImportError: No module named Crypto.Cipher
+[2015-07-05 17:10:53,690] ERROR : Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS\BearCatOMS\urls.py", line 9, in <module>
+    from operation.views import upload,get_upload,upload_data,upload_del,upload_upload,server_operation,get_server_list,search_server_list,run_cmd,\
+  File "E:\BearCatOMS\operation\views.py", line 13, in <module>
+    from libs.str_to_html import convert_str_to_html
+  File "E:\BearCatOMS\libs\str_to_html.py", line 2, in <module>
+    import re,yaml
+ImportError: No module named yaml
+[2015-07-05 18:13:20,755] INFO : <admin> login in sucess.
+[2015-07-05 18:13:24,473] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\user_manage\views.py", line 19, in chpasswd
+    flag = check_permission(u'淇敼瀵嗙爜',request.user.username)
+  File "E:\BearCatOMS\libs\check_perm.py", line 9, in check_permission
+    orm = perm.objects.get(username=username)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 361, in get
+    num = len(clone)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 85, in __len__
+    self._result_cache = list(self.iterator())
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "C:\Python27\lib\site-packages\django\db\models\sql\compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django\db\backends\mysql\base.py", line 114, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 201, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python27\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+DatabaseError: (1146, "Table 'BearCatOMS.user_manage_perm' doesn't exist")
+[2015-07-05 18:14:03,444] ERROR : Internal Server Error: /chpasswd/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\user_manage\views.py", line 19, in chpasswd
+    flag = check_permission(u'淇敼瀵嗙爜',request.user.username)
+  File "E:\BearCatOMS\libs\check_perm.py", line 9, in check_permission
+    orm = perm.objects.get(username=username)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: perm matching query does not exist.
+[2015-07-05 18:15:25,066] ERROR : Internal Server Error: /assets_asset/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\assets\views.py", line 14, in assets_asset
+    flag = check_permission(u'璧勪骇鍑哄叆搴?,request.user.username)
+  File "E:\BearCatOMS\libs\check_perm.py", line 9, in check_permission
+    orm = perm.objects.get(username=username)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: perm matching query does not exist.
+[2015-07-05 18:18:05,566] ERROR : Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 23, in upload
+    flag = check_permission(u'鏂囦欢涓婁紶',request.user.username)
+  File "E:\BearCatOMS\libs\check_perm.py", line 9, in check_permission
+    orm = perm.objects.get(username=username)
+  File "C:\Python27\lib\site-packages\django\db\models\manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django\db\models\query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: perm matching query does not exist.
+[2015-07-05 18:19:11,898] INFO : <admin> login in sucess.
+[2015-07-05 18:27:34,220] ERROR : perm matching query does not exist.
