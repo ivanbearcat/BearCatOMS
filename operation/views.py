@@ -312,9 +312,9 @@ def search_server_list(request):
                     os = eval(os)
                     belong_to = i
                     server_list.objects.create(server_name=k,ip=ip[k]['ipv4'],os=os[k]['os'],belong_to=belong_to)
-            for i in server_list.objects.all():
-                if not i.server_name in dict_data.keys():
-                    i.delete()
+            # for i in server_list.objects.all():
+            #     if not i.server_name in dict_data.keys():
+            #         i.delete()
         return HttpResponse(simplejson.dumps({'code':0,'msg':u'获取完成'}),content_type="application/json")
     except Exception,e:
         logger.error(e)

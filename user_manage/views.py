@@ -6,11 +6,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 import simplejson,re,datetime,os
 from user_manage.models import perm
-from operation.models import server_group_list,server_list
+from operation.models import server_group_list
 from django.db.models.query_utils import Q
 from BearCatOMS.settings import BASE_DIR,SECRET_KEY
 from libs import crypt
 from libs.check_perm import check_permission
+from libs.server_list_conf import server_lists
 from libs.socket_send_data import client_send_data
 
 
@@ -80,12 +81,15 @@ def post_server_chpasswd(request):
         try:
             if os.system('id %s' % request.user.username):
                 code = os.system('useradd -e $(date "+%D" -d "+3 months") ' + request.user.username + ' && echo ' + server_password_new_again + '|passwd --stdin ' + request.user.username)
+
                 if code:
                     return HttpResponse(simplejson.dumps({'code':code,'msg':'密码修改失败'}),content_type="application/json")
             else:
                 code = os.system('usermod -e $(date "+%D" -d "+3 months") ' + request.user.username + ' && echo ' + server_password_new_again + '|passwd --stdin ' + request.user.username)
                 if code:
                     return HttpResponse(simplejson.dumps({'code':code,'msg':'密码修改失败'}),content_type="application/json")
+            for i in server_lists.values():
+                os.system('ssh-copy-id -i /home/%s/.ssh/id_rsa.pub root@%s' % (request.user.username,i))
             orm.server_password = server_password_new
             orm.server_password_expire = three_months_later.strftime('%Y-%m-%d')
             orm.save()

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #coding:utf-8
 import MySQLdb,sys,os
-import server_list
+from libs.server_list_conf import server_lists
 
 username = sys.argv[1]
 server_groups = []
@@ -32,10 +32,19 @@ except Exception,e:
 
 while 1:
     try:
+        print '=================='
         for i in all_servers:
             print i
-        hostname = raw_input('请输入要登录的主机名：')
-        if hostname == '' or hostname not in all_servers:continue
-        os.system('python audit_shell.py %s %s' % (hostname,server_list[hostname]))
+        print '=================='
+
+        hostname = raw_input('请输入要登录的主机名(输入exit退出堡垒机)：').strip()
+	if hostname == 'exit':
+	    sys.exit(0)
+        if hostname == '' or hostname not in all_servers:
+            print '主机名不正确'
+            continue
+        os.system('python audit_shell.py %s %s' % (server_lists[hostname],hostname))
     except Exception:
         continue
+    except KeyboardInterrupt:
+	continue
