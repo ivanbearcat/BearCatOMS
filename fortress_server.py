@@ -2,6 +2,7 @@
 #coding:utf-8
 import MySQLdb,sys,os
 from libs.server_list_conf import server_lists
+from BearCatOMS.settings import BASE_DIR
 
 username = sys.argv[1]
 server_groups = []
@@ -22,7 +23,6 @@ try:
             for n in j:
                 for m in n.split(','):
                     all_servers.append(m)
-    print all_servers
     conn.commit()
     cur.close()
     conn.close()
@@ -43,7 +43,7 @@ while 1:
         if hostname == '' or hostname not in all_servers:
             print '主机名不正确'
             continue
-        os.system('python others/audit_shell/audit_shell.py %s %s' % (server_lists[hostname],hostname))
+        os.system('python %s/others/audit_shell/audit_shell.py %s %s' % (BASE_DIR,server_lists[hostname],username))
     except Exception:
         continue
     except KeyboardInterrupt:
