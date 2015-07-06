@@ -79,9 +79,13 @@ def post_server_chpasswd(request):
         server_password_new = aes.encrypt_aes(server_password_new)
         try:
             if os.system('if id %s' % request.user.username):
-                os.system('useradd -e $(date "+%D" -d "+3 months") ' + request.user.username + ' && echo ' + server_password_new + '|passwd --stdin ' + request.user.username)
+                code = os.system('useradd -e $(date "+%D" -d "+3 months") ' + request.user.username + ' && echo ' + server_password_new + '|passwd --stdin ' + request.user.username)
+                if code:
+                    return HttpResponse(simplejson.dumps({'code':code,'msg':'密码修改失败'}),content_type="application/json")
             else:
-                os.system('usermod -e $(date "+%D" -d "+3 months") ' + request.user.username + ' && echo ' + server_password_new + '|passwd --stdin ' + request.user.username)
+                code = os.system('usermod -e $(date "+%D" -d "+3 months") ' + request.user.username + ' && echo ' + server_password_new + '|passwd --stdin ' + request.user.username)
+                if code:
+                    return HttpResponse(simplejson.dumps({'code':code,'msg':'密码修改失败'}),content_type="application/json")
             orm.server_password = server_password_new
             orm.server_password_expire = three_months_later.strftime('%Y-%m-%d')
             orm.save()

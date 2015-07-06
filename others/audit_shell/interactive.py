@@ -71,7 +71,7 @@ def posix_shell(chan,web_username,source_ip):
                     break
                 try:
                     record.append(x)
-                    if x == '\x7f':
+                    if x == '\x7f' or x == '\x08':
                         record.pop()
                         record.pop()
                     if x == '\t':
