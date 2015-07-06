@@ -94,7 +94,7 @@ if len(sys.argv) < 3:
     sys.exit(1)
 else:
     web_username = sys.argv[2]
-paramiko.util.log_to_file('audit_shell.log')
+#paramiko.util.log_to_file('audit_shell.log')
 
 username = ''
 if len(sys.argv) > 1:
