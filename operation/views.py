@@ -501,3 +501,14 @@ def login_server(request):
         else:
             return HttpResponse(simplejson.dumps({'code':1,'msg':u'shell开启失败'}),content_type="application/json")
 
+@login_required
+def fortress_server(request):
+    flag = check_permission(u'堡垒机',request.user.username)
+    if flag < 1:
+        return render_to_response('public/no_passing.html')
+    path = request.path.split('/')[1]
+    return render_to_response('operation/fortress_server.html',{'user':request.user.username,
+                                                           'path1':'operation',
+                                                           'path2':path,
+                                                           'page_name1':u'运维操作',
+                                                           'page_name2':u'堡垒机'})

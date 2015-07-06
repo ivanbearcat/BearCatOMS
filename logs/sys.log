@@ -6779,3 +6779,27 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
     raise errorclass, errorvalue
 DatabaseError: (1054, "Unknown column 'operation_server_list.belong_to' in 'field list'")
+[2015-07-06 11:41:16,553] WARNING : Not Found: /fortress_server/
+[2015-07-06 12:13:49,691] ERROR : Internal Server Error: /fortress_server/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    request.path_info)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 317, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django\core\urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\site-packages\django\utils\importlib.py", line 35, in import_module
+    __import__(name)
+  File "E:\BearCatOMS\BearCatOMS\urls.py", line 5, in <module>
+    from user_manage.views import chpasswd,post_chpasswd,post_server_chpasswd,user_perm,user_perm_data,user_perm_dropdown,user_perm_save,user_perm_del
+  File "E:\BearCatOMS\user_manage\views.py", line 78
+    if os.system('if ')
+                      ^
+SyntaxError: invalid syntax
+[2015-07-06 12:56:52,509] WARNING : <admin> login in fail.
+[2015-07-06 12:56:59,697] INFO : <admin> login in sucess.
+[2015-07-06 12:57:46,717] INFO : <test1> login in sucess.
+[2015-07-06 13:09:00,421] INFO : <admin> login in sucess.
+[2015-07-06 13:11:40,533] INFO : <test1> login in sucess.

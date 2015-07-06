@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.utils.log import logger
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-import simplejson,re,datetime
+import simplejson,re,datetime,os
 from user_manage.models import perm
 from operation.models import server_group_list,server_list
 from django.db.models.query_utils import Q
@@ -72,16 +72,23 @@ def post_server_chpasswd(request):
     elif not server_password_new == server_password_new_again:
         code = 3
         msg = u'新密码不一致'
+    elif server_password_current == server_password_new:
+        code = 4
+        msg = u'新密码不能与当前相同'
     else:
         server_password_new = aes.encrypt_aes(server_password_new)
         try:
+            if os.system('if id %s' % request.user.username):
+                os.system('useradd -e $(date "+%D" -d "+3 months") ' + request.user.username + ' && echo ' + server_password_new + '|passwd --stdin ' + request.user.username)
+            else:
+                os.system('usermod -e $(date "+%D" -d "+3 months") ' + request.user.username + ' && echo ' + server_password_new + '|passwd --stdin ' + request.user.username)
             orm.server_password = server_password_new
             orm.server_password_expire = three_months_later.strftime('%Y-%m-%d')
             orm.save()
             code = 0
             msg = u'密码修改成功'
         except Exception,e:
-            code = 4
+            code = 5
             msg = u'密码修改失败'
     return HttpResponse(simplejson.dumps({'code':code,'msg':msg}),content_type="application/json")
 
