@@ -91,7 +91,7 @@ def post_server_chpasswd(request):
             for i in server_lists.values():
                 os.system('ssh-copy-id -i /home/%s/.ssh/id_rsa.pub root@%s' % (request.user.username,i))
             if not os.system('grep /home/%s/.bashrc'% request.user.username):
-                os.system('echo "python %s %s" >> /home/%s/.bashrc && echo "logout" >> /home/%s/.bashrc' % (BASE_DIR + '/others/audit_shell/fortress_server.py',request.user.username,request.user.username,request.user.username))
+                os.system('echo "python %s %s" >> /home/%s/.bashrc && echo "logout" >> /home/%s/.bashrc' % (BASE_DIR + '/fortress_server.py',request.user.username,request.user.username,request.user.username))
             orm.server_password = server_password_new
             orm.server_password_expire = three_months_later.strftime('%Y-%m-%d')
             orm.save()
