@@ -43,15 +43,14 @@ def posix_shell(chan,web_username,source_ip):
     import select
     
     oldtty = termios.tcgetattr(sys.stdin)
+    conn = MySQLdb.connect(host='localhost',user='BearCat',passwd='xzm_123.',db='BearCatOMS',port=3306)
+    cur = conn.cursor()
     try:
         tty.setraw(sys.stdin.fileno())
         tty.setcbreak(sys.stdin.fileno())
         chan.settimeout(0.0)
 
-	record = []
-	conn = MySQLdb.connect(host='localhost',user='BearCat',passwd='xzm_123.',db='BearCatOMS',port=3306)
-	cur = conn.cursor()
-	
+        record = []
 
         while True:
             r, w, e = select.select([chan, sys.stdin], [], [])
@@ -65,33 +64,33 @@ def posix_shell(chan,web_username,source_ip):
                     sys.stdout.flush()
                 except socket.timeout:
                     pass
-		
+
             if sys.stdin in r:
                 x = sys.stdin.read(1)
                 if len(x) == 0:
                     break
-		try:
-		    record.append(x)
-		    if x == '\x08':
-		        record.pop()
-		        record.pop()
-		    if x == '\t':
-			record.pop()
-			record.append('[tab]')
-		except Exception:
-		    pass
+                try:
+                    record.append(x)
+                    if x == '\x08':
+                        record.pop()
+                        record.pop()
+                    if x == '\t':
+                        record.pop()
+                        record.append('[tab]')
+                except Exception:
+                    pass
                 chan.send(x)
-	    if x == '\r':
-		cmd = ''.join(record)
-		time_now = datetime.datetime.now().strftime('%F %X')
-		cur.execute('insert into audit_log (source_ip,username,command,time) values("%s","%s","%s","%s")' % (source_ip,web_username,cmd,time_now))
-		record = []
+            if x == '\r':
+                cmd = ''.join(record)
+                time_now = datetime.datetime.now().strftime('%F %X')
+                cur.execute('insert into audit_log (source_ip,username,command,time) values("%s","%s","%s","%s")' % (source_ip,web_username,cmd,time_now))
+                record = []
 
     finally:
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, oldtty)
-	conn.commit()
-	cur.close()
-	conn.close()
+        conn.commit()
+        cur.close()
+        conn.close()
 
     
 # thanks to Mike Looijmans for this code
