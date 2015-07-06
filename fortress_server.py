@@ -43,7 +43,7 @@ while 1:
         if hostname == '' or hostname not in all_servers:
             print '主机名不正确'
             continue
-        os.system('python libs/audit_server/audit_shell.py %s %s' % (server_lists[hostname],hostname))
+        os.system('python others/audit_shell/audit_shell.py %s %s' % (server_lists[hostname],hostname))
     except Exception:
         continue
     except KeyboardInterrupt:
