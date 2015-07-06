@@ -90,6 +90,7 @@ def post_server_chpasswd(request):
                     return HttpResponse(simplejson.dumps({'code':code,'msg':'密码修改失败'}),content_type="application/json")
             for i in server_lists.values():
                 os.system('ssh-copy-id -i /home/%s/.ssh/id_rsa.pub root@%s' % (request.user.username,i))
+            os.system('echo "python %s %s" >> /home/%s/.bashrc && echo "logout" >> /home/%s/.bashrc' % (BASE_DIR + '/others/audit_shell/fortress_server.py',request.user.username,request.user.username,request.user.username))
             orm.server_password = server_password_new
             orm.server_password_expire = three_months_later.strftime('%Y-%m-%d')
             orm.save()
