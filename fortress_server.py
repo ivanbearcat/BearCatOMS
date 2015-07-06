@@ -37,7 +37,7 @@ while 1:
             print i
         print '=================='
 
-        hostname = raw_input('请输入要登录的主机名(输入exit退出堡垒机)：').strip()
+        hostname = raw_input('please input hostname to login("exit" to logout)：').strip()
 	if hostname == 'exit':
 	    sys.exit(0)
         if hostname == '' or hostname not in all_servers:
