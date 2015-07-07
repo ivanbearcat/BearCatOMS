@@ -12,7 +12,7 @@ class crypt_aes():
     #加密函数，如果text不足16位就用空格补足为16位，
     #如果大于16当时不是16的倍数，那就补足为16的倍数。
     def encrypt_aes(self,text):
-        cryptor = AES.new(self.key,self.mode)
+        cryptor = AES.new(self.key,self.mode,b'0000000000000000')
         #这里密钥key 长度必须为16（AES-128）,
         #24（AES-192）,或者32 （AES-256）Bytes 长度
         #目前AES-128 足够目前使用
@@ -32,17 +32,9 @@ class crypt_aes():
 
     #解密后，去掉补足的空格用strip() 去掉
     def decrypt_aes(self,text):
-        cryptor = AES.new(self.key,self.mode)
+        cryptor = AES.new(self.key,self.mode,b'0000000000000000')
         plain_text  = cryptor.decrypt(a2b_hex(text))
         return plain_text.rstrip('\0')
-
-# pc = crypt_aes('keyskeyskeyskeys') #初始化密钥
-# import sys
-# e = pc.encrypt_aes(sys.argv[1]) #加密
-# d = pc.decrypt_aes(e) #解密
-# print "加密:",e
-# print "解密:",d
-
 
 def encrypt(key,text):
     l1 = []
@@ -101,5 +93,7 @@ def strong_encrypt(key,text):
 
 def strong_decrypt(key,text):
     data = decrypt(key,text)
-    data = base64.b64decode(data)
-    return data
+    missing_padding = 4 - len(data) % 4
+    if missing_padding:
+            data += b'='* missing_padding
+    return base64.decodestring(data)
