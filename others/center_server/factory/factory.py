@@ -2,11 +2,13 @@
 from twisted.internet.protocol import Factory, Protocol, ClientFactory
 from twisted.internet import threads
 # from twisted.protocols.basic import LineReceiver
-from conf.config import factory,server
+from conf.config import factory,server,SECRET_KEY
 # from libs.log import logger
-import time,os
+import time,os,yaml
 from twisted.internet import reactor
 from libs import crypt
+from libs.log_mod import logger
+logger = logger()
 # from lib.data_analysis import ProtoControl
 # from lib.c_include import *
 # from orm.factorywork import server_info_save, load_history_online, workRegos, workLostClient,query_device, check_online
@@ -39,7 +41,10 @@ class server_protocol(Protocol):
             """
             禁IP
             """
-            self.transport.write('The IP (%s) not allow' % ip)
+            not_allow = 'The IP (%s) not allow' % ip
+            logger.error(not_allow)
+            msg = crypt.strong_encrypt(SECRET_KEY,not_allow)
+            self.transport.write(msg)
 	    self.transport.loseConnection()
             # logger.info('The IP (%s) not allow' % ip)
         # else:
@@ -77,12 +82,13 @@ class server_protocol(Protocol):
 
     def dataReceived(self, data):
         try:
-            data = crypt.strong_decrypt('#ioag^zjg!+wq^=x-jum(qz*)*&amp;*h&amp;v@_#@_ks%7l3=dyzqu_t',str(data))
+            data = crypt.strong_decrypt(SECRET_KEY,str(data))
             print data
             data = eval(data)
+	    print data
             if data.get('salt') == 1:
                 result = self.factory.call_saltstack(data)
-                result = crypt.strong_encrypt('#ioag^zjg!+wq^=x-jum(qz*)*&amp;*h&amp;v@_#@_ks%7l3=dyzqu_t',str(result))
+                result = crypt.strong_encrypt(SECRET_KEY,str(result))
                 self.transport.write(result)
             else:
                 pass
@@ -144,12 +150,14 @@ class server_factory(Factory):
 
     def __init__(self):
         pass
+
     def call_saltstack(self,data):
         import salt.client
         client = salt.client.LocalClient()
         act = data.get('act')
         hosts = data.get('hosts')
         argv = data.get('argv')
+        result = client.cmd(hosts,act,argv)
         if len(hosts.split(',')) > 1:
             result = client.cmd(hosts,act,argv,expr_form='list')
         else:
