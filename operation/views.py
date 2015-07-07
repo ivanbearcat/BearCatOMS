@@ -351,6 +351,18 @@ def run_cmd(request):
         return HttpResponse(simplejson.dumps({'code':1,'msg':u'完成执行失败'}),content_type="application/json")
 
 @login_required
+def server_del(request):
+    try:
+        server_names = request.POST.get('server_names')
+        for i in server_names.split(','):
+            orm = server_list.objects.get(server_name=i)
+            orm.delete()
+        return HttpResponse(simplejson.dumps({'code':0,'msg':u'服务器删除成功'}),content_type="application/json")
+    except Exception,e:
+        logger.error(e)
+        return HttpResponse(simplejson.dumps({'code':1,'msg':u'服务器删除失败'}),content_type="application/json")
+
+@login_required
 def server_group(request):
     if not request.user.is_superuser:
         return render_to_response('public/no_passing.html')
@@ -458,48 +470,48 @@ def server_group_del(request):
     except Exception,e:
         return HttpResponse(simplejson.dumps({'code':1,'msg':e}),content_type="application/json")
 
-@login_required
-def sync_password(request):
-    try:
-        have_server = ''
-        orm_user_perm = perm.objects.get(username=request.user.username)
-        for i in orm_user_perm.server_groups.split(','):
-            orm_server_group = server_group_list.objects.get(server_group_name=i)
-            if have_server == '':
-                have_server = orm_server_group.members_server
-            else:
-                have_server = have_server + ',' + orm_server_group.members_server
-        servers = {}
-        aes = crypt_aes(SECRET_KEY[:32])
-        password = aes.decrypt_aes(orm_user_perm.server_password)
-        expire_time = orm_user_perm.server_password_expire
-        cmd = 'if ! id ' + request.user.username + ';then useradd -e $(date "+%D" -d "+3 months") ' + request.user.username + ';fi;echo "' + password + '$(sed -n "/^id:/p" /etc/salt/minion|cut -d" " -f2)" |passwd ' + request.user.username + ' --stdin;usermod -e $(date -d "' + expire_time + '" "+%D") ' + request.user.username
-        for i in have_server.split(','):
-            orm_server = server_list.objects.get(server_name=i)
-            if not servers.has_key(orm_server.belong_to):
-                servers[orm_server.belong_to] = []
-            servers[orm_server.belong_to].append(i)
-        for k,v in servers.items():
-            v = ','.join(v)
-            client_send_data("{'salt':1,'act':'cmd.run','hosts':'%s','argv':%s}" % (v,cmd.split(',')),CENTER_SERVER[k][0],CENTER_SERVER[k][1])
-        return HttpResponse(simplejson.dumps({'code':0,'msg':u'密码同步完成'}),content_type="application/json")
-    except Exception,e:
-        logger.error(e)
-        return HttpResponse(simplejson.dumps({'code':1,'msg':u'密码同步失败'}),content_type="application/json")
+# @login_required
+# def sync_password(request):
+#     try:
+#         have_server = ''
+#         orm_user_perm = perm.objects.get(username=request.user.username)
+#         for i in orm_user_perm.server_groups.split(','):
+#             orm_server_group = server_group_list.objects.get(server_group_name=i)
+#             if have_server == '':
+#                 have_server = orm_server_group.members_server
+#             else:
+#                 have_server = have_server + ',' + orm_server_group.members_server
+#         servers = {}
+#         aes = crypt_aes(SECRET_KEY[:32])
+#         password = aes.decrypt_aes(orm_user_perm.server_password)
+#         expire_time = orm_user_perm.server_password_expire
+#         cmd = 'if ! id ' + request.user.username + ';then useradd -e $(date "+%D" -d "+3 months") ' + request.user.username + ';fi;echo "' + password + '$(sed -n "/^id:/p" /etc/salt/minion|cut -d" " -f2)" |passwd ' + request.user.username + ' --stdin;usermod -e $(date -d "' + expire_time + '" "+%D") ' + request.user.username
+#         for i in have_server.split(','):
+#             orm_server = server_list.objects.get(server_name=i)
+#             if not servers.has_key(orm_server.belong_to):
+#                 servers[orm_server.belong_to] = []
+#             servers[orm_server.belong_to].append(i)
+#         for k,v in servers.items():
+#             v = ','.join(v)
+#             client_send_data("{'salt':1,'act':'cmd.run','hosts':'%s','argv':%s}" % (v,cmd.split(',')),CENTER_SERVER[k][0],CENTER_SERVER[k][1])
+#         return HttpResponse(simplejson.dumps({'code':0,'msg':u'密码同步完成'}),content_type="application/json")
+#     except Exception,e:
+#         logger.error(e)
+#         return HttpResponse(simplejson.dumps({'code':1,'msg':u'密码同步失败'}),content_type="application/json")
 
-@login_required
-def login_server(request):
-    # shellinabox = open_web_shell()
-    # a = Process(target=shellinabox.open,args=(20002,'192.168.100.151'))
-    # a.start()
-    # return HttpResponse(simplejson.dumps({'code':0,'msg':u'shell开启成功'}),content_type="application/json")
-    server_ips = request.POST.get('server_ips')
-    for i in server_ips.split(','):
-        shellinabox = open_web_shell()
-        if shellinabox.process(i):
-            return HttpResponse(simplejson.dumps({'code':0,'msg':u'shell开启成功'}),content_type="application/json")
-        else:
-            return HttpResponse(simplejson.dumps({'code':1,'msg':u'shell开启失败'}),content_type="application/json")
+# @login_required
+# def login_server(request):
+#     # shellinabox = open_web_shell()
+#     # a = Process(target=shellinabox.open,args=(20002,'192.168.100.151'))
+#     # a.start()
+#     # return HttpResponse(simplejson.dumps({'code':0,'msg':u'shell开启成功'}),content_type="application/json")
+#     server_ips = request.POST.get('server_ips')
+#     for i in server_ips.split(','):
+#         shellinabox = open_web_shell()
+#         if shellinabox.process(i):
+#             return HttpResponse(simplejson.dumps({'code':0,'msg':u'shell开启成功'}),content_type="application/json")
+#         else:
+#             return HttpResponse(simplejson.dumps({'code':1,'msg':u'shell开启失败'}),content_type="application/json")
 
 @login_required
 def fortress_server(request):
