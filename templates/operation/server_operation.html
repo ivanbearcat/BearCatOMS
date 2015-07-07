@@ -31,7 +31,7 @@
                         <th>IP</th>
                         <th>系统</th>
                         <th>属于哪个中心服务器</th>
-                        <th>备注</th>
+                        <th>连接状态</th>
                         <th>ID</th>
                     </tr>
                     </thead>
@@ -183,13 +183,13 @@ function loaddata() {
             { "sClass": "center", 'sWidth': "15%"},
             { "sClass": "center", 'sWidth': "15%"},
             { "sClass": "center", 'sWidth': "15%"},
-            { "sClass": "center", 'sWidth': "20%", "bVisible": false},
+            { "sClass": "center", 'sWidth': "10%"},
             { "sClass": "center", 'sWidth': "5%", "bVisible": false}
 
 
         ],
         "aaSorting": [
-            [0, 'desc']
+            [4, 'desc']
         ],
         "oLanguage": {
             "sProcessing": "正在加载数据...",
@@ -214,6 +214,11 @@ function loaddata() {
             $('input[type=checkbox],input[type=radio],input[type=file]').uniform()
         },
         "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+            if(aData[4] == '1'){
+                $('td:eq(4)',nRow).html('<div><img src="/static/assets/img/runing.png">正常</div>')
+            }else{
+                $('td:eq(4)',nRow).html('<div><img src="/static/assets/img/stoping.png">错误</div>')
+            }
         },
         "fnServerData": function (sSource, aoData, fnCallback) {
             $.ajax({

@@ -245,7 +245,7 @@ def get_server_list(request):
     sSearch = request.POST.get('sSearch')#高级搜索
 
     aaData = []
-    sort = ['server_name','ip','os','belong_to','comment']
+    sort = ['server_name','ip','os','belong_to','status']
 
     if  sSortDir_0 == 'asc':
         if sSearch == '':
@@ -286,7 +286,7 @@ def get_server_list(request):
                        '1':i.ip,
                        '2':i.os,
                        '3':i.belong_to,
-                       '4':i.comment,
+                       '4':i.status,
                        '5':i.id
                       })
     result = {'sEcho':sEcho,
@@ -311,10 +311,15 @@ def search_server_list(request):
                     os = client_send_data("{'salt':1,'act':'grains.item','hosts':'%s','argv':['os']}" % k,CENTER_SERVER[i][0],CENTER_SERVER[i][1])
                     os = eval(os)
                     belong_to = i
-                    server_list.objects.create(server_name=k,ip=ip[k]['ipv4'],os=os[k]['os'],belong_to=belong_to)
-            # for i in server_list.objects.all():
-            #     if not i.server_name in dict_data.keys():
-            #         i.delete()
+                    server_list.objects.create(server_name=k,ip=ip[k]['ipv4'],os=os[k]['os'],belong_to=belong_to,status=1)
+                elif uniq_test:
+                    orm_server = server_list.objects.get(server_name=k)
+                    orm_server.status = 1
+                    orm_server.save()
+            for i in server_list.objects.all():
+                if not i.server_name in dict_data.keys():
+                    i.status = 0
+                    i.save()
         return HttpResponse(simplejson.dumps({'code':0,'msg':u'获取完成'}),content_type="application/json")
     except Exception,e:
         logger.error(e)
