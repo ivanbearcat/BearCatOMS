@@ -235,6 +235,21 @@ def server_operation(request):
                                                            'path2':path,
                                                            'page_name1':u'运维操作',
                                                            'page_name2':u'服务器操作'})
+
+@login_required
+def password_expire(request):
+    orm = perm.objects.get(username=request.user.username)
+    expire_time = orm.server_password_expire
+    expire_time_format = datetime.date(int(expire_time.split('-')[0]),int(expire_time.split('-')[1]),int(expire_time.split('-')[2]))
+    expire_day = int(expire_time_format.strftime('%s')) - int(expire_time_format.date.today().strftime('%s'))
+    expire_day = expire_day / 60 / 60 / 24
+    if expire_day < 100:
+        msg = '您的服务器密码将于%s过期，请尽快修改密码'
+        return HttpResponse(simplejson.dumps({'code':0,'msg':msg}),content_type="application/json")
+    else:
+        return HttpResponse(simplejson.dumps({'code':1}),content_type="application/json")
+
+
 @login_required
 def get_server_list(request):
     sEcho =  request.POST.get('sEcho') #标志，直接返回

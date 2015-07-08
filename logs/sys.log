@@ -20432,3 +20432,71 @@ Traceback (most recent call last):
     for i in server_list.objects.all():
     ^
 IndentationError: expected an indented block
+[2015-07-08 10:36:32,927] ERROR : Internal Server Error: /password_expire/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 243, in password_expire
+    expire_time = datetime.date(expire_time.split('-')[0],expire_time.split('-')[1],expire_time.split('-')[2])
+TypeError: an integer is required
+[2015-07-08 10:37:02,236] ERROR : Internal Server Error: /password_expire/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 243, in password_expire
+    expire_time = datetime.date(expire_time.split('-')[0],expire_time.split('-')[1],expire_time.split('-')[2])
+TypeError: an integer is required
+[2015-07-08 10:38:10,275] ERROR : Internal Server Error: /password_expire/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 244, in password_expire
+    expire_time = datetime.date(expire_time.split('-')[0],expire_time.split('-')[1],expire_time.split('-')[2])
+TypeError: an integer is required
+[2015-07-08 10:38:56,209] ERROR : Internal Server Error: /password_expire/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 244, in password_expire
+    expire_time = datetime.date(expire_time.split('-')[0],expire_time.split('-')[1],expire_time.split('-')[2])
+TypeError: an integer is required
+[2015-07-08 10:39:43,479] ERROR : Internal Server Error: /password_expire/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 245, in password_expire
+    print expire_time.strftime('%F')
+ValueError: Invalid format string
+[2015-07-08 10:40:42,338] ERROR : Internal Server Error: /password_expire/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 127, in get_response
+    raise ValueError("The view %s.%s didn't return an HttpResponse object." % (callback.__module__, view_name))
+ValueError: The view operation.views.password_expire didn't return an HttpResponse object.
+[2015-07-08 10:41:28,063] ERROR : Internal Server Error: /password_expire/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 245, in password_expire
+    print expire_time.strftime('%s')
+ValueError: Invalid format string
+[2015-07-08 10:41:46,164] ERROR : Internal Server Error: /password_expire/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 245, in password_expire
+    print expire_time.strftime('%s')
+ValueError: Invalid format string

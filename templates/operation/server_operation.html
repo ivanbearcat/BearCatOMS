@@ -101,6 +101,13 @@ var aButtons
 /* Formating function for row details */
 
 $(document).ready(function () {
+
+    $.post('/password_expire/', {}, function (d) {
+        if (d.code == 0) {
+            toastr.warn(d.msg)
+        } else {}
+    })
+
     aButtons = [
             {
                 "sExtends": 'text',
