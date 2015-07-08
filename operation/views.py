@@ -243,8 +243,8 @@ def password_expire(request):
     expire_time_format = datetime.date(int(expire_time.split('-')[0]),int(expire_time.split('-')[1]),int(expire_time.split('-')[2]))
     expire_day = int(expire_time_format.strftime('%s')) - int(datetime.date.today().strftime('%s'))
     expire_day = expire_day / 60 / 60 / 24
-    if expire_day < 100:
-        msg = '您的服务器密码将于%s过期，请尽快修改密码'
+    if expire_day < 10:
+        msg = '您的服务器密码将于%s过期，请尽快修改密码' % expire_day
         return HttpResponse(simplejson.dumps({'code':0,'msg':msg}),content_type="application/json")
     else:
         return HttpResponse(simplejson.dumps({'code':1}),content_type="application/json")
