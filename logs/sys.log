@@ -20500,3 +20500,13 @@ Traceback (most recent call last):
   File "E:\BearCatOMS\operation\views.py", line 245, in password_expire
     print expire_time.strftime('%s')
 ValueError: Invalid format string
+[2015-07-08 11:51:28,437] INFO : <admin> login in sucess.
+[2015-07-08 11:54:09,112] ERROR : Internal Server Error: /password_expire/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django\contrib\auth\decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "E:\BearCatOMS\operation\views.py", line 244, in password_expire
+    expire_day = int(expire_time_format.strftime('%s')) - int(datetime.date.today().strftime('%s'))
+ValueError: Invalid format string

@@ -34,7 +34,7 @@ while 1:
     try:
         print '=================='
         for i in all_servers:
-            print i
+            print '\033[34;1m%s\033[0m' % i
         print '=================='
 
         hostname = raw_input('please input hostname to login("exit" to logout)：').strip()
