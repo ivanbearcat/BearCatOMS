@@ -1,5 +1,5 @@
 #coding:utf-8
-import logging
+import logging,os
 from logging.handlers import RotatingFileHandler
 
 class logger(object):
@@ -10,7 +10,7 @@ class logger(object):
         stream_handler.setFormatter(formatter) 
         self.log.addHandler(stream_handler)
         #定义一个RotatingFileHandler，最多备份5个日志文件，每个日志文件最大10M
-        Rthandler = RotatingFileHandler('logs/server.log', maxBytes=1024*1024,backupCount=5)
+        Rthandler = RotatingFileHandler(os.path.abspath(os.path.dirname(__file__)) + '/../logs/server.log', maxBytes=1024*1024,backupCount=5)
         Rthandler.setFormatter(formatter)
         self.log.addHandler(Rthandler)
         self.log.setLevel(logging.INFO)

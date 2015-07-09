@@ -20510,3 +20510,26 @@ Traceback (most recent call last):
   File "E:\BearCatOMS\operation\views.py", line 244, in password_expire
     expire_day = int(expire_time_format.strftime('%s')) - int(datetime.date.today().strftime('%s'))
 ValueError: Invalid format string
+[2015-07-09 10:53:40,911] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 10:54:13,023] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 10:57:29,842] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 10:59:34,838] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 11:00:05,928] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 11:00:44,066] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 11:00:44,180] WARNING : Not Found: /favicon.ico
+[2015-07-09 11:00:44,224] WARNING : Not Found: /favicon.ico
+[2015-07-09 11:24:11,924] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 11:24:30,948] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 15:24:14,437] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 15:26:03,463] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 15:27:28,986] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 15:33:39,171] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 15:33:48,924] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 15:34:58,263] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 15:35:05,226] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 15:35:55,150] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 15:36:25,450] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 15:36:41,101] ERROR : (1048, "Column 'source_ip' cannot be null")
+[2015-07-09 15:36:58,604] ERROR : (1048, "Column 'username' cannot be null")
+[2015-07-09 15:37:22,414] ERROR : (1048, "Column 'username' cannot be null")
+[2015-07-09 15:39:48,802] ERROR : (1048, "Column 'source_ip' cannot be null")
