@@ -20,7 +20,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'BearCatOMS',
 	    'USER': 'BearCat',
-	    'PASSWORD': 'xzm_123.',
+	    'PASSWORD': 'BearCat',
 	    'HOST': '192.168.100.151',
     }
 }
