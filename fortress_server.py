@@ -38,8 +38,8 @@ while 1:
         print '=================='
 
         hostname = raw_input('please input hostname to login("exit" to logout)：').strip()
-	if hostname == 'exit':
-	    sys.exit(0)
+        if hostname == 'exit':
+            sys.exit(0)
         if hostname == '' or hostname not in all_servers:
             print '主机名不正确'
             continue
@@ -47,4 +47,6 @@ while 1:
     except Exception:
         continue
     except KeyboardInterrupt:
-	continue
+        continue
+    except EOFError:
+        continue
